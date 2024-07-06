@@ -8,6 +8,7 @@ import schoolRouter from "./routes/schoolRoutes.js"
 import adminRouter from "./routes/adminRoute.js"
 import userRoute from "./routes/userRoute.js"
 import classRoute from "./routes/classRoute.js"
+import teacherRouter from "./routes/teacherRoute.js"
 
 dotenv.config()
 
@@ -35,7 +36,8 @@ app.listen(4000, () => {
 app.use('/api', schoolRouter);
 app.use('/api', adminRouter );
 app.use('/api', userRoute);
-app.use("/api", classRoute)
+app.use("/api", classRoute);
+app.use("/api", teacherRouter);
 
 app.use(express.static(path.join(__dirname, '/client/dist')))
 

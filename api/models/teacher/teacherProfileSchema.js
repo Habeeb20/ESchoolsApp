@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import validator from "validator";
 
-const teacherSchema = new mongoose.Schema({
+const teacherProfileSchema = new mongoose.Schema({
     firstName:{
         type: String,
         required: true
@@ -42,6 +42,6 @@ const teacherSchema = new mongoose.Schema({
 });
 
 
-const Teacher = mongoose.model("Teacher", teacherSchema)
+const Teacher = mongoose.model("TeacherProfile", teacherProfileSchema)
 
 export default Teacher

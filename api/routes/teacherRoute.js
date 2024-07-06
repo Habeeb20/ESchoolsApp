@@ -1,0 +1,22 @@
+import express from "express";
+import { teacherSignIn,  } from "../controllers/userController.js";
+import 
+    { getAllteachersProfile,
+      getTeacherProfile, 
+      loginTeacherAccount, 
+      deleteTeacherProfile,
+      createTeacherAccount, 
+      createTeacherProfile,
+      updateTeacherProfile } from "../controllers/teacherController.js";
+
+const teacherRouter = express.Router();
+
+teacherRouter.post("/getAllteachersProfile", getAllteachersProfile)
+teacherRouter.post("/getTeacherProfile", getTeacherProfile)
+teacherRouter.post("/loginTeacherAcount", loginTeacherAccount)
+teacherRouter.post("/deleteTeacherProfile", deleteTeacherProfile)
+teacherRouter.post("/createTeacherAccount", createTeacherAccount)
+teacherRouter.post("/createTeacherProfile", createTeacherProfile)
+teacherRouter.post("/updateTeacherProfile", updateTeacherProfile)
+
+export default teacherRouter;
