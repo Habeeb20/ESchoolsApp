@@ -3,13 +3,15 @@ import School from "../models/School.js"
 
 
 export const signup = async (req, res, next) => {
-    const {username, email, password} = req.body;
+    console.log(req.body)
+    const {name, email, password, isAdmin} = req.body;
     try {
-        const schoolUser = new School({username, email, password});
-        await School.save();
-        res.status(201).json("new school user has been registered")
+      
+       const schoolUser = await School.create({name, email, password, isAdmin});
+        res.status(201).json(schoolUser)
 
     } catch (error) {
+        console.log(error)
         res.status(500).json("an error occured while registering user")
         
     }
@@ -34,6 +36,7 @@ export const login = async (req, res, next ) => {
             .json(rest);
 
     } catch (error) {
+        console.log(error)
         next(error);
     }
 }

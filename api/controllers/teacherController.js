@@ -52,9 +52,9 @@ export const loginTeacherAccount = async(req, res, next) => {
 
 export const createTeacherProfile = async(req, res, next) => {
     console.log(req.body);
-    const {firstName, lastName, email, profileWriteUp, workExperience, address, courses, yearsOfexperience} = req.body
+    const {firstName, lastName, email, profileWriteUp, workExperience, address, courses, yearsOfExperience} = req.body
     try {
-        if(!firstName || !lastName || !email  || !profileWriteUp || !workExperience || !address  || !courses || yearsOfexperience){
+        if(!firstName || !lastName || !email  || !profileWriteUp || !workExperience || !address  || !courses || !yearsOfExperience){
             return res.status(400).json("please fill in the full form")
         }
         await TeacherProfile.create({firstName, lastName, email, profileWriteUp, courses, workExperience, yearsOfExperience, address});

@@ -1,10 +1,11 @@
 import express from "express";
-import { createClass, getAllClasses } from "../controllers/classController.js";
+import { createClass, getAllClasses, getAClass } from "../controllers/classController.js";
 
 
 const classRoute = express.Router()
 
-classRoute.post("/class", getAllClasses)
-classRoute.post("/creatclass", createClass)
+classRoute.get('/class', getAllClasses)
+classRoute.get("/class/:id", getAClass)
+classRoute.post("/createclass", createClass)
 
 export default classRoute

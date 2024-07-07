@@ -2,18 +2,15 @@ import Class from "../models/classSchema.js";
 
 export const createClass = async( req, res, next) => {
     console.log(req.body);
-    const {grade} = req.body;
+    const {grade} = req.body
+   
 
     try{
-        if(!grade) {
-            return res.status(400).json({message: "please fill in the form"})
-
+        const grade1= await Class.create({grade});
+        if(!grade1){
+            return res.status(404).json("an error occured")
         }
-
-        await Class.create({grade});
-        res.status(200).json({
-            success: true, message: "class created"
-        });
+        return res.status(201).json(grade1);
     } catch (error) {
         next(error)
     }
@@ -21,12 +18,28 @@ export const createClass = async( req, res, next) => {
 }
 
 export const getAllClasses = async (req, res, next) => {
+    console.log(req.body)
+  
     try {
-        const classes = await Class.find();
-        res.status(200).json({
-            success: true,
-            classes
-        })
+        const grade= await Class.find();
+        if(!grade){
+            res.status(404).json("an error occured")
+        }
+        res.status(200).json(grade)
+    } catch (error) {
+        next(error)
+    }
+}
+
+export const getAClass = async (req, res, next) => {
+    console.log(req.body)
+    const {id} = req.params
+    try {
+         const grade = await Class.findById(id);
+        if(!grade){
+            return res.status(404).json("an error occured")
+        }
+        return res.status(200).json(grade)
     } catch (error) {
         next(error)
     }

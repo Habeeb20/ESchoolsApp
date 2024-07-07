@@ -15,7 +15,7 @@ const teacherAccountSchema = new mongoose.Schema({
         required: true,
         minlength: 6
     },
-});
+}, {timestamps: true});
 
 const TeacherAccount = mongoose.model("TeacherAccount", teacherAccountSchema)
 

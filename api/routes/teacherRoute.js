@@ -11,8 +11,8 @@ import
 
 const teacherRouter = express.Router();
 
-teacherRouter.post("/getAllteachersProfile", getAllteachersProfile)
-teacherRouter.post("/getTeacherProfile", getTeacherProfile)
+teacherRouter.get("/getAllteachersProfile", getAllteachersProfile)
+teacherRouter.get("/getTeacherProfile/:id", getTeacherProfile)
 teacherRouter.post("/loginTeacherAcount", loginTeacherAccount)
 teacherRouter.post("/deleteTeacherProfile", deleteTeacherProfile)
 teacherRouter.post("/createTeacherAccount", createTeacherAccount)
