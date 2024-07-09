@@ -11,7 +11,7 @@ export const createStudentAccount = async (req, res, next) => {
     const salt = await bcrypt.genSalt(10)
     const hashedPassword = await bcrypt.hash(password, salt)
 
-    const newstudentAccount = new StudentAccount({email,regNumber, password: hashedPassword})
+    const newstudentAccount = new StudentAccount({email,regNumber,password: hashedPassword})
     try {
         if(!email ||!regNumber || !password){
             return res.status(401).json({message:"please fill out the form correctly"})
@@ -22,7 +22,7 @@ export const createStudentAccount = async (req, res, next) => {
             return res.status(400).json({message: "sorry, there is an account with that email, kindly login"})
         }
         await newstudentAccount.save();
-        return res.status(201).json({message: "you have successfully created your account"}, newstudentAccount)
+        return res.status(200).json( newstudentAccount)
     } catch (error) {
         next(error)
         
@@ -43,6 +43,7 @@ export const loginStudentAccount = async(req, res, next) => {
         const {password: hashedPassword, ...rest} = confirmDetails._doc;
         res.cookies("access-token", token, {httpOnly: true}, {expiresIn: age}).status(200).json(rest)
     } catch (error) {
+        res.status(400).json({error:error.message})
         next(error)
     }
 }

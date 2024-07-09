@@ -15,15 +15,16 @@ import classRoute from "./routes/classRoute.js"
 import teacherRouter from "./routes/teacherRoute.js"
 import studentRoute from "./routes/studentRoute.js"
 import schoolAuthRoute from "./routes/eJobs/SchoolAuthRoute.js";
-
+import corsOptions from "./config/corsOptions.js";
 const __dirname = path.resolve()
 const port = 4000
 
 const app = express();
 
 
-app.use(cors())
 app.use(express.json())
+app.use(cors())
+app.use(express.static('public'))
 app.use(cookieParser());
 
 mongoose.connection.once('open', () => {
@@ -37,7 +38,7 @@ app.use('/api', adminRouter );
 app.use('/api', userRoute);
 app.use('/api', classRoute);
 app.use("/api", teacherRouter);
-app.use("/api", studentRoute);
+app.use('/api', studentRoute);
 app.use("/api", schoolAuthRoute)
 
 app.use(express.static(path.join(__dirname, '/client/dist')))

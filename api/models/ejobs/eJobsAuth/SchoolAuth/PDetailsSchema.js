@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import validator from "validator";
 
 
 const personalDetailsSchema = new mongoose.Schema({
@@ -8,7 +9,8 @@ const personalDetailsSchema = new mongoose.Schema({
     },
     schoolEmail: {
         type: String,
-        required: true
+        required: true,
+        validator: [validator.isEmail, "please input a correct email address"]
     },
     schoolType: {
         type: String,
