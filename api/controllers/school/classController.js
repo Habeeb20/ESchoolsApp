@@ -1,5 +1,4 @@
-import Class from "../models/classSchema.js";
-
+import Class from "../../models/school/classSchema.js";
 export const createClass = async( req, res, next) => {
     console.log(req.body);
     const {grade} = req.body

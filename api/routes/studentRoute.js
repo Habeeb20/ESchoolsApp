@@ -13,10 +13,10 @@ const studentRoute = express.Router();
 
 studentRoute.get("/getAllstudentProfile", getAllStudentsProfile)
 studentRoute.get("/getstudentProfile", getStudentProfile)
-studentRoute.post("/loginstudentAcount", loginStudentAccount)
+studentRoute.post('/loginstudentAcount', loginStudentAccount)
 studentRoute.post("/deletestudentProfile", deleteStudentProfile)
-studentRoute.post("/createstudentAccount", createStudentAccount)
+studentRoute.post('/createstudentAccount', createStudentAccount)
 studentRoute.post("/createstudentProfile", createStudentProfile)
-studentRoute.post("/updatestudentProfile", updateStudentProfile)
+studentRoute.put("/updatestudentProfile/:id", updateStudentProfile)
 
 export default studentRoute

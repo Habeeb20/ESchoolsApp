@@ -48,7 +48,7 @@ export const useStudentAcctLogin = () => {
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:4000/api/loginstudentAccount', {
+      const response = await fetch('http://localhost:4000/api/loginstudentAcount', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })

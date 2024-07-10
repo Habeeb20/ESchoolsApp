@@ -2,6 +2,8 @@ import { useState } from "react";
 import useStudentAcctSignup from "../../hooks/student/useStudentAcctSignup";
 
 import React from 'react'
+import FadeIn from "../../FadeIn";
+import Navbar from "../../components/Navbar";
 
 export default function StudentSignupAcct() {
     const [email, setEmail] = useState('')
@@ -21,8 +23,13 @@ export default function StudentSignupAcct() {
     }
 
     return(
-        <form className="signup" onSubmit={handleSubmit}>
-            <h3>sign up</h3>
+        <>
+        <Navbar />
+         <form className="signup" onSubmit={handleSubmit}>
+            <h3>student's Sign up</h3>
+            <FadeIn delay={0.2} direction="right" padding fullWidth>
+
+           
 
             <label >Email</label>
             <input
@@ -48,7 +55,10 @@ export default function StudentSignupAcct() {
 
             <button disabled={isLoading}>Sign up</button>
             {error && <div className="error">{error}</div>}
-
+            </FadeIn>
         </form>
+
+        </>
+       
     )
 }

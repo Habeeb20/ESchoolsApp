@@ -20,7 +20,7 @@ export const createTeacherAccount = async (req, res, next) => {
             return res.status(400).json({message: "sorry, there is an account with that email, kindly login"})
         }
         await newteacherAccount.save();
-        return res.status(201).json({message: "you have successfully created your account"}, newteacherAccount)
+        return res.status(200).json( newteacherAccount)
     } catch (error) {
         next(error)
         

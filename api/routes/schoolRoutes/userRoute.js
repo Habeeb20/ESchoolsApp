@@ -1,6 +1,5 @@
 import express from "express";
-import { studentSignIn, teacherSignIn } from "../controllers/userController.js";
-
+import { studentSignIn, teacherSignIn } from "../../controllers/school/userController.js";
 
 const userRoute = express.Router();
 

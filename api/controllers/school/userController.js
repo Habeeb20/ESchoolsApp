@@ -1,6 +1,8 @@
-import Admin from "../models/adminRegister.js";
-import {Student} from "../models/userSchema.js"
-import {Teacher} from "../models/userSchema.js"
+
+import Admin from "../../models/school/adminRegister.js";
+import { Student } from "../../models/school/studentSchema.js";
+import { Teacher } from "../../models/school/teacherSchema.js";
+
 import bcrypt from "bcrypt";
 
 

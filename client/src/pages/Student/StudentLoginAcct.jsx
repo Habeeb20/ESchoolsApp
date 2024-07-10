@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import {useStudentAcctLogin} from '../../hooks/student/useStudentAcctLogin'
+import FadeIn from '../../FadeIn';
+import Navbar from '../../components/Navbar';
 
 
 export default function StudentLoginAcct() {
@@ -15,8 +17,11 @@ export default function StudentLoginAcct() {
     };
   
     return (
+      <>
+      <Navbar/>
+      <FadeIn delay={0.2} direction="right" padding fullWidth>
       <form className="login" onSubmit={handleSubmit}>
-        <h3>login</h3>
+        <h3>Student's Login</h3>
   
         <label>Email</label>
         <input
@@ -35,6 +40,9 @@ export default function StudentLoginAcct() {
         <button disabled={isLoading}>log in</button>
         {error && <div className="error">{error}</div>}
       </form>
+      </FadeIn>
+      </>
+      
     );
   
 }

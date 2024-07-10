@@ -14,6 +14,16 @@ export const studentProfileReducer = (state, action) => {
             return{
                 profile: action.payload, ...state.workout
             }
+        case "edit_profile":
+            return{
+                profile:state.profile.map((w) => {
+                    if(w._id == action.payload._id){
+                        return{...w, ...action.payload};
+                    }else {
+                        return w;
+                    }
+                })
+            }
         case 'delete_profile' :
             return{
                 profile:state.workout.filter((w) => w._id !== action.payload._id)

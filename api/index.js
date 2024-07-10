@@ -9,13 +9,19 @@ import path from "path"
 //connecting to the database
 connectDb();
 import schoolRouter from "./routes/schoolRoutes.js"
-import adminRouter from "./routes/adminRoute.js"
-import userRoute from "./routes/userRoute.js"
-import classRoute from "./routes/classRoute.js"
+import adminRouter from "./routes/schoolRoutes/adminRoute.js"
+import userRoute from "./routes/schoolRoutes/userRoute.js"
+import classRoute from "./routes/schoolRoutes/classRoute.js"
 import teacherRouter from "./routes/teacherRoute.js"
 import studentRoute from "./routes/studentRoute.js"
 import schoolAuthRoute from "./routes/eJobs/SchoolAuthRoute.js";
 import corsOptions from "./config/corsOptions.js";
+import announcementrouter from "./routes/schoolRoutes/announcementRoute.js";
+import Attendance from "./models/school/attendance.js";
+import AttendanceRouter from "./routes/schoolRoutes/attendanceRoute.js";
+import bookRouter from "./routes/schoolRoutes/libraryRoute.js";
+import student_Router from "./routes/schoolRoutes/stdentRoute.js";
+import teacher_Router from "./routes/schoolRoutes/tcherRoute.js";
 const __dirname = path.resolve()
 const port = 4000
 
@@ -39,7 +45,12 @@ app.use('/api', userRoute);
 app.use('/api', classRoute);
 app.use("/api", teacherRouter);
 app.use('/api', studentRoute);
-app.use("/api", schoolAuthRoute)
+app.use("/api", schoolAuthRoute);
+app.use("/api", announcementrouter );
+app.use("/api", AttendanceRouter);
+app.use("/api", bookRouter);
+app.use("/api", student_Router);
+app.use("/api", teacher_Router);
 
 app.use(express.static(path.join(__dirname, '/client/dist')))
 

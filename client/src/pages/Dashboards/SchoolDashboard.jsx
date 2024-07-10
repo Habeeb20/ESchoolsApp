@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
+import StudentHomePage from '../Student/StudentHomePage';
 
 const SchoolDashboard = () => {
     const {schholUser, setSchhoolUser} = useState([]);
@@ -13,7 +14,8 @@ const SchoolDashboard = () => {
   return (
     <div>
         <h1>Admin Dashboard</h1>
-        <ul></ul>     
+        <ul></ul>  
+        <StudentHomePage />   
     </div>
   )
 }
