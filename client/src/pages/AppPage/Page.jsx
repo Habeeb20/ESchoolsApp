@@ -21,7 +21,7 @@ export default function Page() {
                 <h5>or</h5>
             <button style={button}><Link style={link} to= '/teacherlogin'>a teacher?</Link></button>
                 <h5>or</h5>
-            <button style={button}><Link style={link} to= '/studentprofile'>a school?</Link></button>
+            <button style={button}><Link style={link} to= '/school'>a school?</Link></button>
 
     </FadeIn>
            

@@ -6,5 +6,5 @@ const adminRouter = express.Router();
 
 
 adminRouter.post('/adminSignUp', adminRegister)
-adminRouter.post('/admingLogin', adminLogin)
+adminRouter.post('/adminLogin', adminLogin)
 export default adminRouter

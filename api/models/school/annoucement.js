@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import validator from "validator";
 
 const announcementschema = new mongoose.Schema({
-    announcementschema:{
+    announcement:{
         type:String,
         required: true
     }
