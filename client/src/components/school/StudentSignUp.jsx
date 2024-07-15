@@ -3,22 +3,22 @@ import React, { useState } from 'react';
 import { StudentSignInContainer, FormContainer, InputField, SubmitButton } from '../../styles/StudentSignInStyles';
 import StudentNavbar from './StudentNavbar';
 import FadeIn from '../../FadeIn';
-const StudentSignIn = () => {
+const StudentSignUp = () => {
   const [email, setEmail] = useState('');
-  const [registrationNumber, setRegistrationNumber] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleSignIn = () => {
+  const handleSignUp = () => {
     // For demonstration purposes, we'll directly navigate to the student dashboard route
     // Replace this with your actual sign-in logic
-    console.log('Student Sign In:', { email, registrationNumber });
+    console.log('Student Sign Up:', { email, password });
   };
 
   return (
     <>
     <StudentNavbar />
      <FadeIn delay={0.2} direction="right" padding fullWidth>
-      <form className="login" onSubmit={handleSignIn}>
-        <h3>student's Sign In</h3>
+      <form className="login" onSubmit={handleSignUp}>
+        <h3>student's Sign Up</h3>
   
         <label>Email</label>
         <input
@@ -30,11 +30,11 @@ const StudentSignIn = () => {
         <label>Password</label>
         <input
           type="password"
-          onChange={(e) => setRegistrationNumber(e.target.value)}
-          value={registrationNumber}
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
         />
   
-        <button onClick={handleSignIn}>register</button>
+        <button onClick={handleSignUp}>register</button>
        
       </form>
       </FadeIn></>
@@ -62,4 +62,4 @@ const StudentSignIn = () => {
   );
 };
 
-export default StudentSignIn;
+export default StudentSignUp;

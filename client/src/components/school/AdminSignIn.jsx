@@ -4,13 +4,15 @@ import axios from 'axios';
 import FadeIn from '../../FadeIn';
 import Navbar from '../Navbar';
 import AdminNavbar from './AdminNavbar';
-
+import { useNavigate } from 'react-router-dom';
 const AdminSignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate()
 
   const handleSignIn = async (e) => {
     e.preventDefault();
+    navigate('/admindashboard')
   
     try {
       const response = await axios.post('http://localhost:4000/api/adminLogin', { email, password }); 

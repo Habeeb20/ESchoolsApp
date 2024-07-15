@@ -129,7 +129,7 @@ const Sidebar = () => {
         </SidebarNavItem>
         <SidebarNavItem>
           <SidebarIcon><BsChatDots /></SidebarIcon>
-          <StyledLink to="/adminanouncement">Announcement</StyledLink>
+          <StyledLink to="/adminannouncement" >Announcement</StyledLink>
         </SidebarNavItem>
         {/* <SidebarNavItem> */}
           {/* <SidebarIcon><BsCalendarEvent /></SidebarIcon>
@@ -137,7 +137,7 @@ const Sidebar = () => {
         </SidebarNavItem> */}
         <SidebarNavItem>
           <SidebarIcon><BsGear /></SidebarIcon>
-          <StyledLink to="/admin/settings">Settings & Profile</StyledLink>
+          <StyledLink to="/adminsettingprofile">Settings & Profile</StyledLink>
         </SidebarNavItem>
         </SidebarNav>
       <ToggleButton onClick={toggleSidebar}>

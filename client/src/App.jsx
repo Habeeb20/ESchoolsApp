@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useStudentAcctContext } from './hooks/student/useStudentAcctContext'
@@ -34,9 +34,45 @@ import AnnouncementStudent from './pages/School/schoolStudent/Announcement'
 import AttendanceStudent from './pages/School/schoolStudent/Attendance'
 import LibraryStudent from './pages/School/schoolStudent/Library'
 import ProfileStudent from './pages/School/schoolStudent/Profile'
+import LandingPage from './pages/LandingPage/LandingPage'
+
+
+//Ejobs
+import { Context } from './main'
+import Login from "./components/EssentialJobs/Auth/Login";
+import Register from './components/EssentialJobs/Auth/Register'
+import { Toaster } from 'react-hot-toast'
+import axios from 'axios'
+import Ejobs from './pages/Ejobs/Ejobs'
+import Jobs from './pages/Ejobs/Job/Jobs'
+import JobDetails from './pages/Ejobs/Job/JobDetails'
+import Application from './components/EssentialJobs/Application/Application'
+import MyApplication from './components/EssentialJobs/Application/MyApplication'
+import PostJob from './pages/Ejobs/Job/PostJob'
+import NotFound from './components/EssentialJobs/NotFound/NotFound'
+import MyJobs from './pages/Ejobs/Job/MyJobs'
+import Footer from './components/EssentialJobs/Layout/Footer'
 function App() {
   const {user} = useStudentAcctContext()
   const {teacher} = useTeacherAcctContext()
+  const {isAuthorized, setIsAuthorized, setUser} = useContext(Context)
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:4000/api/user/getuser",
+          {
+            withCredentials: true,
+          }
+        );
+        setUser(response.data.user);
+        setIsAuthorized(true);
+      } catch (error) {
+        setIsAuthorized(false);
+      }
+    };
+    fetchUser();
+  }, [isAuthorized]);
 
   return (
    <BrowserRouter>
@@ -83,6 +119,30 @@ function App() {
     <Route exact path ='/studentprof' element = {< ProfileStudent/>} />
 
 
+    <Route exact path ='/landingpage' element = {< LandingPage/>} />
+
+    //Ejobs
+    <Route exact path='/ejobs'  element = {<Ejobs />} />
+    <Route exact path='/ejobslogin' element ={<Login />}/>
+    <Route exact path='/ejobsregister' element ={<Register />}/>
+    <Route exact path='/job/getall' element ={<Jobs />}/>
+    <Route exact path='/job/:id' element ={<JobDetails />}/>
+    <Route exact path='/application/:id' element ={<Application />}/>
+    <Route exact path='/application?me' element ={<MyApplication />}/>
+    <Route exact path='/job/post' element ={<PostJob />}/>
+    <Route exact path='/job/me' element ={<MyJobs />}/>
+    <Route exact path='*' element ={<NotFound />}/>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
 
 
 
@@ -90,6 +150,8 @@ function App() {
 
     
    </Routes>
+   <Footer />
+   <Toaster />
    </BrowserRouter>
   )
 }
