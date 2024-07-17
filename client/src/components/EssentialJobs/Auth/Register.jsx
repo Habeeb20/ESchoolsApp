@@ -45,7 +45,7 @@ function Register() {
     };
   
     if(isAuthorized){
-      return <Navigate to={'/landingpage'}/>
+      return <Navigate to={'/ejobs'}/>
     }
   
   

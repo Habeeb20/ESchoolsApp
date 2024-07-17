@@ -2,6 +2,7 @@ import React from "react";
 import { FaUserPlus } from "react-icons/fa";
 import { MdFindInPage } from "react-icons/md";
 import { IoMdSend } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const HowItWorks = () => {
   return (
@@ -18,21 +19,29 @@ const HowItWorks = () => {
                 Consequuntur, culpa.
               </p>
             </div>
+           
             <div className="card">
+            
               <MdFindInPage />
-              <p>Find a Job/Post a Job</p>
+              <p><Link to="/job/post">Find a Job/Post a Job</Link></p>
               <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Consequuntur, culpa.
               </p>
+            
             </div>
+           
+            
             <div className="card">
+              
               <IoMdSend />
-              <p>Apply For Job/Recruit Suitable Candidates</p>
+              <p><Link to="/application/:id">Apply For Job/Recruit Suitable Candidates</Link></p>
               <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Consequuntur, culpa.
               </p>
+           
+             
             </div>
           </div>
         </div>

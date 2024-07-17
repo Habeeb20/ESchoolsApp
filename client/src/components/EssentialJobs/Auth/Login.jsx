@@ -40,7 +40,7 @@ const Login = () => {
   };
 
   if(isAuthorized){
-    return <Navigate to={'/'}/>
+    return <Navigate to={'/ejobs'}/>
   }
 
   return (
@@ -91,7 +91,7 @@ const Login = () => {
             <button type="submit" onClick={handleLogin}>
               Login
             </button>
-            <Link to={"/register"}>Register Now</Link>
+            <Link to={"/ejobsregister"}>Register Now</Link>
           </form>
         </div>
         <div className="banner">

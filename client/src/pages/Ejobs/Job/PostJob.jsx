@@ -3,7 +3,8 @@ import axios from "axios"
 import { Context } from "../../../main";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-
+import { useState } from "react";
+import { useContext } from "react";
 const PostJob = () => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -70,7 +71,7 @@ const PostJob = () => {
   
     const navigateTo = useNavigate();
     if (!isAuthorized || (user && user.role !== "Employer")) {
-      navigateTo("/");
+      navigateTo("/ejobs");
     }
   
     return (

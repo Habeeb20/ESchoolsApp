@@ -13,15 +13,15 @@ export default function Navbar() {
   return (
    <header>
         <div className="container">
-            <Link to="#"><h3>Home</h3></Link>
-            <Link to="#"><h3>Admision</h3></Link>
-            <Link to="#"><h3>Schools</h3></Link>
-            <Link to="#"><h3>Teacher</h3></Link>
-            <Link to="/ejobs"><h3>e-jobs</h3></Link>
-            <Link to="#"><h3>Scholarships</h3></Link>
-            <Link to="#"><h3>Exams</h3></Link>
-            <Link to="#"><h3>Comparism</h3></Link>
-            <Link to="#"><h3>Books</h3></Link>
+            <Link to="/landingpage"><h6>Home</h6></Link>
+            <Link to="#"><h6>Admision</h6></Link>
+            <Link to="#"><h6>Schools</h6></Link>
+            <Link to="/teacherpage"><h6>Teacher</h6></Link>
+            <Link to="/ejobs"><h6>e-jobs</h6></Link>
+            <Link to="#"><h6>Scholarships</h6></Link>
+            <Link to="#"><h6>Exams</h6></Link>
+            <Link to="/Aihome"><h6>Comparism</h6></Link>
+            <Link to="#"><h6>Books</h6></Link>
             <nav>
                 { (
                     <div>

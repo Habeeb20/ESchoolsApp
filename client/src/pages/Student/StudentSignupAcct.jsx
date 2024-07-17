@@ -1,6 +1,6 @@
 import { useState } from "react";
 import useStudentAcctSignup from "../../hooks/student/useStudentAcctSignup";
-
+import { useNavigate } from "react-router-dom";
 import React from 'react'
 import FadeIn from "../../FadeIn";
 import Navbar from "../../components/Navbar";
@@ -9,15 +9,17 @@ export default function StudentSignupAcct() {
     const [email, setEmail] = useState('')
     const [regNumber, setRegNumber] = useState('')
     const [password, setPassword] = useState('')
-    
+    const navigate = useNavigate();
     const {StudentSignup, error, isLoading}  = useStudentAcctSignup()
 
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+     
+
 
         await StudentSignup(email,regNumber, password)
-
+        navigate('/landingpage')
         
 
     }
@@ -26,7 +28,7 @@ export default function StudentSignupAcct() {
         <>
         <Navbar />
          <form className="signup" onSubmit={handleSubmit}>
-            <h3>student's Sign up</h3>
+            <h3>user's Sign up</h3>
             <FadeIn delay={0.2} direction="right" padding fullWidth>
 
            

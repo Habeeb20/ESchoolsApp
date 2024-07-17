@@ -1,5 +1,20 @@
 import mongoose from "mongoose";
 
+import { randomUUID } from "crypto";
+const chatSchema = new mongoose.Schema({
+    id: {
+        type: String,
+        default: randomUUID()
+    },
+    role: {
+        type: String,
+        required: true
+    },
+    content: {
+        type: String,
+        required: true
+    }
+});
 const studentAccountSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -14,6 +29,8 @@ const studentAccountSchema = new mongoose.Schema({
         type: String,
         required: true
       },
+      chats: [chatSchema]
+
 })
 
 

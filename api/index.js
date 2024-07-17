@@ -2,6 +2,7 @@ import connectDb from "./database/dbConnect.js";
 import express from "express"
 import cors from "cors"
 import dotenv from "dotenv"
+
 dotenv.config();
 import mongoose from "mongoose"
 import cookieParser from "cookie-parser"
@@ -12,6 +13,7 @@ import ErrorHandler from "./middlewares/error.js";
 import { errorMiddleware } from "./middlewares/error.js";
 //connecting to the database
 connectDb();
+import schoolRoute from "./routes/EssentialSchool/schoolRoute.js";
 import schoolRouter from "./routes/schoolRoutes.js"
 import adminRouter from "./routes/schoolRoutes/adminRoute.js"
 import userRoute from "./routes/schoolRoutes/userRoute.js"
@@ -34,6 +36,11 @@ import teacher_Router from "./routes/schoolRoutes/tcherRoute.js";
 import EapplicationRoute from "./routes/EssentialJobsRoute/EapplicationRoute.js";
 import EjobRoute from "./routes/EssentialJobsRoute/EjobRoute.js";
 import EuserRoute from "./routes/EssentialJobsRoute/EuserRoute.js"
+
+
+//AI
+import chatRoute from "./routes/userAIRoute/userAIRoute.js";
+
 const __dirname = path.resolve()
 const port = 4000
 
@@ -42,6 +49,7 @@ const app = express();
 
 app.use(express.json())
 app.use(cors({
+    origin: [process.env.client_URL],
     method: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
 }))
@@ -87,12 +95,21 @@ app.use("/api/application", EapplicationRoute);
 app.use("/api/job", EjobRoute);
 app.use("/api/user", EuserRoute);
 
+
+//essentialschool route
+
+app.use("/api/school", schoolRoute)
+
 app.use(express.static(path.join(__dirname, '/client/dist')))
 
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'))
 })
+
+//chatAI
+
+app.use("/api", chatRoute);
 
 app.use(errorMiddleware)
 

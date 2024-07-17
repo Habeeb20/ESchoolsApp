@@ -17,11 +17,11 @@ export default function Page() {
     <h3>who are you?</h3>
 
     <FadeIn delay={0.2} direction="down" padding fullWidth>
-            <button style={button}><Link style={link} to= '/studentlogin'>a student?</Link></button>
+            <button style={button}><Link style={link} to= '/studentlogin'>a user?</Link></button>
                 <h5>or</h5>
-            <button style={button}><Link style={link} to= '/teacherlogin'>a teacher?</Link></button>
-                <h5>or</h5>
-            <button style={button}><Link style={link} to= '/school'>a school?</Link></button>
+            {/* <button style={button}><Link style={link} to= '/teacherlogin'>a teacher?</Link></button> */}
+                {/* <h5>or</h5> */}
+            <button style={button}><Link style={link} to= '/schoolhomepage'>a school?</Link></button>
 
     </FadeIn>
            

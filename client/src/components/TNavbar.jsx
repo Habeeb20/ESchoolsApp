@@ -28,11 +28,12 @@ export default function TNavbar() {
          <header>
         <div style={buttonBackground} className="container">
             <Link style={link} to="#"><h1>ESchools</h1></Link>
+            <Link style={link} to="/landingpage"><h1>Back</h1></Link>
             <nav>
                 {teacher && (
                     <div>
                         <span>{teacher.email}</span>
-                        <button style={link}><Link style={link} to= '/'>Profile</Link></button>
+                        <button style={link}><Link style={link} to= '/teacherprofileform'>Profile</Link></button>
                         
                         <button style={link} onClick={handleClick}>logout</button>
                     </div>
