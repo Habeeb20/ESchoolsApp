@@ -6,6 +6,20 @@ import Navbar from '../../components/Navbar';
 import { useNavigate } from 'react-router-dom';
 
 export default function StudentLoginAcct() {
+
+  const style ={
+    padding: "10px",
+    marginTop: "10px",
+    marginBottom: "20px",
+    width: "100%",
+    border: "1px solid #ddd",
+    borderRadius: "4px",
+    boxSizing: "border-box",
+}
+
+    const label={
+      display :"block"
+    }
  
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -21,18 +35,18 @@ export default function StudentLoginAcct() {
       <>
       <Navbar/>
       <FadeIn delay={0.2} direction="right" padding fullWidth>
-      <form className="login" onSubmit={handleSubmit}>
+      <form className="login1" onSubmit={handleSubmit}>
         <h3>user's Login</h3>
   
-        <label>Email</label>
-        <input
+        <label style={label}>Email</label>
+        <input style={style}
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
   
-        <label>Password</label>
-        <input
+        <label style={label}>Password</label>
+        <input style = {style}
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}

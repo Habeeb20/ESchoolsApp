@@ -40,6 +40,9 @@ import EuserRoute from "./routes/EssentialJobsRoute/EuserRoute.js"
 
 //AI
 import chatRoute from "./routes/userAIRoute/userAIRoute.js";
+import bookroute from "./routes/Book/bookroute.js";
+
+
 
 const __dirname = path.resolve()
 const port = 4000
@@ -122,6 +125,9 @@ app.use((err, req, res, next) => {
         message,
     });
 })
+
+//Book
+app.use('/api', bookroute )
 
 
 

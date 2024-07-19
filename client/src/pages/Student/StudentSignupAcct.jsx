@@ -6,6 +6,28 @@ import FadeIn from "../../FadeIn";
 import Navbar from "../../components/Navbar";
 
 export default function StudentSignupAcct() {
+    const style ={
+        padding: "10px",
+        marginTop: "10px",
+        marginBottom: "20px",
+        width: "100%",
+        border: "1px solid #ddd",
+        borderRadius: "4px",
+        boxSizing: "border-box",
+    }
+    
+        const label={
+          display :"block"
+        }
+
+        const login1 = {
+            maxWidth:"400px",
+            margin:"40px auto",
+            padding: "20px",
+            background: "#fff",
+            borderRadius: "4px"
+        }
+
     const [email, setEmail] = useState('')
     const [regNumber, setRegNumber] = useState('')
     const [password, setPassword] = useState('')
@@ -27,29 +49,30 @@ export default function StudentSignupAcct() {
     return(
         <>
         <Navbar />
-         <form className="signup" onSubmit={handleSubmit}>
+        <FadeIn delay={0.2} direction="right" padding fullWidth>
+         <form className="login1" onSubmit={handleSubmit}>
             <h3>user's Sign up</h3>
-            <FadeIn delay={0.2} direction="right" padding fullWidth>
+            
 
            
 
-            <label >Email</label>
-            <input
+            <label style={label}>Email</label>
+            <input style={style}
                 type="email"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
             />
 
-            <label >Reg Number</label>
-            <input
+            <label style={label} >Reg Number</label>
+            <input style={style}
                 type="text"
                 onChange={(e) => setRegNumber(e.target.value)}
                 value={regNumber}
             />
 
 
-            <label>Password</label>
-            <input
+            <label style={label}>Password</label>
+            <input style={style}
                 type="password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
@@ -57,8 +80,9 @@ export default function StudentSignupAcct() {
 
             <button disabled={isLoading}>Sign up</button>
             {error && <div className="error">{error}</div>}
-            </FadeIn>
+            
         </form>
+        </FadeIn>
 
         </>
        

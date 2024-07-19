@@ -214,12 +214,14 @@
 
 import { useState, useContext, useEffect } from 'react'
 import './App.css'
+
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useStudentAcctContext } from './hooks/student/useStudentAcctContext'
 
 import SchoolDashboard from './pages/Dashboards/SchoolDashboard'
 import Navbar from './components/Navbar'
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 import StudentLoginAcct from './pages/Student/StudentLoginAcct'
 import StudentSignupAcct from './pages/Student/StudentSignupAcct'
 import { StudentProfileForm } from './pages/Student/StudentProfileForm'
@@ -289,6 +291,22 @@ import TD from './pages/Teacher/TD/TD'
 
 import Chat from './pages/AIChat/Chat'
 import HomeChat from './pages/AIChat/HomeChat'
+import BookHomePage from './pages/Book/BookHomePage'
+import AddBook from './pages/Book/AddBook'
+
+
+///bookEssential
+
+import MainBook from './pages/Bookessential/MainBook'
+import Services from './components/BookEssential/Services'
+
+//searchbook
+import SearchHome from './components/searchBook/pages/Home/SearchHome'
+import About from './components/searchBook/pages/About/About'
+import BookList from './components/searchBook/component/BookList/BookList'
+import BookDetails from './components/searchBook/component/BookDetails/BookDetails'
+
+
 
 
 
@@ -381,6 +399,10 @@ function App() {
     <Route exact path='Aihome' element ={<HomeChat />}/>
     <Route exact path='chat' element ={<Chat />}/>
 
+    //
+    <Route exact path='/bookhomepage' element = {<BookHomePage />}></Route>
+    <Route exact path='/addbook' element = {<AddBook />}></Route>
+
 
 
 
@@ -389,6 +411,18 @@ function App() {
     <Route exact path='/teacherpage' element ={<TeacherPage />}/>
     <Route exact path='/teacherdetaildashboard' element ={<TeacherDetailDashboard />}/>
     <Route exact path='/teacherprofileform' element ={<TeacherProfileForm />}/>
+
+
+    ///Bookessential
+    <Route path="/mainpage" element={<MainBook />} />
+    <Route path="/services" element={<Services />} />
+
+    //searchbook
+    <Route path="/searchbook" element={<SearchHome />} />
+    <Route path="/searchabout" element={<About />} />
+    <Route path="/book" element={<BookList />} />
+    <Route path="/book/:id" element={<BookDetails />} />
+
 
     {currentRole === null &&
         <>
@@ -401,6 +435,8 @@ function App() {
           <Route path="/Teacherloginsch" element={<LoginPage role="Teacher" />} />
 
           <Route path="/Adminregister" element={<AdminRegisterPageSch />} />
+
+        
 
           <Route path='*' element={<Navigate to="/" />} />
         </>

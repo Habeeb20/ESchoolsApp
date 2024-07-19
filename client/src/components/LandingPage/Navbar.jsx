@@ -19,9 +19,9 @@ export default function Navbar() {
             <Link to="/teacherpage"><h6>Teacher</h6></Link>
             <Link to="/ejobs"><h6>e-jobs</h6></Link>
             <Link to="#"><h6>Scholarships</h6></Link>
-            <Link to="#"><h6>Exams</h6></Link>
+            <Link to="/mainpage"><h6>Exams</h6></Link>
             <Link to="/Aihome"><h6>Comparism</h6></Link>
-            <Link to="#"><h6>Books</h6></Link>
+            <Link to="/bookhomepage"><h6>Books</h6></Link>
             <nav>
                 { (
                     <div>

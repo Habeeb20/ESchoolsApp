@@ -13,7 +13,7 @@ export default function Page() {
         color: "white"
     }
   return (
-    <form className="signup" >
+    <form className="signup1" >
     <h3>who are you?</h3>
 
     <FadeIn delay={0.2} direction="down" padding fullWidth>
