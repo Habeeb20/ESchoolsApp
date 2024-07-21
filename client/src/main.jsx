@@ -16,9 +16,17 @@ import { TeacherContext, TeacherContextProvider } from './context/Teacher/Teache
 // import {ContextProvider} from './hooks/Context.js'
 // import { AppWrapper } from './hooks/Context.js'
 import { useState } from 'react'
+import {ClerkProvider} from '@clerk/clerk-react'
+import TeacherLogin from './pages/Teacher/TeacherLogin.jsx';
 export const Context = createContext({
   isAuthorized:false
 });
+// Import your publishable key
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+
+if (!PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable Key")
+}
 
 axios.defaults.baseURL = "http://localhost:4000/api";
 axios.defaults.withCredentials = true
@@ -36,6 +44,7 @@ const AppWrapper =() => {
       user,
       setUser,
     }}>
+  
       <App />
     </Context.Provider>
 
@@ -51,7 +60,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <StudentAcctContextProvider>
       <StudentProfileContextProvider>
         <Provider store={store}>
+          
+        {/* <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/"> */}
+          {/* <TeacherLogin /> */}
         <AppWrapper />
+      {/* </ClerkProvider> */}
+       
         </Provider>
         
       </StudentProfileContextProvider>

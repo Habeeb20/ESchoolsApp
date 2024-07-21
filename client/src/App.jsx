@@ -228,7 +228,7 @@ import { StudentProfileForm } from './pages/Student/StudentProfileForm'
 import StudentHomePage from './pages/Student/StudentHomePage'
 import Page from './pages/AppPage/Page'
 import { useTeacherAcctContext } from './hooks/teacher/useTeacherAcctContext'
-import { TeacherLogin } from './pages/Teacher/TeacherLogin'
+import TeacherLogin  from './pages/Teacher/TeacherLogin'
 import TeacherSignup from './pages/Teacher/TeacherSignup'
 import TeacherHome from './pages/Teacher/TeacherHome'
 import Home from './components/school/Home'
@@ -251,7 +251,7 @@ import AttendanceStudent from './pages/School/schoolStudent/Attendance'
 import LibraryStudent from './pages/School/schoolStudent/Library'
 import ProfileStudent from './pages/School/schoolStudent/Profile'
 import LandingPage from './pages/LandingPage/LandingPage'
-
+import { ClerkProvider } from '@clerk/clerk-react'
 //Ejobs
 import { Context } from './main'
 import Login from "./components/EssentialJobs/Auth/Login";
@@ -305,7 +305,13 @@ import SearchHome from './components/searchBook/pages/Home/SearchHome'
 import About from './components/searchBook/pages/About/About'
 import BookList from './components/searchBook/component/BookList/BookList'
 import BookDetails from './components/searchBook/component/BookDetails/BookDetails'
+import Payment from './pages/Payment/Payment'
+import PaymentSuccess from './pages/Payment/PaymentSuccess'
 
+// Import your publishable key
+
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+import AdminProfile from './pages/adminSch/AdminProfile'
 
 
 
@@ -337,6 +343,8 @@ function App() {
    <BrowserRouter>
    {/* <Navbar /> */}
    <Routes>
+ 
+  
     <Route path= '/' element = {<Page/> } />
     <Route path = '/studentlogin' element = {!user ? <StudentLoginAcct /> : <Navigate to='/landingpage' />} />
     <Route path = '/studentsignup' element = {!user ? <StudentSignupAcct /> : <Navigate to='/landingpage' />} />
@@ -344,9 +352,9 @@ function App() {
     <Route path = '/studenthome' element = {user? <StudentHomePage/>  : <Navigate to='/landingpage' />}/>
     {/* <Route path='/studentdashboard' element={user? <SchoolDashboard />  :<Navigate to='/studentlogin' /> }/> */}
 
-    <Route path='/teacherhome' element = {teacher ? <TD /> : <Navigate to='/teacherlogin' />} />
-    <Route path='/teacherlogin' element ={!teacher ? <TeacherLogin /> : <Navigate to='/teacherHome'/>} />
-    <Route path='/teachersignup' element ={!teacher ? <TeacherSignup /> : <Navigate to='/teacherHome'/>} />
+    <Route path='/teacherhome' element = {teacher ? <TeacherHome /> : <Navigate to='/teacherlogin' />} />
+    <Route path='/teacherlogin' element ={!teacher ? <TeacherLogin /> : <Navigate to='/teacherhome'/>} />
+    <Route path='/teachersignup' element ={!teacher ? <TeacherSignup /> : <Navigate to='/teacherhome'/>} />
 
 
     <Route path="/school" element= {<Home />} />
@@ -379,6 +387,18 @@ function App() {
 
 
     <Route exact path ='/landingpage' element = {< LandingPage/>} />
+
+
+    {/* <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+      <TeacherLogin />
+    </ClerkProvider> */}
+{/* 
+    <Route path='/teacherlogin' element ={ <TeacherLogin /> } /> */}
+
+
+
+
+
 
     //Ejobs
     <Route exact path='/ejobs'  element = {<Ejobs />} />
@@ -423,7 +443,16 @@ function App() {
     <Route path="/book" element={<BookList />} />
     <Route path="/book/:id" element={<BookDetails />} />
 
+    //payment 
 
+    <Route path="/payment" element={<Payment />} />
+    <Route path="/paymentverification" element={<PaymentSuccess />} />
+
+
+
+
+    
+    <Route path="/Adminregister" element={<AdminRegisterPageSch />} />
     {currentRole === null &&
         <>
           <Route path="/schoolhomepage" element={<Homepage />} />
@@ -443,8 +472,10 @@ function App() {
     }
 
       {currentRole === "Admin" &&
-        <Route path='/admindashboardsch' element={<AdminDashboardSch />} />
+        <Route path='/Admin/dashboard' element={<AdminDashboardSch />} />
+      
       }
+        <Route path='/Admin/profile' element={<AdminProfile />} />
 
       {currentRole === "Student" &&
         <Route path='/studentdashboardsch' element={<StudentDashboardSch />} />

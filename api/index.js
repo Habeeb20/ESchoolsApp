@@ -41,6 +41,7 @@ import EuserRoute from "./routes/EssentialJobsRoute/EuserRoute.js"
 //AI
 import chatRoute from "./routes/userAIRoute/userAIRoute.js";
 import bookroute from "./routes/Book/bookroute.js";
+import paymentRoute from "./routes/paymentRoute.js";
 
 
 
@@ -128,6 +129,11 @@ app.use((err, req, res, next) => {
 
 //Book
 app.use('/api', bookroute )
+
+
+//payment
+
+app.use('/api', paymentRoute)
 
 
 

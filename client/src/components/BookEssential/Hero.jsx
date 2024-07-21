@@ -3,6 +3,8 @@ import Book1 from "../../assets/books/book2.jpg";
 import Book2 from "../../assets/books/book1.jpg";
 import Book3 from "../../assets/books/book3.jpg";
 import Vector from "../../assets/website/blue-pattern.png";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 
 const ImageList = [
   {
@@ -27,6 +29,11 @@ const ImageList = [
       "Lost Boy, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ];
+
+const HandlePayment = () => {
+  const navigate = useNavigate()
+  navigate("/payment")
+}
 
 const Hero = ({ handleOrderPopup }) => {
   const [imageId, setImageId] = React.useState(Book1);
@@ -78,7 +85,8 @@ const Hero = ({ handleOrderPopup }) => {
               </p>
               <div>
                 <button
-                  onClick={handleOrderPopup}
+                onClick={HandlePayment}
+                  // onClick={handleOrderPopup}
                   className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full"
                 >
                   Order Now

@@ -10,22 +10,87 @@ import footerLogo from "../../assets/website/logo.png";
 
 const FooterLinks = [
   {
-    title: "Home",
+    title: "Corporate info",
     link: "/#",
   },
   {
-    title: "About",
+    title: "Accessibility",
     link: "/#about",
   },
   {
-    title: "Contact",
+    title: "Jobs",
     link: "/#contact",
   },
   {
-    title: "Blog",
+    title: "Ad Choices",
     link: "/#blog",
   },
+  {
+    title: "Privacy Policy",
+    link: "/#",
+  },
+  {
+    title: "CA Notice",
+    link: "/#",
+  },
+  {
+    title: "Terms of Service-NEW",
+    link: "/#",
+  },
 ];
+
+
+const FooterLink3 = [
+  {
+    title: "NBC App",
+    link: "/#",
+  },
+  {
+    title: "Peacock",
+    link: "/#",
+  },
+  {
+    title: "Advertise",
+    link: "/#",
+  },
+  {
+    title: "Closed Captioning",
+    link: "/#",
+  },
+]
+
+const FooterLink2 = [
+  {
+    title: "Advertise",
+    link: "/#",
+  },
+  {
+    title: "Link TV Provider",
+    link: "/#",
+  },
+  {
+    title: "FAQ",
+    link: "/#",
+  },
+  {
+    title: "Casting",
+    link: "/#blog",
+  },
+  {
+    title: "Contact Us",
+    link: "/#",
+  },
+  {
+    title: "Local Schedule",
+    link: "/#",
+  },
+  {
+    title: "Tickets and NBC Studio",
+    link: "/#",
+  },
+];
+
+
 const Footer = () => {
   return (
     <div className="bg-gray-100 dark:bg-gray-950">
@@ -35,20 +100,19 @@ const Footer = () => {
           <div className=" py-8 px-4 ">
             <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3">
               <img src={footerLogo} alt="Logo" className="max-w-[50px]" />
-              Books Store
+              Logo
             </h1>
             <p className="">
-              Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Possimus, voluptate.{" "}
+              Book tickets & track your coach anytime, anywhere.{" "}
             </p>
             <br />
             <div className="flex items-center gap-3">
-              <FaLocationArrow />
-              <p>Noida, Uttar Pradesh</p>
+              {/* <FaLocationArrow /> */}
+              {/* <p>Noida, Uttar Pradesh</p> */}
             </div>
             <div className="flex items-center gap-3 mt-3">
-              <FaMobileAlt />
-              <p>+91 123456789</p>
+              {/* <FaMobileAlt /> */}
+              {/* <p>+91 123456789</p> */}
             </div>
             {/* Social Handle */}
             <div className="flex items-center gap-3 mt-6">
@@ -68,7 +132,7 @@ const Footer = () => {
             <div className="">
               <div className="py-8 px-4 ">
                 <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
-                  Important Links
+                  Quick Links
                 </h1>
                 <ul className={`flex flex-col gap-3`}>
                   {FooterLinks.map((link) => (
@@ -83,10 +147,10 @@ const Footer = () => {
             <div className="">
               <div className="py-8 px-4 ">
                 <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
-                  Links
+                  {/* Links */}
                 </h1>
                 <ul className="flex flex-col gap-3">
-                  {FooterLinks.map((link) => (
+                  {FooterLink3.map((link) => (
                     <li className="cursor-pointer hover:translate-x-1 duration-300 hover:text-primary space-x-1 text-gray-500">
                       <span>&#11162;</span>
                       <span>{link.title}</span>
@@ -98,11 +162,11 @@ const Footer = () => {
             <div className="">
               <div className="py-8 px-4 ">
                 <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
-                  Location
+                  {/* Location */}
                 </h1>
                 {/* <ul className="list-disc list-inside"> */}
                 <ul className="flex flex-col gap-3">
-                  {FooterLinks.map((link) => (
+                  {FooterLink2.map((link) => (
                     <li className="cursor-pointer hover:translate-x-1 duration-300 hover:text-primary space-x-1 text-gray-500">
                       <span>&#11162;</span>
                       <span>{link.title}</span>
@@ -115,7 +179,7 @@ const Footer = () => {
         </div>
         <div>
           <div className="text-center py-10 border-t-2 border-gray-300/50">
-            @copyright 2024 All rights reserved || Made with ❤️ by Dilshad
+            @copyright 2024 All rights reserved 
           </div>
         </div>
       </section>
