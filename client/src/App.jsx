@@ -312,6 +312,9 @@ import PaymentSuccess from './pages/Payment/PaymentSuccess'
 
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 import AdminProfile from './pages/adminSch/AdminProfile'
+import SchoolLandingPage from './pages/SchoolLandingPage/SchoolLandingPage'
+import SchOriginal from './pages/SchoolLandingPage/SchOriginal'
+import SchComp2 from './pages/SchoolLandingPage/SchComp'
 
 
 
@@ -447,6 +450,12 @@ function App() {
 
     <Route path="/payment" element={<Payment />} />
     <Route path="/paymentverification" element={<PaymentSuccess />} />
+
+    //SchoolLandingPage
+    <Route path="/schoollandingpage" element={<SchoolLandingPage />} />
+    <Route path = "/schoriginal" element={<SchOriginal />} />
+    <Route path = "/schcomp" element={<SchComp2 />} />
+
 
 
 

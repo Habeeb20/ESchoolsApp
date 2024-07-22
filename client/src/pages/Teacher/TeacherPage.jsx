@@ -1,42 +1,54 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import FadeIn from '../../FadeIn'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import FadeIn from '../../FadeIn';
+
 export default function TeacherPage() {
-    const button = {
-        borderRadius : '15%',
-        backgroundColor: "darkgreen",
-        color: 'white',
-        width:"240px"
-        // padding: "10%",
-        // display: "list-grid"
+  const buttonStyle = {
+    borderRadius: '8px',
+    backgroundColor: 'darkgreen',
+    color: 'white',
+    width: '100%',
+    maxWidth: '240px',
+    padding: '10px',
+    margin: '10px auto',
+    border: 'none',
+    cursor: 'pointer',
+    textAlign: 'center',
+    textDecoration: 'none',
+    display: 'block'
+  };
 
-    }
+  const linkStyle = {
+    color: 'white',
+    textDecoration: 'none'
+  };
 
-    const link = {
-        color: "white"
-    }
+  const headerStyle = {
+    textAlign: 'center',
+    marginBottom: '20px'
+  };
 
-    const resize = {
-        paddingLeft: "13%"
-    }
+  const containerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '20px',
+    boxSizing: 'border-box',
+  };
 
-  
   return (
-    <form className="signup" >
-    <h3 style={resize}>Do you want to create a teacher's acct?</h3>
+    <div style={containerStyle}>
+      <h3 style={headerStyle}>Do you want to create a teacher's account?</h3>
 
-    <FadeIn delay={0.2} direction="down" padding fullWidth>
-            <button style={button}><Link style={link} to= '/teacherlogin'>account?</Link></button>
-                <h5>or want to employ a teacher</h5>
-            {/* <button style={button}><Link style={link} to= '/teacherlogin'>a teacher?</Link></button> */}
-                {/* <h5>or</h5> */}
-            <button style={button}><Link style={link} to= '/teacherlandingpage'>teachers?</Link></button>
-
-    </FadeIn>
-           
-        
-
-</form>
-   
-  )
+      <FadeIn delay={0.2} direction="down" padding fullWidth>
+        <button style={buttonStyle}>
+          <Link style={linkStyle} to='/teacherlogin'>Account?</Link>
+        </button>
+        <h5>or want to employ a teacher</h5>
+        <button style={buttonStyle}>
+          <Link style={linkStyle} to='/teacherlandingpage'>Teachers?</Link>
+        </button>
+      </FadeIn>
+    </div>
+  );
 }

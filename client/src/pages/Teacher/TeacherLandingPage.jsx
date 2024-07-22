@@ -555,6 +555,111 @@ const TeacherLandingPage = () => {
           marginBottom: '20px',
           position: 'relative',
       },
+
+
+
+
+      appContainer: {
+        fontFamily: 'Poppins, sans-serif',
+        color: '#010101',
+        backgroundColor: '#f3f3f3',
+      },
+      header: {
+        padding: '20px',
+        backgroundColor: '#fff',
+        marginBottom: '20px',
+      },
+      headerTitle: {
+        fontSize: '24px',
+        marginBottom: '10px',
+        color: '#28a745',
+      },
+      comment: {
+        backgroundColor: '#fff',
+        padding: '20px',
+        borderRadius: '5px',
+        marginBottom: '20px',
+      },
+      author: {
+        fontWeight: 'bold',
+        color: '#28a745',
+      },
+      related: {
+        padding: '20px',
+        backgroundColor: '#fff',
+        marginBottom: '20px',
+      },
+      relatedTitle: {
+        fontSize: '20px',
+        marginBottom: '10px',
+        color: '#28a745',
+      },
+      profiles: {
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+        gap: '20px',
+        padding: '20px',
+      },
+      profileCard: {
+        backgroundColor: '#fff',
+        padding: '20px',
+        borderRadius: '5px',
+        textAlign: 'center',
+      },
+      experience: {
+        marginBottom: '5px',
+        color: '#28a745',
+      },
+      rating: {
+        marginBottom: '5px',
+        color: '#28a745',
+      },
+      specialization: {
+        color: '#28a745',
+      },
+      footer: {
+        backgroundColor: '#fff',
+        padding: '20px',
+        textAlign: 'center',
+      },
+      subscription: {
+        marginBottom: '20px',
+      },
+      input: {
+        marginBottom: '10px',
+        padding: '10px',
+        borderRadius: '5px',
+        border: '1px solid #28a745',
+      },
+      button: {
+        display: 'block',
+        margin: '0 auto',
+        padding: '10px 20px',
+        backgroundColor: '#28a745',
+        color: '#fff',
+        border: 'none',
+        borderRadius: '5px',
+        cursor: 'pointer',
+      },
+      privacy: {
+        fontSize: '12px',
+        color: '#717171',
+      },
+      quickLinks: {
+        marginBottom: '20px',
+      },
+      list: {
+        listStyle: 'none',
+        padding: '0',
+      },
+      socialLinks: {
+        marginBottom: '20px',
+      },
+      socialLink: {
+        display: 'inline-block',
+        marginRight: '10px',
+        color: '#28a745',
+      },
     };
 
     return (
@@ -690,6 +795,69 @@ const TeacherLandingPage = () => {
                     Submit
                 </button>
             </form>
+            <div style={styles.appContainer}>
+      <header style={styles.header}>
+        <h1 style={styles.headerTitle}>Drop a comment</h1>
+        <div style={styles.comment}>
+          <p>
+            Atxlhceg has enjoyed care rare in low- and middle-income countries, where SCM is often an afterthought. Pharmacists and clinical staff are frequently required to perform supply chain functions despite lacking training, qualifications, or expertise. This cost of this skills gap is
+          </p>
+          <p style={styles.author}>James Johnson</p>
+        </div>
+      </header>
+      
+      <section style={styles.related}>
+        <h2 style={styles.relatedTitle}>Related</h2>
+        <div style={styles.comment}>
+          <p>
+            Atxlhceg has enjoyed care rare in low- and middle-income countries, where SCM is often an afterthought. Pharmacists and clinical staff are frequently required to perform supply chain functions despite lacking training, qualifications, or expertise. This cost of this skills gap is
+          </p>
+          <p style={styles.author}>James Johnson</p>
+        </div>
+      </section>
+      
+      <section style={styles.profiles}>
+        {[...Array(8)].map((_, index) => (
+          <div key={index} style={styles.profileCard}>
+            <h3>James Johnson</h3>
+            <p style={styles.experience}>3 years experience</p>
+            <p style={styles.rating}>⭐⭐⭐⭐⭐ 4.3/5</p>
+            <p style={styles.specialization}>Specialization: Physics</p>
+          </div>
+        ))}
+      </section>
+
+      <footer style={styles.footer}>
+        <div style={styles.subscription}>
+          <p>You are 90% MORE likely to get the best deals as a Student by subscribing</p>
+          <input type="email" placeholder="Enter your email" style={styles.input}/>
+          <button style={styles.button}>Sign Up</button>
+          <p style={styles.privacy}>
+            Your privacy is important to us, so we'll never spam you or share your info with third parties. Take a look at our privacy policy. You can unsubscribe at any time.
+          </p>
+        </div>
+        <div style={styles.quickLinks}>
+          <h3>Quick Links</h3>
+          <ul style={styles.list}>
+            <li>Corporate Info</li>
+            <li>Accessibility</li>
+            <li>Jobs</li>
+            <li>Ad Choices</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </div>
+        <div style={styles.socialLinks}>
+          <h3>Follow Us</h3>
+          <div>
+            <a href="#" style={styles.socialLink}>Twitter</a>
+            <a href="#" style={styles.socialLink}>WhatsApp</a>
+            <a href="#" style={styles.socialLink}>Instagram</a>
+            <a href="#" style={styles.socialLink}>Facebook</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
 
         </div>
     );

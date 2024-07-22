@@ -1,7 +1,7 @@
 import { Context } from "../../../main";
 import React, { useContext, useState } from "react";
 import { FaRegUser } from "react-icons/fa";
-
+import footerLogo from "../../../assets/website/logo.png"
 import { MdOutlineMailOutline } from "react-icons/md";
 import { RiLock2Fill } from "react-icons/ri";
 import { FaPencilAlt } from "react-icons/fa";
@@ -54,7 +54,8 @@ function Register() {
         <section className="authPage">
           <div className="container">
             <div className="header">
-              <img src="/JobZeelogo.png" alt="logo" />
+              <img src={footerLogo} alt="Logo" />
+              {/* <img src="/JobZeelogo.png" alt="logo" /> */}
               <h3>Create a new account</h3>
             </div>
             <form>

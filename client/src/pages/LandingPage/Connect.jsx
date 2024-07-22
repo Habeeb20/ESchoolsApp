@@ -10,7 +10,7 @@ function Connect() {
     <div id="care" className="px-10 max-w-[1490px] mx-auto mb-[160px]">
     <FadeIn delay={0.2} direction="down">
       <h3 style={size} className="text-5xl lg:text-[64px] font-medium text-fontBlack mb-6 text-center">
-        Connect student the world of students, schools and exams <button style={{ border: "1px solid black", backgroundColor:"greenyellow", padding: "25px", borderRadius:"25%", color:"white"}}>together</button>
+        Connect student, the world of students, schools and exams <button style={{ border: "1px solid black", backgroundColor:"greenyellow", padding: "25px", borderRadius:"25%", color:"white"}}>together</button>
       </h3>
     </FadeIn>
 

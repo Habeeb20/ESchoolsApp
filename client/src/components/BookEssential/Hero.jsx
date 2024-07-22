@@ -30,17 +30,18 @@ const ImageList = [
   },
 ];
 
-const HandlePayment = () => {
-  const navigate = useNavigate()
-  navigate("/payment")
-}
 
 const Hero = ({ handleOrderPopup }) => {
+  const navigate = useNavigate()
   const [imageId, setImageId] = React.useState(Book1);
   const [title, setTitle] = React.useState("His Life will forever be Changed");
   const [description, setDescription] = React.useState(
     "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   );
+  const HandlePayment = () => {
+ 
+    navigate("/payment")
+  }
 
   const bgImage = {
     backgroundImage: `url(${Vector})`,

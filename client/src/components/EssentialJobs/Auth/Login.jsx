@@ -3,6 +3,7 @@ import {Link, Navigate} from "react-router-dom"
 import {FaRegUser} from "react-icons/fa";
 import axios from "axios";
 import { useContext } from 'react';
+import  footerLogo from "../../../assets/website/logo.png"
 import toast from 'react-hot-toast';
 import { Context } from '../../../main';
 import { MdOutlineMailOutline } from 'react-icons/md';
@@ -49,7 +50,8 @@ const Login = () => {
       <section className="authPage">
         <div className="container">
           <div className="header">
-            <img src="/JobZeelogo.png" alt="logo" />
+            <img src={footerLogo} alt="Logo" />
+            {/* <img src="/JobZeelogo.png" alt="logo" /> */}
             <h3>Login to your account</h3>
           </div>
           <form>

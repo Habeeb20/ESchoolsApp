@@ -3,7 +3,7 @@ import Img1 from "../../assets/books/book2.jpg";
 import Img2 from "../../assets/books/book1.jpg";
 import Img3 from "../../assets/books/book3.jpg";
 import { FaStar } from "react-icons/fa";
-
+import { useNavigate } from "react-router-dom";
 const ServicesData = [
   {
     id: 1,
@@ -29,6 +29,12 @@ const ServicesData = [
 ];
 
 const Services = ({ handleOrderPopup }) => {
+  const navigate = useNavigate()
+  const HandlePayment = () => {
+ 
+    navigate("/payment")
+  }
+
   return (
     <>
       <span id="services"></span>
@@ -71,7 +77,7 @@ const Services = ({ handleOrderPopup }) => {
                   </p>
                   <button
                     className="bg-primary hover:scale-105 duration-300 text-white py-1 px-4 rounded-full mt-4 group-hover:bg-white group-hover:text-primary"
-                    onClick={handleOrderPopup}
+                    onClick={HandlePayment}
                   >
                     Order Now
                   </button>

@@ -5,6 +5,7 @@ import Vector from "../../assets/vector3.png";
 import { GrSecure } from "react-icons/gr";
 import { IoFastFood } from "react-icons/io5";
 import { GiFoodTruck } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   const bgImage = {
@@ -15,6 +16,10 @@ const Banner = () => {
     height: "100%",
     width: "100%",
   };
+  const color = {
+    color: "green",
+    fontSize: "150%"
+  }
   return (
     <>
       <div className="min-h-[550px]">
@@ -35,9 +40,8 @@ const Banner = () => {
                   Library at your fingertips
                 </h1>
                 <p className="text-sm text-gray-500 tracking-wide leading-5">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Eaque reiciendis inventore iste ratione ex alias quis magni at
-                  optio
+                you can also search for details of any book of your choice 
+                <Link to='/searchbook' style={color}>  SEARCH</Link>
                   <br />
                 </p>
                 <div className="flex flex-col gap-4">
