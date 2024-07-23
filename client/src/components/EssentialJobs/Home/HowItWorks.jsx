@@ -9,14 +9,13 @@ const HowItWorks = () => {
     <>
       <div className="howitworks">
         <div className="container">
-          <h3>How JobZee Works</h3>
+          <h3>How E-jobs works</h3>
           <div className="banner">
             <div className="card">
               <FaUserPlus />
               <p>Create Account</p>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Consequuntur, culpa.
+               Your account has been created successfully
               </p>
             </div>
            
@@ -25,8 +24,7 @@ const HowItWorks = () => {
               <MdFindInPage />
               <p><Link to="/job/post">Find a Job/Post a Job</Link></p>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Consequuntur, culpa.
+               find a job that fits your qualifications. you can also post a job vacancy
               </p>
             
             </div>
@@ -37,8 +35,7 @@ const HowItWorks = () => {
               <IoMdSend />
               <p><Link to="/application/:id">Apply For Job/Recruit Suitable Candidates</Link></p>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Consequuntur, culpa.
+               Apply for a good paying job of your choice
               </p>
            
              

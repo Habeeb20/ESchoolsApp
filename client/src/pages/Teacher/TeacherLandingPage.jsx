@@ -361,16 +361,24 @@
 
 
 import React, { useState } from 'react';
+import Navbar from '../../components/LandingPage/Navbar';
+import Footer from '../../components/BookEssential/Footer';
 
 const TeacherLandingPage = () => {
     const [teacher, setTeacher] = useState({
-        name: 'Mr Akpaokagi James',
-        institution: 'Arcane Academy of Learning',
+        name: 'Mr John James',
+        institution: 'Valencia Schools',
         role: 'Teacher',
-        specialization: 'Physics, Geology, Socialics, Quantum',
+        specialization: 'Physics, Geology, Chemistry',
         experience: '3 years experience',
-        bio: `Lorem ipsum dolor sit amet consectetur. Neque euismod nisi nisi sit laoreet. Metus aliquam maecenas rhoncus vulputate sed scelerisque pretium faucibus. Penatibus facilisis et egestas egestas a cursus faucibus dictum. In amet in amet urna in. Placerat suspendisse vitae aliquam amet amet vitae condimentum quam. Tristique id mollis donec sit odio. Ac odio sit pulvinar malesuada consectetur mus quis morbi. Dis eu non enim suspendisse. Volutpat dictum purus laoreet magna. Enim massa suspendisse.`,
-        courses: ['Mathematics', 'Mathematics', 'Mathematics', 'Mathematics', 'Mathematics', 'Mathematics', 'Mathematics', 'Mathematics', 'Mathematics'],
+        bio: `What is needed to professionalize the supply chain workforce?\n
+        Commitment from all stakeholders around the shared vision of professionalization is needed to meet the Sustainable Development Goals and achieve universal health coverage.\n
+        Donor agencies should commit to systematic and coordinated multiyear investments to develop and strengthen the health supply chain workforce. They should work alongside educational institutions to increase access to pre-service educational programs, which will build a pool of qualified health supply chain professionals. At the same time, investments should contribute to the expansion of employment and career development opportunities, which include internship and apprenticeship programs, and mentorship opportunities for new entrants.\n
+        All these efforts will contribute to rejuvenating the perceptions of a career in health SCM.\n
+        Get in touch with PtD to learn about how you can help to professionalize the health supply chain workforce.\n
+        This opinion piece has been co-authored by.;
+    `,
+        courses: ['Mathematics', 'Physics', 'chemistry', 'Mathematics', 'Mathematics', 'Mathematics', 'Mathematics', 'Mathematics'],
     });
     const [experiences, setExperiences] = useState([
       { company: '', position: '', startYear: '', endYear: '', country: '', city: '', description: '' },
@@ -663,7 +671,10 @@ const TeacherLandingPage = () => {
     };
 
     return (
+      <>
+      <Navbar />
         <div style={styles.container}>
+ 
             <div style={styles.header}>
                 <div style={styles.name}>{teacher.name}</div>
                 <div style={styles.tag}>{teacher.institution}</div>
@@ -835,7 +846,7 @@ const TeacherLandingPage = () => {
           <p style={styles.privacy}>
             Your privacy is important to us, so we'll never spam you or share your info with third parties. Take a look at our privacy policy. You can unsubscribe at any time.
           </p>
-        </div>
+        {/* </div>
         <div style={styles.quickLinks}>
           <h3>Quick Links</h3>
           <ul style={styles.list}>
@@ -854,13 +865,18 @@ const TeacherLandingPage = () => {
             <a href="#" style={styles.socialLink}>Instagram</a>
             <a href="#" style={styles.socialLink}>Facebook</a>
           </div>
+        </div> */}
         </div>
+      
       </footer>
     </div>
 
 
         </div>
+        <Footer />
+        </>
     );
+    
 };
 
 export default TeacherLandingPage;

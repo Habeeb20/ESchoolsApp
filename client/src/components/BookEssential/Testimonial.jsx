@@ -5,19 +5,19 @@ const testimonialData = [
   {
     id: 1,
     name: "Victor",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
+    text: "I felt good about the EBook section because it fills great checking out what Eschools have here",
     img: "https://picsum.photos/101/101",
   },
   {
     id: 1,
-    name: "Satya Narayan",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
+    name: "Mary",
+    text: "waoo, the seacrh section is just superb",
     img: "https://picsum.photos/102/102",
   },
   {
     id: 1,
-    name: "Sachin Tendulkar",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
+    name: "James",
+    text: "i love what am seeing here, the layouts, the payment integrated method and especially the  section",
     img: "https://picsum.photos/103/103",
   },
 ];
