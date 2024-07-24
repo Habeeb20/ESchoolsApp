@@ -20,28 +20,30 @@ const ShowSubjects = () => {
     const { currentUser } = useSelector(state => state.user);
 
     useEffect(() => {
-        if (currentUser._id) {
+        if (currentUser && currentUser._id) {
             dispatch(getSubjectList(currentUser._id, "AllSubjects"));
         }
     }, [currentUser._id, dispatch]);
 
-    if (error) {
-        console.log(error);
-    }
+    useEffect(() => {
+        if (error) {
+            console.error("Error fetching subjects:", error);
+        }
+    }, [error]);
 
     const [showPopup, setShowPopup] = useState(false);
     const [message, setMessage] = useState("");
 
     const deleteHandler = (deleteID, address) => {
-        console.log(deleteID);
-        console.log(address);
+        console.log("Delete ID:", deleteID);
+        console.log("Address:", address);
         setMessage("Sorry, the delete function has been disabled for now.");
         setShowPopup(true);
 
-        // dispatch(deleteUser(deleteID, address))
-        //     .then(() => {
-        //         dispatch(getSubjectList(currentUser._id, "AllSubjects"));
-        //     });
+        dispatch(deleteUser(deleteID, address))
+            .then(() => {
+                dispatch(getSubjectList(currentUser._id, "AllSubjects"));
+            });
     };
 
     const subjectColumns = [
@@ -54,25 +56,26 @@ const ShowSubjects = () => {
         return {
             subName: subject.subName,
             sessions: subject.sessions,
-            sclassName: subject.sclassName.sclassName,
-            sclassID: subject.sclassName._id,
+            sclassName: subject.sclassName?.sclassName,
+            sclassID: subject.sclassName?._id,
             id: subject._id,
         };
     });
 
-    const SubjectsButtonHaver = ({ row }) => {
-        return (
-            <>
-                <IconButton onClick={() => deleteHandler(row.id, "Subject")}>
-                    <DeleteIcon color="error" />
-                </IconButton>
-                <BlueButton variant="contained"
-                    onClick={() => navigate(`/Admin/subjects/subject/${row.sclassID}/${row.id}`)}>
-                    View
-                </BlueButton>
-            </>
-        );
-    };
+    console.log("Subjects List:", subjectsList);
+    console.log("Subject Rows:", subjectRows);
+
+    const SubjectsButtonHaver = ({ row }) => (
+        <>
+            <IconButton onClick={() => deleteHandler(row.id, "Subject")}>
+                <DeleteIcon color="error" />
+            </IconButton>
+            <BlueButton variant="contained"
+                onClick={() => navigate(`/Admin/subjects/subject/${row.sclassID}/${row.id}`)}>
+                View
+            </BlueButton>
+        </>
+    );
 
     const actions = [
         {
@@ -87,30 +90,32 @@ const ShowSubjects = () => {
 
     return (
         <>
-            {loading ?
+            {loading ? (
                 <div>Loading...</div>
-                :
+            ) : (
                 <>
-                    {response ?
+                    {response ? (
                         <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: '16px' }}>
                             <GreenButton variant="contained"
                                 onClick={() => navigate("/Admin/subjects/chooseclass")}>
                                 Add Subjects
                             </GreenButton>
                         </Box>
-                        :
+                    ) : (
                         <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-                            {Array.isArray(subjectsList) && subjectsList.length > 0 &&
+                            {Array.isArray(subjectsList) && subjectsList.length > 0 ? (
                                 <TableTemplate buttonHaver={SubjectsButtonHaver} columns={subjectColumns} rows={subjectRows} />
-                            }
+                            ) : (
+                                <div>No subjects available.</div>
+                            )}
                             <SpeedDialTemplate actions={actions} />
                         </Paper>
-                    }
+                    )}
                 </>
-            }
+            )}
             <Popup message={message} setShowPopup={setShowPopup} showPopup={showPopup} />
         </>
     );
 };
 
-export default ShowSubjects
+export default ShowSubjects;

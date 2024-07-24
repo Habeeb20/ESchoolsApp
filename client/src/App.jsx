@@ -672,6 +672,12 @@ import AddStudent from './pages/adminSch/studentRelated/AddStudent';
 import AddClass from './pages/adminSch/classRelated/AddClass';
 import AddNotice from './pages/adminSch/noticeRelated/AddNotice';
 import SubjectForm from './pages/adminSch/subjectRelated/SubjectForm';
+import AdminProfile from './pages/adminSch/AdminProfile';
+import ClassDetails from './pages/adminSch/classRelated/ClassDetails';
+import ViewSubject from './pages/adminSch/subjectRelated/ViewSubject';
+import ChooseClass from './pages/adminSch/teacherRelated/ChooseClass';
+import StudentAttendance from './pages/adminSch/studentRelated/StudentAttendance';
+import ViewStudent from './pages/adminSch/studentRelated/ViewStudent';
 
 // import StudentDashboardSch from './pages/studentSch/StudentDashboard';
 // import TeacherDashboard from './pages/teacherSch/TeacherDashboard';
@@ -784,6 +790,8 @@ function App() {
 
         <Route path='/schoolhomepage' element={<Homepage />} />
         <Route path='/choose' element={<ChooseUser visitor="normal" />} />
+        <Route path='/Admin/profile' element={<AdminProfile />}/>
+        <Route path='/Adminregister' element={<AdminRegisterPageSch />} />
         {currentRole === null && (
           <>
            
@@ -792,7 +800,7 @@ function App() {
             <Route path='/Adminlogin' element={<LoginPage role="Admin" />} />
             <Route path='/Studentloginsch' element={<LoginPage role="Student" />} />
             <Route path='/Teacherloginsch' element={<LoginPage role="Teacher" />} />
-            <Route path='/Adminregister' element={<AdminRegisterPageSch />} />
+            <Route  path='/Admin/subjects/subject/:classID/:subjectID' element={<ViewSubject/>}/>
             <Route path='*' element={<Navigate to="/" />} />
           </>
         )}
@@ -809,12 +817,18 @@ function App() {
 
 
 
+
             <Route path="/Admin/addstudents" element={<AddStudent />} />
             <Route path="/Admin/addclass" element={<AddClass />} />
             <Route path="/Admin/addnotice" element={<AddNotice />} />
+            <Route  path='/Admin/classes/class/:id' element={<ClassDetails />}/>
+            <Route path='/Admin/subjects/chooseclass' element={<ChooseClass />} />
             
-                        <Route path="/Admin/addsubject/:id" element={<SubjectForm />} />
-            
+            <Route path="/Admin/addsubject/:id" element={<SubjectForm  situation="Subject"/>} />
+            <Route path='/Admin/subjects/subject/:classID/:subjectID' element={<ViewSubject />} />
+            <Route path='/Admin/class/addstudents/:id' element={<AddStudent situation="Class" />} />
+            <Route path='/Admin/subject/student/attendance/:studentID/:subjectID' element={<StudentAttendance  situation="Subject"/>}/>
+            <Route path='/Admin/students/student/:id' element={<ViewStudent />} />
             
             
             

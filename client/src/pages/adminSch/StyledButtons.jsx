@@ -6,17 +6,33 @@ import styled from 'styled-components';
 
 // Define styled buttons
 const StyledButton = styled(Button)`
-  width: 150px;
-  height: 50px;
-  margin: 10px;
-  font-size: 16px;
+  width: 200px;
+  height: 60px;
+  margin: 15px;
+  font-size: 18px;
   font-weight: bold;
-  border-radius: 8px;
+  border-radius: 10px;
   color: #fff;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   &:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
+    margin: 10px;
+  }
+
+  @media (max-width: 480px) {
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    margin: 8px;
   }
 `;
 
@@ -67,7 +83,7 @@ const StyledButtons = () => {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
       <Link to="/Admin/Addclass" style={{ textDecoration: 'none' }}>
-        <ButtonPrimary variant="contained">Add classes</ButtonPrimary>
+        <ButtonPrimary variant="contained">Add Classes</ButtonPrimary>
       </Link>
       <Link to="/Admin/addsubject/:id" style={{ textDecoration: 'none' }}>
         <ButtonSecondary variant="contained">Add Subjects</ButtonSecondary>
@@ -82,7 +98,7 @@ const StyledButtons = () => {
         <ButtonWarning variant="contained">Add Notice</ButtonWarning>
       </Link>
       <Link to="/page6" style={{ textDecoration: 'none' }}>
-        <ButtonInfo variant="contained">Add Complains</ButtonInfo>
+        <ButtonInfo variant="contained">Add Complaints</ButtonInfo>
       </Link>
     </div>
   );
