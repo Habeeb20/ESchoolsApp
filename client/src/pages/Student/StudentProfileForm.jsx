@@ -3,9 +3,14 @@ import { useStudentProfileContext } from "../../hooks/student/useStudentProfileC
 import { useStudentAcctContext } from "../../hooks/student/useStudentAcctContext";
 import { DeleteEditStudentProfile } from "../../components/Student/DeleteEditStudentProfile";
 import { useNavigate } from "react-router-dom";
+
+import React from 'react'
+
+
+
 import Navbar from "../../components/Navbar";
-export const StudentProfileForm =  () => {
-    const {dispatch} = useStudentProfileContext()
+function StudentProfileForm() {
+  const {dispatch} = useStudentProfileContext()
     const {user} = useStudentAcctContext()
     const navigate = useNavigate()
 
@@ -152,6 +157,6 @@ export const StudentProfileForm =  () => {
 
   
 
-
-
 }
+
+export default StudentProfileForm

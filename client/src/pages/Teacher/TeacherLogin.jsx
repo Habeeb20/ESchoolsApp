@@ -6,6 +6,23 @@ import TNavbar from "../../components/TNavbar";
 import React from 'react'
 
 function TeacherLogin() {
+
+  const style ={
+    padding: "10px",
+    marginTop: "10px",
+    marginBottom: "20px",
+    width: "100%",
+    border: "1px solid #ddd",
+    borderRadius: "4px",
+    boxSizing: "border-box",
+}
+
+    const label={
+      display :"block"
+    }
+    const fontSize ={
+      fontSize: "150%"
+    }
   const [email, setEmail ] = useState("");
   const [password, setPassword] = useState("")
   const {teacherLogin, error,isLoading  } = useTeacherAcctLogin();
@@ -18,18 +35,19 @@ function TeacherLogin() {
   return (
     <>
     <TNavbar />
-       <form className="login" onSubmit={handleSubmit}>
-      <h3>Teacher's login</h3>
-      <FadeIn delay={0.2} direction="right" padding fullWidth> 
-      <label>Email</label>
-      <input
+    <FadeIn delay={0.2} direction="right" padding fullWidth> 
+       <form className="login1" onSubmit={handleSubmit}>
+      <h3 style={fontSize}>Teacher's login</h3>
+     
+      <label style={label}>Email</label>
+      <input style={style}
         type="email"
         onChange={(e) => setEmail(e.target.value)}
         value={email}
       />
 
-      <label>Password</label>
-      <input
+      <label style={label}>Password</label>
+      <input style={style}
         type="password"
         onChange={(e) => setPassword(e.target.value)}
         value={password}
@@ -37,8 +55,9 @@ function TeacherLogin() {
 
       <button disabled={isLoading}>log in</button>
       {error && <div className="error">{error}</div>}
-      </FadeIn>
+     
     </form>
+    </FadeIn>
     </>
 
 

@@ -1,80 +1,71 @@
-import { useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { getAllStudents } from '../../../redux/studentRelated/studentHandle';
 import { deleteUser } from '../../../redux/userRelated/userHandle';
 import {
-    Paper, Box, IconButton
+    Paper, Box, IconButton, ButtonGroup, Button, ClickAwayListener, Grow, Popper, MenuItem, MenuList
 } from '@mui/material';
 import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
 import { BlackButton, BlueButton, GreenButton } from '../../../components/buttonStyles';
 import TableTemplate from '../../../components/TableTemplate';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import SpeedDialTemplate from '../../../components/SpeedDialTemplate';
-
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
-// import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { KeyboardArrowUp, KeyboardArrowDown } from '@mui/icons-material';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
-import Grow from '@mui/material/Grow';
-import Popper from '@mui/material/Popper';
-import MenuItem from '@mui/material/MenuItem';
-import MenuList from '@mui/material/MenuList';
 import Popup from '../../../components/Popup';
 
 const ShowStudents = () => {
-
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { studentsList, loading, error, response } = useSelector((state) => state.student);
-    const { currentUser } = useSelector(state => state.user)
+    const { studentsList = [], loading, error, response } = useSelector((state) => state.student);
+    const { currentUser } = useSelector(state => state.user);
 
     useEffect(() => {
-        dispatch(getAllStudents(currentUser._id));
+        if (currentUser._id) {
+            dispatch(getAllStudents(currentUser._id));
+        }
     }, [currentUser._id, dispatch]);
 
     if (error) {
         console.log(error);
     }
 
-    const [showPopup, setShowPopup] = React.useState(false);
-    const [message, setMessage] = React.useState("");
+    const [showPopup, setShowPopup] = useState(false);
+    const [message, setMessage] = useState("");
 
     const deleteHandler = (deleteID, address) => {
         console.log(deleteID);
         console.log(address);
-        setMessage("Sorry the delete function has been disabled for now.")
-        setShowPopup(true)
+        setMessage("Sorry the delete function has been disabled for now.");
+        setShowPopup(true);
 
         // dispatch(deleteUser(deleteID, address))
         //     .then(() => {
         //         dispatch(getAllStudents(currentUser._id));
-        //     })
-    }
+        //     });
+    };
 
     const studentColumns = [
         { id: 'name', label: 'Name', minWidth: 170 },
         { id: 'rollNum', label: 'Roll Number', minWidth: 100 },
         { id: 'sclassName', label: 'Class', minWidth: 170 },
-    ]
+    ];
 
-    const studentRows = studentsList && studentsList.length > 0 && studentsList.map((student) => {
+    const studentRows = Array.isArray(studentsList) && studentsList.map((student) => {
         return {
             name: student.name,
             rollNum: student.rollNum,
             sclassName: student.sclassName.sclassName,
             id: student._id,
         };
-    })
+    });
 
     const StudentButtonHaver = ({ row }) => {
         const options = ['Take Attendance', 'Provide Marks'];
 
-        const [open, setOpen] = React.useState(false);
-        const anchorRef = React.useRef(null);
-        const [selectedIndex, setSelectedIndex] = React.useState(0);
+        const [open, setOpen] = useState(false);
+        const anchorRef = useRef(null);
+        const [selectedIndex, setSelectedIndex] = useState(0);
 
         const handleClick = () => {
             console.info(`You clicked ${options[selectedIndex]}`);
@@ -86,10 +77,10 @@ const ShowStudents = () => {
         };
 
         const handleAttendance = () => {
-            navigate("/Admin/students/student/attendance/" + row.id)
-        }
+            navigate("/Admin/students/student/attendance/" + row.id);
+        };
         const handleMarks = () => {
-            navigate("/Admin/students/student/marks/" + row.id)
+            navigate("/Admin/students/student/marks/" + row.id);
         };
 
         const handleMenuItemClick = (event, index) => {
@@ -105,16 +96,15 @@ const ShowStudents = () => {
             if (anchorRef.current && anchorRef.current.contains(event.target)) {
                 return;
             }
-
             setOpen(false);
         };
+
         return (
             <>
                 <IconButton onClick={() => deleteHandler(row.id, "Student")}>
                     <PersonRemoveIcon color="error" />
                 </IconButton>
-                <BlueButton variant="contained"
-                    onClick={() => navigate("/Admin/students/student/" + row.id)}>
+                <BlueButton variant="contained" onClick={() => navigate("/Admin/students/student/" + row.id)}>
                     View
                 </BlueButton>
                 <React.Fragment>
@@ -132,9 +122,7 @@ const ShowStudents = () => {
                         </BlackButton>
                     </ButtonGroup>
                     <Popper
-                        sx={{
-                            zIndex: 1,
-                        }}
+                        sx={{ zIndex: 1 }}
                         open={open}
                         anchorEl={anchorRef.current}
                         role={undefined}
@@ -144,10 +132,7 @@ const ShowStudents = () => {
                         {({ TransitionProps, placement }) => (
                             <Grow
                                 {...TransitionProps}
-                                style={{
-                                    transformOrigin:
-                                        placement === 'bottom' ? 'center top' : 'center bottom',
-                                }}
+                                style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
                             >
                                 <Paper>
                                     <ClickAwayListener onClickAway={handleClose}>

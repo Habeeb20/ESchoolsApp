@@ -28,7 +28,7 @@
 
 import { useState, useEffect } from "react";
 import { DeleteEditStudentProfile } from "../../components/Student/DeleteEditStudentProfile";
-import { StudentProfileForm } from "./StudentProfileForm";
+// import { StudentProfileForm } from "./StudentProfileForm";
 import { StudentAcctContext } from "../../context/Student/StudentAcctContext";
 import { StudentProfileContext } from "../../context/Student/StudentProfileContext";
 

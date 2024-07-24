@@ -14,13 +14,15 @@ import SpeedDialTemplate from '../../../components/SpeedDialTemplate';
 import Popup from '../../../components/Popup';
 
 const ShowSubjects = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { subjectsList, loading, error, response } = useSelector((state) => state.sclass);
-    const { currentUser } = useSelector(state => state.user)
+    const { subjectsList = [], loading, error, response } = useSelector((state) => state.sclass);
+    const { currentUser } = useSelector(state => state.user);
 
     useEffect(() => {
-        dispatch(getSubjectList(currentUser._id, "AllSubjects"));
+        if (currentUser._id) {
+            dispatch(getSubjectList(currentUser._id, "AllSubjects"));
+        }
     }, [currentUser._id, dispatch]);
 
     if (error) {
@@ -33,22 +35,22 @@ const ShowSubjects = () => {
     const deleteHandler = (deleteID, address) => {
         console.log(deleteID);
         console.log(address);
-        setMessage("Sorry the delete function has been disabled for now.")
-        setShowPopup(true)
+        setMessage("Sorry, the delete function has been disabled for now.");
+        setShowPopup(true);
 
         // dispatch(deleteUser(deleteID, address))
         //     .then(() => {
         //         dispatch(getSubjectList(currentUser._id, "AllSubjects"));
-        //     })
-    }
+        //     });
+    };
 
     const subjectColumns = [
         { id: 'subName', label: 'Sub Name', minWidth: 170 },
         { id: 'sessions', label: 'Sessions', minWidth: 170 },
         { id: 'sclassName', label: 'Class', minWidth: 170 },
-    ]
+    ];
 
-    const subjectRows = subjectsList.map((subject) => {
+    const subjectRows = Array.isArray(subjectsList) && subjectsList.map((subject) => {
         return {
             subName: subject.subName,
             sessions: subject.sessions,
@@ -56,7 +58,7 @@ const ShowSubjects = () => {
             sclassID: subject.sclassName._id,
             id: subject._id,
         };
-    })
+    });
 
     const SubjectsButtonHaver = ({ row }) => {
         return (
@@ -107,9 +109,8 @@ const ShowSubjects = () => {
                 </>
             }
             <Popup message={message} setShowPopup={setShowPopup} showPopup={showPopup} />
-
         </>
     );
 };
 
-export default ShowSubjects;
+export default ShowSubjects

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import { getAllTeachers } from '../../../redux/teacherRelated/teacherHandle';
 import {
     Paper, Table, TableBody, TableContainer,
@@ -20,11 +20,13 @@ const ShowTeachers = () => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { teachersList, loading, error, response } = useSelector((state) => state.teacher);
+    const { teachersList = [], loading, error, response } = useSelector((state) => state.teacher);
     const { currentUser } = useSelector((state) => state.user);
 
     useEffect(() => {
-        dispatch(getAllTeachers(currentUser._id));
+        if (currentUser._id) {
+            dispatch(getAllTeachers(currentUser._id));
+        }
     }, [currentUser._id, dispatch]);
 
     const [showPopup, setShowPopup] = useState(false);
@@ -32,7 +34,9 @@ const ShowTeachers = () => {
 
     if (loading) {
         return <div>Loading...</div>;
-    } else if (response) {
+    }
+
+    if (response) {
         return (
             <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: '16px' }}>
                 <GreenButton variant="contained" onClick={() => navigate("/Admin/teachers/chooseclass")}>
@@ -40,16 +44,17 @@ const ShowTeachers = () => {
                 </GreenButton>
             </Box>
         );
-    } else if (error) {
-        console.log(error);
+    }
+
+    if (error) {
+        console.error(error);
+        return <div>Error loading teachers.</div>;
     }
 
     const deleteHandler = (deleteID, address) => {
-        console.log(deleteID);
-        console.log(address);
-        setMessage("Sorry the delete function has been disabled for now.")
-        setShowPopup(true)
-
+        setMessage("Sorry the delete function has been disabled for now.");
+        setShowPopup(true);
+        // Uncomment and adjust the dispatch as needed.
         // dispatch(deleteUser(deleteID, address)).then(() => {
         //     dispatch(getAllTeachers(currentUser._id));
         // });
@@ -61,23 +66,23 @@ const ShowTeachers = () => {
         { id: 'teachSclass', label: 'Class', minWidth: 170 },
     ];
 
-    const rows = teachersList.map((teacher) => {
-        return {
-            name: teacher.name,
-            teachSubject: teacher.teachSubject?.subName || null,
-            teachSclass: teacher.teachSclass.sclassName,
-            teachSclassID: teacher.teachSclass._id,
-            id: teacher._id,
-        };
-    });
+    const rows = Array.isArray(teachersList) ? teachersList.map((teacher) => ({
+        name: teacher.name,
+        teachSubject: teacher.teachSubject?.subName || null,
+        teachSclass: teacher.teachSclass.sclassName,
+        teachSclassID: teacher.teachSclass._id,
+        id: teacher._id,
+    })) : [];
 
     const actions = [
         {
-            icon: <PersonAddAlt1Icon color="primary" />, name: 'Add New Teacher',
+            icon: <PersonAddAlt1Icon color="primary" />,
+            name: 'Add New Teacher',
             action: () => navigate("/Admin/teachers/chooseclass")
         },
         {
-            icon: <PersonRemoveIcon color="error" />, name: 'Delete All Teachers',
+            icon: <PersonRemoveIcon color="error" />,
+            name: 'Delete All Teachers',
             action: () => deleteHandler(currentUser._id, "Teachers")
         },
     ];
@@ -105,45 +110,45 @@ const ShowTeachers = () => {
                     <TableBody>
                         {rows
                             .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                            .map((row) => {
-                                return (
-                                    <StyledTableRow hover role="checkbox" tabIndex={-1} key={row.id}>
-                                        {columns.map((column) => {
-                                            const value = row[column.id];
-                                            if (column.id === 'teachSubject') {
-                                                return (
-                                                    <StyledTableCell key={column.id} align={column.align}>
-                                                        {value ? (
-                                                            value
-                                                        ) : (
-                                                            <Button variant="contained"
-                                                                onClick={() => {
-                                                                    navigate(`/Admin/teachers/choosesubject/${row.teachSclassID}/${row.id}`)
-                                                                }}>
-                                                                Add Subject
-                                                            </Button>
-                                                        )}
-                                                    </StyledTableCell>
-                                                );
-                                            }
+                            .map((row) => (
+                                <StyledTableRow hover role="checkbox" tabIndex={-1} key={row.id}>
+                                    {columns.map((column) => {
+                                        const value = row[column.id];
+                                        if (column.id === 'teachSubject') {
                                             return (
                                                 <StyledTableCell key={column.id} align={column.align}>
-                                                    {column.format && typeof value === 'number' ? column.format(value) : value}
+                                                    {value ? (
+                                                        value
+                                                    ) : (
+                                                        <Button
+                                                            variant="contained"
+                                                            onClick={() => navigate(`/Admin/teachers/choosesubject/${row.teachSclassID}/${row.id}`)}
+                                                        >
+                                                            Add Subject
+                                                        </Button>
+                                                    )}
                                                 </StyledTableCell>
                                             );
-                                        })}
-                                        <StyledTableCell align="center">
-                                            <IconButton onClick={() => deleteHandler(row.id, "Teacher")}>
-                                                <PersonRemoveIcon color="error" />
-                                            </IconButton>
-                                            <BlueButton variant="contained"
-                                                onClick={() => navigate("/Admin/teachers/teacher/" + row.id)}>
-                                                View
-                                            </BlueButton>
-                                        </StyledTableCell>
-                                    </StyledTableRow>
-                                );
-                            })}
+                                        }
+                                        return (
+                                            <StyledTableCell key={column.id} align={column.align}>
+                                                {column.format && typeof value === 'number' ? column.format(value) : value}
+                                            </StyledTableCell>
+                                        );
+                                    })}
+                                    <StyledTableCell align="center">
+                                        <IconButton onClick={() => deleteHandler(row.id, "Teacher")}>
+                                            <PersonRemoveIcon color="error" />
+                                        </IconButton>
+                                        <BlueButton
+                                            variant="contained"
+                                            onClick={() => navigate(`/Admin/teachers/teacher/${row.id}`)}
+                                        >
+                                            View
+                                        </BlueButton>
+                                    </StyledTableCell>
+                                </StyledTableRow>
+                            ))}
                     </TableBody>
                 </Table>
             </TableContainer>
@@ -155,15 +160,14 @@ const ShowTeachers = () => {
                 page={page}
                 onPageChange={(event, newPage) => setPage(newPage)}
                 onRowsPerPageChange={(event) => {
-                    setRowsPerPage(parseInt(event.target.value, 5));
+                    setRowsPerPage(parseInt(event.target.value, 10));
                     setPage(0);
                 }}
             />
-
             <SpeedDialTemplate actions={actions} />
             <Popup message={message} setShowPopup={setShowPopup} showPopup={showPopup} />
-        </Paper >
+        </Paper>
     );
 };
 
-export default ShowTeachers
+export default ShowTeachers;

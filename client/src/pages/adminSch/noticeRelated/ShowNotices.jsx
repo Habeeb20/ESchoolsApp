@@ -14,13 +14,15 @@ import SpeedDialTemplate from '../../../components/SpeedDialTemplate';
 
 const ShowNotices = () => {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { noticesList, loading, error, response } = useSelector((state) => state.notice);
-    const { currentUser } = useSelector(state => state.user)
+    const { noticesList = [], loading, error, response } = useSelector((state) => state.notice);
+    const { currentUser } = useSelector(state => state.user);
 
     useEffect(() => {
-        dispatch(getAllNotices(currentUser._id, "Notice"));
+        if (currentUser._id) {
+            dispatch(getAllNotices(currentUser._id, "Notice"));
+        }
     }, [currentUser._id, dispatch]);
 
     if (error) {
@@ -32,7 +34,7 @@ const ShowNotices = () => {
             .then(() => {
                 dispatch(getAllNotices(currentUser._id, "Notice"));
             })
-    }
+    };
 
     const noticeColumns = [
         { id: 'title', label: 'Title', minWidth: 170 },
@@ -40,7 +42,7 @@ const ShowNotices = () => {
         { id: 'date', label: 'Date', minWidth: 170 },
     ];
 
-    const noticeRows = noticesList && noticesList.length > 0 && noticesList.map((notice) => {
+    const noticeRows = Array.isArray(noticesList) && noticesList.map((notice) => {
         const date = new Date(notice.date);
         const dateString = date.toString() !== "Invalid Date" ? date.toISOString().substring(0, 10) : "Invalid Date";
         return {

@@ -17,20 +17,22 @@ import SpeedDialTemplate from '../../../components/SpeedDialTemplate';
 import Popup from '../../../components/Popup';
 
 const ShowClasses = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { sclassesList, loading, error, getresponse } = useSelector((state) => state.sclass);
-  const { currentUser } = useSelector(state => state.user)
+  const { sclassesList = [], loading, error, getresponse } = useSelector((state) => state.sclass);
+  const { currentUser } = useSelector(state => state.user);
 
-  const adminID = currentUser._id
+  const adminID = currentUser?._id;
 
   useEffect(() => {
-    dispatch(getAllSclasses(adminID, "Sclass"));
+    if (adminID) {
+      dispatch(getAllSclasses(adminID, "Sclass"));
+    }
   }, [adminID, dispatch]);
 
   if (error) {
-    console.log(error)
+    console.log(error);
   }
 
   const [showPopup, setShowPopup] = useState(false);
@@ -39,24 +41,22 @@ const ShowClasses = () => {
   const deleteHandler = (deleteID, address) => {
     console.log(deleteID);
     console.log(address);
-    setMessage("Sorry the delete function has been disabled for now.")
-    setShowPopup(true)
+    setMessage("Sorry the delete function has been disabled for now.");
+    setShowPopup(true);
     // dispatch(deleteUser(deleteID, address))
     //   .then(() => {
     //     dispatch(getAllSclasses(adminID, "Sclass"));
     //   })
-  }
+  };
 
   const sclassColumns = [
     { id: 'name', label: 'Class Name', minWidth: 170 },
-  ]
+  ];
 
-  const sclassRows = sclassesList && sclassesList.length > 0 && sclassesList.map((sclass) => {
-    return {
-      name: sclass.sclassName,
-      id: sclass._id,
-    };
-  })
+  const sclassRows = Array.isArray(sclassesList) && sclassesList.map((sclass) => ({
+    name: sclass.sclassName,
+    id: sclass._id,
+  }));
 
   const SclassButtonHaver = ({ row }) => {
     const actions = [
@@ -118,8 +118,8 @@ const ShowClasses = () => {
           transformOrigin={{ horizontal: 'right', vertical: 'top' }}
           anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
         >
-          {actions.map((action) => (
-            <MenuItem onClick={action.action}>
+          {actions.map((action, index) => (
+            <MenuItem key={index} onClick={action.action}>
               <ListItemIcon fontSize="small">
                 {action.icon}
               </ListItemIcon>
@@ -129,7 +129,7 @@ const ShowClasses = () => {
         </Menu>
       </>
     );
-  }
+  };
 
   const actions = [
     {
