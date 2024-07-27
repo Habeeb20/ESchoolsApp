@@ -28,7 +28,7 @@ export default function StudentLoginAcct() {
     const handleSubmit = async (e) => {
       e.preventDefault();
       await StudentLogin(email, password);
-      navigate('/landingpage')
+      navigate('/landinghome')
     };
   
     return (

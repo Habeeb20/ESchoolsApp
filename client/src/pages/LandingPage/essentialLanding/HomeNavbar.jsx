@@ -27,7 +27,7 @@ export default function HomeNavbar() {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' className='bg-light' />
           <Navbar.Collapse id='basic-navbar-nav'>
-            <Nav className='me-auto justify-content-end w-100'>
+            <Nav  className='me-auto justify-content-end w-100'>
               <Nav.Link href='/' className='text-uppercase'>Home</Nav.Link>
               <Nav.Link href='/admissiondat' className='text-uppercase'>Admission</Nav.Link>
               <Nav.Link href="/secondary-schools/private" className='text-uppercase'>Schools</Nav.Link>

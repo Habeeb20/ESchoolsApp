@@ -41,7 +41,7 @@ export default function StudentSignupAcct() {
 
 
         await StudentSignup(email,regNumber, password)
-        navigate('/landingpage')
+        navigate('/landinghome')
         
 
     }

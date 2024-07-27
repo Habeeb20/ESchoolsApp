@@ -727,10 +727,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Page />} />
-        <Route path='/studentlogin' element={!user ? <StudentLoginAcct /> : <Navigate to='/landingpage' />} />
-        <Route path='/studentsignup' element={!user ? <StudentSignupAcct /> : <Navigate to='/landingpage' />} />
-        <Route path='/landingpage' element={<LandingPage />} />
-        <Route path='/studenthome' element={user ? <StudentHomePage /> : <Navigate to='/landingpage' />} />
+        <Route path='/studentlogin' element={!user ? <StudentLoginAcct /> : <Navigate to='/landinghome' />} />
+        <Route path='/studentsignup' element={!user ? <StudentSignupAcct /> : <Navigate to='/landinghome' />} />
+        {/* <Route path='/landingpage' element={<LandingPage />} /> */}
+        <Route path='/landinghome' element={<HomeLanding />} />
+        <Route path='/studenthome' element={user ? <StudentHomePage /> : <Navigate to='/landinghome' />} />
         {/* <Route path='/teacherpage' element={<Teacher />} /> */}
         <Route exact path='/teacherpage' element ={<TeacherPage />}/>
         <Route exact path='/teacherlandingpage' element ={<TeacherLandingPage />}/>
@@ -795,7 +796,7 @@ function App() {
 
 
           //home
-          <Route path='/landinghome' element={<HomeLanding />} />
+         
 
 
           
