@@ -10,7 +10,7 @@ const PopupNotification = () => {
   }, []);
 
   return (
-    <Fade in={open} timeout={3000}> 
+    <Fade in={open} timeout={2000}> 
       <StyledPaper elevation={4}>
         <Typography variant="h4" gutterBottom>
           Welcome to ESchools Application

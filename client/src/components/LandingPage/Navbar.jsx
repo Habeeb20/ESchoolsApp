@@ -14,11 +14,11 @@ export default function Navbar() {
    <header>
         <div className="container">
             <Link to="/landingpage"><h6>Home</h6></Link>
-            <Link to="#"><h6>Admision</h6></Link>
-            <Link to="/schoriginal"><h6>Schools</h6></Link>
+            <Link to="/admissiondata"><h6>Admision</h6></Link>
+            <Link to="/secondary-schools/private"><h6>Schools</h6></Link>
             <Link to="/teacherpage"><h6>Teacher</h6></Link>
             <Link to="/ejobs"><h6>e-jobs</h6></Link>
-            <Link to="#"><h6>Scholarships</h6></Link>
+            <Link to="/landinghome"><h6>Scholarships</h6></Link>
             <Link to="/bookhomepage"><h6>Exams</h6></Link>
             <Link to="/Aihome"><h6>Comparism</h6></Link>
             <Link to="/mainpage"><h6>Books</h6></Link>

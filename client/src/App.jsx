@@ -611,24 +611,24 @@ import TeacherHome from './pages/Teacher/TeacherHome'
 
 
 import Home from './components/school/Home'
-import AdminRegister from './components/school/AdminRegister'
-import AdminSignIn from './components/school/AdminSignIn'
-import StudentSignIn from './components/school/StudentSignIn'
-import TeacherSignIn from './components/school/TeacherSignIn'
-import AdminDashboard from './pages/Admin/Dashboard'
-import StudentDashboard from './pages/School/schoolStudent/Dashboard'
-import Classes from './pages/Admin/Classes'
-import Announcement from './pages/Admin/Announcement'
-import Attendance from './pages/Admin/Attendance'
-import Library from './pages/Admin/Library'
-import SettingsProfile from './pages/Admin/SettingsProfile'
-import Teachers from './pages/Admin/Teachers'
-import Students from './pages/Admin/Students'
-import Sidebar from './pages/Admin/Sidebar'
-import AnnouncementStudent from './pages/School/schoolStudent/Announcement'
-import AttendanceStudent from './pages/School/schoolStudent/Attendance'
-import LibraryStudent from './pages/School/schoolStudent/Library'
-import ProfileStudent from './pages/School/schoolStudent/Profile'
+// import AdminRegister from './components/school/AdminRegister'
+// import AdminSignIn from './components/school/AdminSignIn'
+// import StudentSignIn from './components/school/StudentSignIn'
+// import TeacherSignIn from './components/school/TeacherSignIn'
+// import AdminDashboard from './pages/Admin/Dashboard'
+// import StudentDashboard from './pages/School/schoolStudent/Dashboard'
+// import Classes from './pages/Admin/Classes'
+// import Announcement from './pages/Admin/Announcement'
+// import Attendance from './pages/Admin/Attendance'
+// import Library from './pages/Admin/Library'
+// import SettingsProfile from './pages/Admin/SettingsProfile'
+// import Teachers from './pages/Admin/Teachers'
+// import Students from './pages/Admin/Students'
+// import Sidebar from './pages/Admin/Sidebar'
+// import AnnouncementStudent from './pages/School/schoolStudent/Announcement'
+// import AttendanceStudent from './pages/School/schoolStudent/Attendance'
+// import LibraryStudent from './pages/School/schoolStudent/Library'
+// import ProfileStudent from './pages/School/schoolStudent/Profile'
 import LandingPage from './pages/LandingPage/LandingPage'
 import AdminDashboardSch from './pages/adminSch/AdminDashboard'
 import StudentDashboardSch from './pages/studentSch/StudentDashboard'
@@ -678,6 +678,26 @@ import ViewSubject from './pages/adminSch/subjectRelated/ViewSubject';
 import ChooseClass from './pages/adminSch/teacherRelated/ChooseClass';
 import StudentAttendance from './pages/adminSch/studentRelated/StudentAttendance';
 import ViewStudent from './pages/adminSch/studentRelated/ViewStudent';
+import AddTeacher from './pages/adminSch/teacherRelated/AddTeacher';
+import ChooseSubject from './pages/adminSch/teacherRelated/ChooseSubject';
+import TeacherDetails from './pages/adminSch/teacherRelated/TeacherDetails';
+import TeacherHomePage from './pages/teacherSch/TeacherHomePage';
+import TeacherPage from './pages/Teacher/TeacherPage';
+import TeacherLandingPage from './pages/Teacher/TeacherLandingPage';
+import TeacherProfileForm from './pages/Teacher/TeacherProfileForm';
+import AdmissionData from './pages/AdmissionData';
+import SchOriginal from './pages/SchoolLandingPage/SchOriginal';
+import PrivateSec from './pages/SchoolLandingPage/secondaryschool/PrivateSec';
+import PublicSec from './pages/SchoolLandingPage/secondaryschool/PublicSec';
+import PrivateUni from './pages/SchoolLandingPage/university/PrivateUni';
+import StateUni from './pages/SchoolLandingPage/university/StateUni';
+import FederalUni from './pages/SchoolLandingPage/university/FederalUni';
+import StatePoly from './pages/SchoolLandingPage/polytechnic/StatePoly';
+import FederalPoly from './pages/SchoolLandingPage/polytechnic/FederalPoly';
+import CollegesOfEducation from './pages/SchoolLandingPage/schoolselection/CollegesOfEducation';
+import SearchResults from './pages/SchoolLandingPage/schoolselection/SearchResults';
+import SchoolLandingPage from './pages/SchoolLandingPage/SchoolLandingPage';
+import HomeLanding from './pages/LandingPage/essentialLanding/Home/HomeLanding';
 
 // import StudentDashboardSch from './pages/studentSch/StudentDashboard';
 // import TeacherDashboard from './pages/teacherSch/TeacherDashboard';
@@ -747,13 +767,16 @@ function App() {
         <Route path='/studentsignup' element={!user ? <StudentSignupAcct /> : <Navigate to='/landingpage' />} />
         <Route path='/landingpage' element={<LandingPage />} />
         <Route path='/studenthome' element={user ? <StudentHomePage /> : <Navigate to='/landingpage' />} />
-        
+        {/* <Route path='/teacherpage' element={<Teacher />} /> */}
+        <Route exact path='/teacherpage' element ={<TeacherPage />}/>
+        <Route exact path='/teacherlandingpage' element ={<TeacherLandingPage />}/>
         <Route path='/teacherhome' element={teacher ? <TeacherHome /> : <Navigate to='/teacherlogin' />} />
         <Route path='/teacherlogin' element={!teacher ? <TeacherLogin /> : <Navigate to='/teacherhome' />} />
         <Route path='/teachersignup' element={!teacher ? <TeacherSignup /> : <Navigate to='/teacherhome' />} />
+        <Route path='/teacherprofileform' element={<TeacherProfileForm />} />
 
         <Route path='/school' element={<Home />} />
-        <Route path='/adminsignin' element={<AdminSignIn />} />
+        {/* <Route path='/adminsignin' element={<AdminSignIn />} />
         <Route path='/adminsignup' element={<AdminRegister />} />
         <Route path='/studentsignin' element={<StudentSignIn />} />
         <Route path='/teachersignin' element={<TeacherSignIn />} />
@@ -772,7 +795,7 @@ function App() {
         <Route path='/studentannouncement' element={<AnnouncementStudent />} />
         <Route path='/studentattendance' element={<AttendanceStudent />} />
         <Route path='/studentlibrary' element={<LibraryStudent />} />
-        <Route path='/studentprof' element={<ProfileStudent />} />
+        <Route path='/studentprof' element={<ProfileStudent />} /> */}
 
         <Route path='/ejobs' element={<Ejobs />} />
         <Route path='/ejobslogin' element={<Login />} />
@@ -784,6 +807,34 @@ function App() {
         <Route path='/job/post' element={<PostJob />} />
         <Route path='/job/me' element={<MyJobs />} />
         <Route path='*' element={<NotFound />} />
+
+        <Route path='/admissiondata' element={<AdmissionData />} />
+        <Route path='/schoriginal' element={<SchOriginal />} />
+
+
+
+
+
+        
+        //schooldetails
+            <Route path='/schoollandingpage' element={<SchoolLandingPage />} />
+            <Route path='/secondary-schools/private' element={<PrivateSec />} />
+            <Route path='/secondary-schools/government' element={<PublicSec />} />
+            <Route path='/universities/private' element={<PrivateUni />} />
+            <Route path='/universities/state' element={<StateUni />} />
+            <Route path='/universities/federal' element={<FederalUni />} />
+            <Route path='/polytechnics/state' element={<StatePoly />} />
+            <Route path='/polytechnics/federal' element={<FederalPoly />} />
+            <Route path='/colleges-of-education' element={<CollegesOfEducation />} />
+            <Route path='/search' element={<SearchResults />} />
+
+
+
+          //home
+          <Route path='/landinghome' element={<HomeLanding />} />
+
+            
+            
 
 
 
@@ -801,6 +852,7 @@ function App() {
             <Route path='/Studentloginsch' element={<LoginPage role="Student" />} />
             <Route path='/Teacherloginsch' element={<LoginPage role="Teacher" />} />
             <Route  path='/Admin/subjects/subject/:classID/:subjectID' element={<ViewSubject/>}/>
+            <Route path='/Admin/classes' element={<ShowClasses />} />
             <Route path='*' element={<Navigate to="/" />} />
           </>
         )}
@@ -829,6 +881,16 @@ function App() {
             <Route path='/Admin/class/addstudents/:id' element={<AddStudent situation="Class" />} />
             <Route path='/Admin/subject/student/attendance/:studentID/:subjectID' element={<StudentAttendance  situation="Subject"/>}/>
             <Route path='/Admin/students/student/:id' element={<ViewStudent />} />
+            
+
+
+            //teacher
+            <Route path='/Admin/teachers/addteacher/:id' element={<AddTeacher />} />
+            <Route path='/AAdmin/teachers/choosesubject/:classID/:teacherID' element={<ChooseSubject situation="Teacher" />} />
+            <Route path='/Admin/teachers/choosesubject/:id' element={<ChooseSubject situation="Norm"/>} />
+            <Route path='/Admin/teachers/chooseclass'  element={<ChooseClass situation="Teacher" />} />
+            <Route path="/Admin/teachers/teacher/:id" element={<TeacherDetails /> } />
+            
             
             
             

@@ -2,7 +2,7 @@ import TeacherProfile from "../models/teacher/teacherProfileSchema.js";
 import TeacherAccount from "../models/teacher/teacherAccountSchema.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken"
-
+import Joi from "joi";
 
 
 export const createTeacherAccount = async (req, res, next) => {
@@ -51,22 +51,56 @@ export const loginTeacherAccount = async(req, res, next) => {
 }
 
 export const createTeacherProfile = async(req, res, next) => {
-    console.log(req.body);
-    const {firstName, lastName, email, profileWriteUp, workExperience, address, courses, yearsOfExperience} = req.body
-    try {
-        if(!firstName || !lastName || !email  || !profileWriteUp || !workExperience || !address  || !courses || !yearsOfExperience){
-            return res.status(400).json("please fill in the full form")
+        const { firstName, lastName, email, profileWriteUp, workExperience, address, courses, yearsOfExperience } = req.body;
+
+        // Check for missing fields
+        const missingFields = [];
+
+        if (!firstName.trim()) missingFields.push('firstName');
+        if (!lastName.trim()) missingFields.push('lastName');
+        if (!email.trim()) missingFields.push('email');
+        if (!profileWriteUp.trim()) missingFields.push('profileWriteUp');
+        if (!workExperience.trim()) missingFields.push('workExperience');
+        if (!address.trim()) missingFields.push('address');
+        if (!Array.isArray(courses) || !courses.length || courses.some(course => !course.trim())) missingFields.push('courses');
+        if (!yearsOfExperience) missingFields.push('yearsOfExperience');
+
+        if (missingFields.length > 0) {
+            return res.status(400).json({
+                success: false,
+                message: 'Please fill in the full form',
+                missingFields
+            });
         }
-        await TeacherProfile.create({firstName, lastName, email, profileWriteUp, courses, workExperience, yearsOfExperience, address});
-        res.status(200).json({
-            success: true,
-            message: "teacher's details is created"
-        })
 
-    } catch (error){
-        next(error)
+        // Proceed with profile creation
+        try {
+            await TeacherProfile.create({ firstName, lastName, email, profileWriteUp, workExperience, address, courses, yearsOfExperience });
+            res.status(200).json({
+                success: true,
+                message: "Teacher's details have been created successfully"
+            });
+        } catch (error) {
+            next(error);
+}
 
-    }
+ 
+    // try {
+    //     console.log(req.body);
+    //     const {firstName, lastName, email, profileWriteUp, workExperience, address, courses, yearsOfExperience} = req.body
+    //     if(!firstName || !lastName || !email  || !profileWriteUp || !workExperience || !address  || !courses || !yearsOfExperience){
+    //         return res.status(400).json("please fill in the full form")
+    //     }
+    //     await TeacherProfile.create({firstName, lastName, email, profileWriteUp, workExperience,address, courses, yearsOfExperience, });
+    //     res.status(200).json({
+    //         success: true,
+    //         message: "teacher's details is created"
+    //     })
+
+    // } catch (error){
+    //     next(error)
+
+    // }
 }
 
 export const getTeacherProfile = async(req, res, next) => {

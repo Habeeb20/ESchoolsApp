@@ -42,6 +42,7 @@ import EuserRoute from "./routes/EssentialJobsRoute/EuserRoute.js"
 import chatRoute from "./routes/userAIRoute/userAIRoute.js";
 import bookroute from "./routes/Book/bookroute.js";
 import paymentRoute from "./routes/paymentRoute.js";
+import admissionRouter from "./routes/admissionScrapper/admissionScrapper.js";
 
 
 
@@ -83,7 +84,7 @@ app.use('/api', schoolRouter);
 app.use('/api', adminRouter );
 app.use('/api', userRoute);
 app.use('/api', classRoute);
-app.use("/api", teacherRouter);
+app.use('/api', teacherRouter);
 app.use('/api', studentRoute);
 app.use("/api", schoolAuthRoute);
 app.use("/api", announcementrouter );
@@ -133,6 +134,9 @@ app.use('/api', bookroute )
 
 app.use('/api', paymentRoute)
 
+
+//admissionData
+app.use('/api', admissionRouter)
 
 
 

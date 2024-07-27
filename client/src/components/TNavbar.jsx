@@ -1,12 +1,14 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { useTeacherAcctContext } from '../hooks/teacher/useTeacherAcctContext'
-import { useLogout } from '../hooks/student/useStudentLogout'
+
+import { useTeacherLogout } from '../hooks/teacher/useTeacherLogout'
+
 
 
 
 export default function TNavbar() {
-    const {logout} = useLogout()
+    const {logout} = useTeacherLogout()
     const {teacher} = useTeacherAcctContext()
     const handleClick = () => {
         logout()

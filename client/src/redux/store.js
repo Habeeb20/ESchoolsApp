@@ -5,7 +5,8 @@ import { noticeReducer } from './noticeRelated/noticeSlice';
 import { sclassReducer } from './sclassRelated/sclassSlice';
 import { teacherReducer } from './teacherRelated/teacherSlice';
 import { complainReducer } from './complainRelated/complainSlice';
-
+import teachersReducer from "../pages/Teacher/TeacherRedux/TeacherSlice"
+import { TeacherProfileStore } from '../pages/Teacher/TeacherRedux/TeacherProfileStore';
 const store = configureStore({
     reducer: {
         user: userReducer,
@@ -13,7 +14,9 @@ const store = configureStore({
         teacher: teacherReducer,
         notice: noticeReducer,
         complain: complainReducer,
-        sclass: sclassReducer
+        sclass: sclassReducer,
+        teachers: teachersReducer,
+  
     },
 });
 

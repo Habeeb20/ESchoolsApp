@@ -1,9 +1,9 @@
 import { useTeacherAcctContext } from "./useTeacherAcctContext";
+import { useStudentAcctContext } from "../student/useStudentAcctContext";
+import { useStudentProfileContext } from "../student/useStudentProfileContext";
 
-import { useStudentAcctContext } from "./useStudentAcctContext";
-import { useStudentProfileContext } from "./useStudentProfileContext";
 
-export const useLogout = () => {
+export const useTeacherLogout = () => {
     const {dispatch} = useTeacherAcctContext()
     const {dispatch: studentDispatch} = useStudentProfileContext()
 
