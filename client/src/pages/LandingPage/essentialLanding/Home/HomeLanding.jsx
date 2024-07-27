@@ -11,24 +11,33 @@ import Blog2Img from '../utils/images/blog2-img.jpg'
 import Blog3Img from '../utils/images/blog3-img.jpg'
 import FadeIn from '../../../../FadeIn';
 import HomeNavbar from '../HomeNavbar';
+import Footer from '../../../../components/BookEssential/Footer';
+import Groups from '../Groups';
+import KenyanPresident from '../utils/images/kenyan president.png'
+import BAT from '../utils/images/tinubuConstruction.png'
+import Diddy from '../utils/images/Diddy.png'
 const blogs = [
     {
         id: 1,
-        img: [Blog1Img],
+        img: [KenyanPresident],
         title: 'Blog 1',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, fugit? Doloremque deserunt ipsum eaque, dolor tempore, minima nisi debitis, et quas voluptatibus nam ex. Necessitatibus eligendi ratione expedita! Porro, ut.'
+        description: 'Kenyan President William Ruto announced Wednesday that the controversial finance bill, which included significant tax hikes, will be withdrawn following intense nationwide protests that resulted in more than 20 deaths and the ransacking of the parliament.The people have spoken, Ruto stated during a press briefing, acknowledging the widespread opposition. I concede and therefore I will not sign the 2024 finance bill and it shall subsequently be withdrawn.'
+        
+         
+        
+        // However, Ruto warned that this withdrawal would lead to a substantial shortfall in funding for crucial development programs aimed at supporting farmers, schoolteachers, and other sectors. The East African nation is grappling with a heavy foreign debt burden and is seeking ways to reduce it.
     },
     {
         id: 2,
-        img: [Blog2Img],
+        img: [BAT],
         title: 'Blog 2',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, fugit? Doloremque deserunt ipsum eaque, dolor tempore, minima nisi debitis, et quas voluptatibus nam ex. Necessitatibus eligendi ratione expedita! Porro, ut.'
+        description: 'President Bola Tinubu has inaugurated the ultramodern and digitalized National Cybercrime Centre to enhance the efficiency of law enforcement agencies across Nigeria. The announcement was delivered by the Minister of Communication, Innovation, and Digital Economy, Dr. Bosun Tijani, at the new facility in Abuja.In his address, President Tinubu emphasized the government dedication to bolstering the Nigerian police force through the acquisition of advanced arms, weapons, and other essential equipment. He also highlighted the ongoing efforts in recruitment and continuous training to improve the number, quality, and readiness of police personnel'
     },
     {
         id: 3,
-        img: [Blog3Img],
+        img: [Diddy],
         title: 'Blog 3',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, fugit? Doloremque deserunt ipsum eaque, dolor tempore, minima nisi debitis, et quas voluptatibus nam ex. Necessitatibus eligendi ratione expedita! Porro, ut.'
+        description: 'American music mogul and business tycoon Sean Combs, popularly known as ‘Diddy’, has been implicated in the 1996 murder of iconic rapper Tupac Shakur. According to new documents, Diddy is accused of paying $1 million to Duane ‘Keefe D’ Davis, who was arrested in 2023 for Shakur’s murder, the U.S. Sun reported.The documents, filed on Thursday, July 18, mention Diddy 77 times by his various pseudonyms, including Puffy, Puff Daddy, Puff, and his legal name, Sean Combs.'
     }
 ];
 
@@ -39,17 +48,29 @@ export default function HomeLanding() {
   <div className='home-page'>
         <header className='h-100 min-vh-100 d-flex align-items-center text-light'>
             <div className='container d-flex flex-column align-items-center'>
-                <h2>Welcome To</h2>
-                <h1 className='text-center fw-semibold'>React University London</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, fugit? Doloremque deserunt ipsum eaque, dolor tempore, minima nisi debitis, et quas voluptatibus nam ex. Necessitatibus eligendi ratione expedita! Porro, ut.</p>
+               
+                    <h2>Welcome To</h2>
+                <FadeIn delay={0.4} direction="down">
+                    <h1 className='text-center fw-semibold'>ESchools</h1>
+                </FadeIn >
+                <p>Connect students, the world of students, schools and exams together.</p>
                 <div className='d-flex flex-column flex-sm-row align-items-center'>
                     <Link to="/courses">
-                        <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Our Courses</button>
+                        <button type='button' className='btn btn-success btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Our Courses</button>
                     </Link>
                     <Link to="/contact">
                         <button type='button' className='btn btn-outline-light btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Contact Us</button>
                     </Link>
                 </div>
+                <p style={{paddingTop: "10%"}}>Make the right choices during your school year with.</p>
+                <FadeIn delay={0.4} direction="up">
+                <ul>
+                    <Link to="/ejobs"><li style={{ color:"white"}}>E-JOBS</li></Link>
+                    <Link to="/Aihome"><li style={{ color:"white"}}>Comparism</li></Link>
+                    <Link to="/landinghome"><li style={{ color:"white"}}>Scholarships</li></Link>
+                    <Link to="/mainpage"><li style={{ color:"white"}}>Books</li></Link>
+                </ul>
+                </FadeIn>
             </div>
         </header>
 
@@ -60,13 +81,19 @@ export default function HomeLanding() {
         <div className='py-5 bg-light'>
             <div className="container">
                 <div className='row d-flex align-items-center justify-content-around'>
+               
                     <div className='col-lg-5'>
-                        <h2 className='text-capitalize'>2024 start courses</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, placeat.</p>
-                        <Link to="/courses">
-                            <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Learn More</button>
+                        
+                        <h2 className='text-capitalize'>Want to Study?</h2>
+                        <FadeIn delay={0.4} direction="left">
+                        <p>A Single click to take any examination anywhere, anytime</p>
+                        </FadeIn>
+                        <Link to="/bookhomepage">
+                            <button type='button' className='btn btn-success btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Learn More</button>
                         </Link>
+                        
                     </div>
+                   
                     <div className='col-lg-5 mt-5 mt-lg-0'>
                         <img src={StartCoursesImg} className='img-fluid' alt="" />
                     </div>
@@ -77,10 +104,13 @@ export default function HomeLanding() {
         <div className="py-5">
             <FaqAccordion />
         </div>
+        
+        <Groups />
+     
 
         <div className='blog-section text-light py-5'>
             <div className='container d-flex flex-column align-items-center'>
-                <h2 className='text-center text-capitalize mb-5'>Latest on the blog</h2>
+                <h2 className='text-center text-capitalize mb-5'>E Direct Blog</h2>
                 <div className='row g-4'>
                     {blogs.map((blog) => (
                         <div key={blog.id} className='col-md-6 col-lg-4'>
@@ -96,13 +126,14 @@ export default function HomeLanding() {
                         </div>
                     ))}
                 </div>
-                <Link to="/blog">
-                    <button type='button' className='btn btn-danger btn-lg mt-5'>Read More Blogs</button>
+                <Link style={{marginTop:"5%"}} to="https://essentialnews.ng">
+                            <button  type='button' className='btn btn-success btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Learn More</button>
                 </Link>
             </div>
         </div>
         
     </div>
+    <Footer />
   </>
     
   )

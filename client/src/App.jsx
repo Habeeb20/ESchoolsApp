@@ -309,26 +309,6 @@
 
 
 
-// //AIchats
-
-// import Chat from './pages/AIChat/Chat'
-// import HomeChat from './pages/AIChat/HomeChat'
-// import BookHomePage from './pages/Book/BookHomePage'
-// import AddBook from './pages/Book/AddBook'
-
-
-// ///bookEssential
-
-// import MainBook from './pages/Bookessential/MainBook'
-// import Services from './components/BookEssential/Services'
-
-// //searchbook
-// import SearchHome from './components/searchBook/pages/Home/SearchHome'
-// import About from './components/searchBook/pages/About/About'
-// import BookList from './components/searchBook/component/BookList/BookList'
-// import BookDetails from './components/searchBook/component/BookDetails/BookDetails'
-// import Payment from './pages/Payment/Payment'
-// import PaymentSuccess from './pages/Payment/PaymentSuccess'
 
 // // Import your publishable key
 
@@ -436,48 +416,6 @@
 //     <Route exact path='/job/post' element ={<PostJob />}/>
 //     <Route exact path='/job/me' element ={<MyJobs />}/>
 //     <Route exact path='*' element ={<NotFound />}/>
-
-
-
-//     //chat
-
-//     <Route exact path='Aihome' element ={<HomeChat />}/>
-//     <Route exact path='chat' element ={<Chat />}/>
-
-//     //
-//     <Route exact path='/bookhomepage' element = {<BookHomePage />}></Route>
-//     <Route exact path='/addbook' element = {<AddBook />}></Route>
-
-
-
-
-//     //
-//     <Route exact path='/teacherlandingpage' element ={<TeacherLandingPage />}/>
-//     <Route exact path='/teacherpage' element ={<TeacherPage />}/>
-//     <Route exact path='/teacherdetaildashboard' element ={<TeacherDetailDashboard />}/>
-//     <Route exact path='/teacherprofileform' element ={<TeacherProfileForm />}/>
-
-
-//     ///Bookessential
-//     <Route path="/mainpage" element={<MainBook />} />
-//     <Route path="/services" element={<Services />} />
-
-//     //searchbook
-//     <Route path="/searchbook" element={<SearchHome />} />
-//     <Route path="/searchabout" element={<About />} />
-//     <Route path="/book" element={<BookList />} />
-//     <Route path="/book/:id" element={<BookDetails />} />
-
-//     //payment 
-
-//     <Route path="/payment" element={<Payment />} />
-//     <Route path="/paymentverification" element={<PaymentSuccess />} />
-
-//     //SchoolLandingPage
-//     <Route path="/schoollandingpage" element={<SchoolLandingPage />} />
-//     <Route path = "/schoriginal" element={<SchOriginal />} />
-//     <Route path = "/schcomp" element={<SchComp2 />} />
-
 
 
 
@@ -699,6 +637,32 @@ import SearchResults from './pages/SchoolLandingPage/schoolselection/SearchResul
 import SchoolLandingPage from './pages/SchoolLandingPage/SchoolLandingPage';
 import HomeLanding from './pages/LandingPage/essentialLanding/Home/HomeLanding';
 
+
+
+
+
+//AIchats
+
+import Chat from './pages/AIChat/Chat'
+import HomeChat from './pages/AIChat/HomeChat'
+
+
+
+
+///bookEssential
+
+import MainBook from './pages/Bookessential/MainBook'
+import Services from './components/BookEssential/Services'
+
+//searchbook
+import SearchHome from './components/searchBook/pages/Home/SearchHome'
+import About from './components/searchBook/pages/About/About'
+import BookList from './components/searchBook/component/BookList/BookList'
+import BookDetails from './components/searchBook/component/BookDetails/BookDetails'
+import Payment from './pages/Payment/Payment'
+import PaymentSuccess from './pages/Payment/PaymentSuccess'
+
+
 // import StudentDashboardSch from './pages/studentSch/StudentDashboard';
 // import TeacherDashboard from './pages/teacherSch/TeacherDashboard';
 // import LoginPage from './pages/LoginPage';
@@ -832,6 +796,52 @@ function App() {
 
           //home
           <Route path='/landinghome' element={<HomeLanding />} />
+
+
+          
+           //chat
+          <Route exact path='Aihome' element ={<HomeChat />}/>     <Route exact path='chat' element ={<Chat />}/>
+         
+        
+
+
+
+        <Route exact path='/teacherlandingpage' element ={<TeacherLandingPage />}/>     <Route exact path='/teacherpage' element ={<TeacherPage />}/>
+        {/* <Route exact path='/teacherdetaildashboard' element ={<TeacherDetailDashboard />}/>     <Route exact path='/teacherprofileform' element ={<TeacherProfileForm />}/>
+ */}
+
+
+    ///Bookessential
+         <Route path="/mainpage" element={<MainBook />} />
+
+         <Route path="/services" element={<Services />} />
+
+
+    //searchbook
+
+        <Route path="/searchbook" element={<SearchHome />} />
+         <Route path="/searchabout" element={<About />} />
+         <Route path="/book" element={<BookList />} />
+
+        <Route path="/book/:id" element={<BookDetails />} />
+
+     //payment 
+
+        <Route path="/payment" element={<Payment />} />
+
+        <Route path="/paymentverification" element={<PaymentSuccess />} />
+
+     //SchoolLandingPage
+
+        <Route path="/schoollandingpage" element={<SchoolLandingPage />} />
+         <Route path = "/schoriginal" element={<SchOriginal />} />
+         {/* <Route path = "/schcomp" element={<SchComp2 />} /> */}
+
+
+
+
+
+
 
             
             

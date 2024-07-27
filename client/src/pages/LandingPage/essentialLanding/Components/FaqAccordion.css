@@ -9,7 +9,8 @@
 }
 
 .accordion .accordion-button:not(.collapsed) {
-    background-color: #dc3545;
+    margin-top: 5px;
+    background-color: #35dc67;
     color: #ffffff;
 }
 

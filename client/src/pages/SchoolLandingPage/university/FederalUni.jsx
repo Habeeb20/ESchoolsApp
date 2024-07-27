@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Footer from '../../../components/BookEssential/Footer';
 import SchoolNavbar from '../schoolselection/SchoolNavbar';
 import { useState } from 'react';
+import { color } from 'framer-motion';
 export default function FederalUni() {
   const [searchTerm, setSearchTerm] = useState('');
   const headerStyle = {
@@ -57,11 +58,12 @@ export default function FederalUni() {
   };
 
   const Fontsize = {
-    fontSize: '140%',
+
+    color: "green"
   };
 
   const Despsize = {
-    fontSize: '100%',
+    fontSize: '150%',
   };
 
   const ratingStars = (rating) => {
@@ -113,7 +115,7 @@ export default function FederalUni() {
     <>
       <SchoolNavbar />
       <header style={headerStyle}>
-      <h1 style={{ fontSize: '100%' }}>Federal Universities</h1>
+      <h1 style={{ fontSize: '200%' }}>Federal Universities</h1>
       </header>
       <section style={searchStyle}>
         <input
