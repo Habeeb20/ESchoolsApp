@@ -314,8 +314,11 @@ const AdminDashboard = () => {
 }
 
 export default AdminDashboard
-
+const globalStyles = {
+    fontSize: '1.2em'
+  };
 const styles = {
+  
     boxStyled: {
         backgroundColor: (theme) =>
             theme.palette.mode === 'light'

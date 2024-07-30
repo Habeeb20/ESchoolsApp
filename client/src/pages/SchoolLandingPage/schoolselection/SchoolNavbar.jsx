@@ -152,6 +152,9 @@ const SchoolNavbar = () => {
         <SearchButton onClick={handleSearch}>Search</SearchButton>
       </SearchContainer>
       <LinksContainer isOpen={isMenuOpen}>
+      <LinkItem>
+          <Link to="/schownercreate"><StyledNavLink>create your website</StyledNavLink></Link>
+        </LinkItem>
         <LinkItem>
           <StyledNavLink>Secondary Schools</StyledNavLink>
           <SubMenuContainer>

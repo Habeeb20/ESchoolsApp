@@ -10,12 +10,12 @@ const PopupNotification = () => {
   }, []);
 
   return (
-    <Fade in={open} timeout={2000}> 
+    <Fade in={open} timeout={1000}> 
       <StyledPaper elevation={4}>
-        <Typography variant="h4" gutterBottom>
+        <Typography style={globalStyles} variant="h4" gutterBottom>
           Welcome to ESchools Application
         </Typography>
-        <Typography variant="body1" gutterBottom>
+        <Typography style={globalStyles} variant="body1" gutterBottom>
           This application handles school management for schools, ordering and searching for a book of your choice, 
           information about tertiary institutions in Nigeria, and also gives room for students that want to apply for a job 
           and teachers that want to be hired for a teaching job.
@@ -31,6 +31,9 @@ const PopupNotification = () => {
       </StyledPaper>
     </Fade> 
   );
+};
+const globalStyles = {
+  fontSize: '1.8em', // Adjust the font size as needed
 };
 
 const StyledPaper = styled(Paper)`

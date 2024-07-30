@@ -1,31 +1,40 @@
+import { color } from "framer-motion";
 import React from "react";
 import { FaBuilding, FaSuitcase, FaUsers, FaUserPlus } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 const HeroSection = () => {
+  const style = {
+    backgroundColor: "#2d5649",
+    color: "white"
+  }
   const details = [
     {
       id: 1,
       title: "1,23,441",
       subTitle: "Live Job",
       icon: <FaSuitcase />,
+   
     },
     {
       id: 2,
       title: "91220",
       subTitle: "Companies",
       icon: <FaBuilding />,
+
     },
     {
       id: 3,
       title: "2,34,200",
       subTitle: "Job Seekers",
       icon: <FaUsers />,
+    
     },
     {
       id: 4,
       title: "1,03,761",
       subTitle: "Employers",
       icon: <FaUserPlus />,
+      
     },
   ];
   return (
@@ -38,6 +47,7 @@ const HeroSection = () => {
             <p>
               Find a job that interests you without disrupting your education
             </p>
+            <Link to='/job/getall'><button>get all jobs</button></Link>
           </div>
           <div className="image">
             <img src="/heroS.jpg" alt="hero" />
@@ -46,7 +56,8 @@ const HeroSection = () => {
         <div className="details">
           {details.map((element) => {
             return (
-              <div className="card" key={element.id}>
+              <div style={style} className="card" key={element.id}>
+          
                 <div className="icon">{element.icon}</div>
                 <div className="content">
                   <p>{element.title}</p>

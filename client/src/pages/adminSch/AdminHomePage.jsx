@@ -40,7 +40,7 @@ const AdminHomePage = () => {
                     <Grid item xs={12} md={3} lg={3}>
                         <StyledPaper>
                             <img src={Students} alt="Students" />
-                            <Title>
+                            <Title style={globalStyles}>
                                 Total Students
                             </Title>
                             <Data start={0} end={numberOfStudents} duration={2.5} />
@@ -84,6 +84,9 @@ const AdminHomePage = () => {
     );
 };
 
+const globalStyles = {
+    fontSize: '1.2em'
+  };
 
 const StyledPaper = styled(Paper)`
   padding: 16px;

@@ -43,7 +43,7 @@ import chatRoute from "./routes/userAIRoute/userAIRoute.js";
 import bookroute from "./routes/Book/bookroute.js";
 import paymentRoute from "./routes/paymentRoute.js";
 import admissionRouter from "./routes/admissionScrapper/admissionScrapper.js";
-
+import schOwnerRouter from "./routes/SchoolOwner/SchoolOwner.js";
 
 
 const __dirname = path.resolve()
@@ -138,7 +138,9 @@ app.use('/api', paymentRoute)
 //admissionData
 app.use('/api', admissionRouter)
 
+//schoowner
 
+app.use("/api", schOwnerRouter)
 
 
 // app.listen(port, () => {

@@ -519,7 +519,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { Toaster } from 'react-hot-toast'
 import axios from 'axios'
-
+import '../public/global.css'
 // Contexts
 import { useStudentAcctContext } from './hooks/student/useStudentAcctContext'
 import { useTeacherAcctContext } from './hooks/teacher/useTeacherAcctContext'
@@ -660,7 +660,18 @@ import About from './components/searchBook/pages/About/About'
 import BookList from './components/searchBook/component/BookList/BookList'
 import BookDetails from './components/searchBook/component/BookDetails/BookDetails'
 import Payment from './pages/Payment/Payment'
-import PaymentSuccess from './pages/Payment/PaymentSuccess'
+import PaymentSuccess from './pages/Payment/PaymentSuccess';
+import SchOwnerSignin from './pages/schOwner/SchOwnerSignin';
+import SchOwnerSignup from './pages/schOwner/SchOwnerSignup';
+import SchOwnerDashboard from './pages/schOwner/SchOwnerDashboard';
+import SchOwnerHome from './pages/schOwner/SchOwnerHome';
+import CreateSchool from './pages/schOwner/CreateSchool';
+
+
+
+//schowner
+
+
 
 
 // import StudentDashboardSch from './pages/studentSch/StudentDashboard';
@@ -770,6 +781,7 @@ function App() {
         <Route path='/application/:id' element={<Application />} />
         <Route path='/application?me' element={<MyApplication />} />
         <Route path='/job/post' element={<PostJob />} />
+        
         <Route path='/job/me' element={<MyJobs />} />
         <Route path='*' element={<NotFound />} />
 
@@ -839,6 +851,16 @@ function App() {
          {/* <Route path = "/schcomp" element={<SchComp2 />} /> */}
 
 
+         //schoOwner
+       
+         <Route path="/schownerlogin" element={<SchOwnerSignin />} />
+         <Route path="/schownerregister" element={<SchOwnerSignup />}/>
+         <Route path="/schownerdashboard" element={<SchOwnerDashboard />} />
+         <Route path="/schownerhome" element={<SchOwnerHome />} />
+         <Route path="/schownercreate" element={<CreateSchool />} />
+
+
+
 
 
 
@@ -854,12 +876,13 @@ function App() {
         <Route path='/choose' element={<ChooseUser visitor="normal" />} />
         <Route path='/Admin/profile' element={<AdminProfile />}/>
         <Route path='/Adminregister' element={<AdminRegisterPageSch />} />
+        <Route path='/Adminlogin' element={<LoginPage role="Admin" />} />
         {currentRole === null && (
           <>
            
           
             <Route path='/chooseasguest' element={<ChooseUser visitor="guest" />} />
-            <Route path='/Adminlogin' element={<LoginPage role="Admin" />} />
+          
             <Route path='/Studentloginsch' element={<LoginPage role="Student" />} />
             <Route path='/Teacherloginsch' element={<LoginPage role="Teacher" />} />
             <Route  path='/Admin/subjects/subject/:classID/:subjectID' element={<ViewSubject/>}/>

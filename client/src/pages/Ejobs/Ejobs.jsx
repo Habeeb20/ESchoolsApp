@@ -7,6 +7,7 @@ import HowItWorks from '../../components/EssentialJobs/Home/HowItWorks';
 import PopularCategories from '../../components/EssentialJobs/Home/PopularCategories';
 import PopularCompanies from '../../components/EssentialJobs/Home/PopularCompanies';
 import Navbar from '../../components/LandingPage/Navbar';
+import HomeNavbar from '../LandingPage/essentialLanding/HomeNavbar';
 
 const Ejobs = () => {
     const { isAuthorized } = useContext(Context);
@@ -15,7 +16,7 @@ const Ejobs = () => {
     }
     return (
         <>
-        <Navbar />
+        <HomeNavbar />
         <section className="homePage page">
           <HeroSection />
           <HowItWorks />
