@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import React from "react";
 // import { Context } from "../../../hooks/Context";
 import axios from "axios";
@@ -39,7 +39,7 @@ export default function MyApplication() {
     }, [isAuthroized]);
 
     if(!isAuthroized){
-        navigateTo("/landingpage");
+        navigateTo("/");
     }
 
     const deleteApplication = (id) => {

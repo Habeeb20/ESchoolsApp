@@ -48,6 +48,7 @@ const HeroSection = () => {
               Find a job that interests you without disrupting your education
             </p>
             <Link to='/job/getall'><button>get all jobs</button></Link>
+            <Link to='/application/me'>see my jobs</Link>
           </div>
           <div className="image">
             <img src="/heroS.jpg" alt="hero" />
