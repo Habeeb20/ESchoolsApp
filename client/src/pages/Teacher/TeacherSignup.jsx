@@ -37,7 +37,7 @@ export default function TeacherSignup() {
     <TNavbar />
     <FadeIn delay={0.2} direction="left" padding fullWidth> 
        <form className="login1" onSubmit={handleSubmit}>
-      <h3 style={fontSize}>Teacher's login</h3>
+      <h3 style={fontSize}>Teacher's signup</h3>
      
       <label style={label}>Email</label>
       <input style={style}
@@ -53,7 +53,7 @@ export default function TeacherSignup() {
         value={password}
       />
 
-      <button disabled={isLoading}>log in</button>
+      <button disabled={isLoading}>Register</button>
       {error && <div className="error">{error}</div>}
      
     </form>

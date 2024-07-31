@@ -19,11 +19,21 @@ export const getTeachers = () => async (dispatch) => {
 export const createTeacher = (teacher) => async (dispatch) => {
     try {
         const response = await axios.post('http://localhost:4000/api/createTeacherProfile', teacher);
-        dispatch({ type: CREATE_TEACHER, payload: response.data });
+        await dispatch({ type: CREATE_TEACHER, payload: response.data });
     } catch (error) {
-        console.error('Error creating teacher:', error);
+        console.error('Error creating teacher:', error.response ? error.response.data : error.message);
     }
 };
+
+
+// export const createTeacher = (teacher) => async (dispatch) => {
+//     try {
+//         const response = await axios.post('http://localhost:4000/api/createTeacherProfile', teacher);
+//         dispatch({ type: CREATE_TEACHER, payload: response.data });
+//     } catch (error) {
+//         console.error('Error creating teacher:', error);
+//     }
+// };
 
 export const updateTeacher = (id, teacher) => async (dispatch) => {
     try {

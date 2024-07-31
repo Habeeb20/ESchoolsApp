@@ -33,6 +33,15 @@ paymentRoute.post("/paystack/pay", async (req, res) => {
         res.status(500).json({message: 'Payment initialization failed', error: error.message})
     }
 
+});
+
+paymentRoute.get('/products', async(req, res) => {
+    try {
+        const products = await Payment.find();
+        res.json(products);
+    } catch (error) {
+        res.status(500).send(error.message)
+    }
 })
 
 paymentRoute.post("/payment/verify", async (req, res) => {

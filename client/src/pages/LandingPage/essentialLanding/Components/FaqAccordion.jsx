@@ -17,26 +17,26 @@ export default function FaqAccordion() {
         </Link>
         <Accordion defaultActiveKey="" flush>
             <Accordion.Item eventKey='0'>
-                <Accordion.Header>Do you know ?</Accordion.Header>
-                <Accordion.Body>
+                <Accordion.Header style={{fontSize:"5.2rem", fontWeight:"bolder"}}>Do you know ?</Accordion.Header>
+                <Accordion.Body style={{fontSize:"155%"}}>
                     that you can teach easily than before, make double the cash and rest twice more with your teacher's account to get a teaching job?
                 </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey='1'>
-                <Accordion.Header>Have you heard ?</Accordion.Header>
-                <Accordion.Body>
+                <Accordion.Header style={{fontSize:"5.2rem", fontWeight:"bolder"}}>Have you heard ?</Accordion.Header>
+                <Accordion.Body style={{fontSize:"155%"}}>
                     that you can host your school websites and manage the activities free with ease? Dnt be surprised, Eschool is in charge of all your school activities
                 </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey='2'>
-                <Accordion.Header>Do you also Know?</Accordion.Header>
-                <Accordion.Body>
+                <Accordion.Header style={{fontSize:"5.2rem", fontWeight:"bolder"}}>Do you also Know?</Accordion.Header>
+                <Accordion.Body style={{fontSize:"155%"}}>
                     we tell you more about people,Businesses & places in Nigeria than any other Directory with our blog site
                 </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey='3'>
-                <Accordion.Header>Be informed that ...</Accordion.Header>
-                <Accordion.Body>
+                <Accordion.Header style={{fontSize:"5.2rem", fontWeight:"bolder"}}>Be informed that ...</Accordion.Header>
+                <Accordion.Body style={{fontSize:"155%"}}>
                     you can enjoy being a student than any other with our estudent ID card benefit such as ejobs, scholarship, eride and many others
                 </Accordion.Body>
             </Accordion.Item>

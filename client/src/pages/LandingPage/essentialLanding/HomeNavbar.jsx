@@ -33,7 +33,7 @@ export default function HomeNavbar() {
               <Nav.Link href="/secondary-schools/private" className='text-uppercase'>Schools</Nav.Link>
               <Nav.Link href='/teacherpage' className='text-uppercase'>Teacher</Nav.Link>
               <Nav.Link href='/ejobslogin' className='text-uppercase'>E-jobs</Nav.Link>
-              <Nav.Link href='/contact' className='text-uppercase'>Scholarships</Nav.Link>
+              <Nav.Link href='/scholarship' className='text-uppercase'>Scholarships</Nav.Link>
               <Nav.Link href='/bookhomepage' className='text-uppercase'>Exams</Nav.Link>
               <Nav.Link href='/Aihome' className='text-uppercase'>Comparism</Nav.Link>
               <Nav.Link href='/mainpage' className='text-uppercase'>Books</Nav.Link>

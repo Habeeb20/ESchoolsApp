@@ -1,6 +1,5 @@
 import React from "react";
 import Logo from "../../../assets/website/logo.png"
-
 import { FaCartShopping } from "react-icons/fa6";
 import DarkMode from "./DarkMode";
 import { FaCaretDown } from "react-icons/fa";
@@ -9,7 +8,7 @@ const Menu = [
   {
     id: 1,
     name: "Home",
-    link: "/landingpage",
+    link: "/landinghome",
   },
 //   {
 //     id: 2,
@@ -43,24 +42,25 @@ const Navbar = ({ handleOrderPopup }) => {
   return (
     <>
       <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200">
-        <div className="container py-3 sm:py-0">
+        <div style={{color:"green"}} className="container py-3 sm:py-0">
           <div className="flex justify-between items-center">
             <div>
-              <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
+              <a href="#" style={{color:"green"}} className="font-bold text-2xl sm:text-3xl flex gap-2">
                 <img src={Logo} alt="Logo" className="w-10" />
-                Books
+                EBooks
               </a>
             </div>
             <div className="flex justify-between items-center gap-4">
               <div>
                 <DarkMode />
               </div>
-              <ul className="hidden sm:flex items-center gap-4">
+              <ul  className="hidden sm:flex items-center gap-4">
                 {Menu.map((menu) => (
-                  <li key={menu.id}>
+                  <li  key={menu.id}>
                     <a
+                      style={{color:"green", textDecoration: "none", fontSize:"200%"}}
                       href={menu.link}
-                      className="inline-block py-4 px-4 hover:text-primary duration-200"
+                      className="inline-block py-4 px-4 hover:text-success duration-200"
                     >
                       {menu.name}
                     </a>
@@ -69,10 +69,10 @@ const Navbar = ({ handleOrderPopup }) => {
                 {/* Simple Dropdown and Links */}
                 <li className="group relative cursor-pointer">
                   <a
-                    href="/landingpage"
-                    className="flex h-[72px] items-center gap-[2px]"
+                    href="/landinghome"
+                    className="flex h-[12px] items-center gap-[2px]"
                   >
-                    Quick Links{" "}
+                    {/* Quick Links{" "} */}
                     <span>
                       <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
                     </span>
@@ -82,7 +82,7 @@ const Navbar = ({ handleOrderPopup }) => {
                       {DropdownLinks.map((data) => (
                         <li key={data.name}>
                           <a
-                            className="inline-block w-full rounded-md p-2 hover:bg-primary/20"
+                            className="inline-block w-full rounded-md p-2 hover:bg-success/20"
                             href={data.link}
                           >
                             {data.name}
@@ -97,7 +97,7 @@ const Navbar = ({ handleOrderPopup }) => {
                 onClick={() => handleOrderPopup()}
                 className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3"
               >
-                Order
+                {/* Order */}
                 <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
               </button>
             </div>

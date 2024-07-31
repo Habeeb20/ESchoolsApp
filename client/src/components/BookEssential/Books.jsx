@@ -11,6 +11,7 @@ const booksData = [
     title: "Who's there",
     rating: 5.0,
     author: "Someone",
+   
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const booksData = [
     title: "His Life",
     rating: 4.5,
     author: "John",
+
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const booksData = [
     title: "Lost boys",
     rating: 4.7,
     author: "Lost Girl",
+
   },
   {
     id: 4,
@@ -32,6 +35,7 @@ const booksData = [
     title: "His Life",
     rating: 4.4,
     author: "Someone",
+
   },
   {
     id: 5,
@@ -39,6 +43,7 @@ const booksData = [
     title: "Who's There",
     rating: 4.5,
     author: "Someone",
+
   },
 ];
 
@@ -63,7 +68,7 @@ const Books = () => {
           <div>
             <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-5">
               {/* Card */}
-              {booksData.map(({ id, img, title, rating, author }) => (
+              {booksData.map(({ id, img, title, rating, author, price }) => (
                 <div key={id} className="div space-y-3">
                   <img
                     src={img}
@@ -73,6 +78,7 @@ const Books = () => {
                   <div>
                     <h3 className="font-semibold">{title}</h3>
                     <p className="text-sm text-gray-700">{author}</p>
+                    <p className="text-sm text-gray-700">{price}</p>
                     <div className="flex items-center gap-1">
                       <FaStar className="text-yellow-500" />
                       <span>{rating}</span>
@@ -82,9 +88,9 @@ const Books = () => {
               ))}
             </div>
             <div className="flex justify-center">
-              <button className="text-center mt-10 cursor-pointer  bg-primary text-white py-1 px-5 rounded-md">
+              {/* <button className="text-center mt-10 cursor-pointer  bg-primary text-white py-1 px-5 rounded-md">
                 View All Books
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

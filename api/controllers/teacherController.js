@@ -72,8 +72,6 @@ export const createTeacherProfile = async(req, res, next) => {
                 missingFields
             });
         }
-
-        // Proceed with profile creation
         try {
             await TeacherProfile.create({ firstName, lastName, email, profileWriteUp, workExperience, address, courses, yearsOfExperience });
             res.status(200).json({

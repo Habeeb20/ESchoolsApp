@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Book1 from "../../assets/books/book2.jpg";
 import Book2 from "../../assets/books/book1.jpg";
 import Book3 from "../../assets/books/book3.jpg";
@@ -6,27 +6,28 @@ import Vector from "../../assets/website/blue-pattern.png";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 
+
 const ImageList = [
   {
     id: 1,
     img: Book1,
+    price: "2000",
     title: "His Life will forever be Changed",
-    description:
-      "lorem His Life will forever be Changed dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+   
   },
   {
     id: 2,
     img: Book2,
     title: "Who's there",
-    description:
-      "Who's there lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    price: "4000",
+    
   },
   {
     id: 3,
     img: Book3,
+    price:"5000",
     title: "Lost Boy",
-    description:
-      "Lost Boy, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+   
   },
 ];
 
@@ -34,10 +35,9 @@ const ImageList = [
 const Hero = ({ handleOrderPopup }) => {
   const navigate = useNavigate()
   const [imageId, setImageId] = React.useState(Book1);
+  const [price, setPrice] = useState("")
   const [title, setTitle] = React.useState("His Life will forever be Changed");
-  const [description, setDescription] = React.useState(
-    "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  );
+
   const HandlePayment = () => {
  
     navigate("/payment")
@@ -82,7 +82,7 @@ const Hero = ({ handleOrderPopup }) => {
                 data-aos-delay="100"
                 className="text-sm "
               >
-                {description}
+               
               </p>
               <div>
                 <button
@@ -104,6 +104,7 @@ const Hero = ({ handleOrderPopup }) => {
                   alt="biryani img"
                   className="w-[300px] h-[300px] sm:h-[450px] sm:w-[450px] sm:scale-125 object-contain mx-auto"
                 />
+             
               </div>
               <div className="flex lg:flex-col lg:top-1/2 lg:-translate-y-1/2 lg:py-2 justify-center gap-4 absolute -bottom-[40px] lg:-right-1 bg-white rounded-full">
                 {ImageList.map((item) => (
@@ -115,12 +116,15 @@ const Hero = ({ handleOrderPopup }) => {
                       setImageId(
                         item.id === 1 ? Book1 : item.id === 2 ? Book2 : Book3
                       );
+                    
                       setTitle(item.title);
-                      setDescription(item.description);
+                  
+                      setPrice(product.price)
                     }}
                     alt="biryani img"
                     className="max-w-[100px] h-[100px] object-contain inline-block hover:scale-110 duration-200"
                   />
+                  
                 ))}
               </div>
             </div>

@@ -38,9 +38,9 @@ export default function MyApplication() {
         }
     }, [isAuthroized]);
 
-    if(!isAuthroized){
-        navigateTo("/");
-    }
+    // if(!isAuthroized){
+    //     navigateTo("/");
+    // }
 
     const deleteApplication = (id) => {
         try{

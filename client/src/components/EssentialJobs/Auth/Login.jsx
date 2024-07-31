@@ -9,7 +9,9 @@ import { Context } from '../../../main';
 import { MdOutlineMailOutline } from 'react-icons/md';
 // import { Context } from '../../../hooks/Context';
 import { useState } from 'react';
-import Navbar from '../../Ejobs/Navbar';
+import Navbar from '../../LandingPage/Navbar';
+import HomeNavbar from '../../../pages/LandingPage/essentialLanding/HomeNavbar';
+
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
@@ -47,6 +49,7 @@ const Login = () => {
   return (
     <>
     {/* <Navbar /> */}
+      <Navbar />
       <section className="authPage">
         <div className="container">
           <div className="header">

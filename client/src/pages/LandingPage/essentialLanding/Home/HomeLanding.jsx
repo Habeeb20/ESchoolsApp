@@ -55,8 +55,8 @@ export default function HomeLanding() {
                 </FadeIn >
                 <p>Connect students, the world of students, schools and exams together.</p>
                 <div className='d-flex flex-column flex-sm-row align-items-center'>
-                    <Link to="/courses">
-                        <button type='button' className='btn btn-success btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Our Courses</button>
+                    <Link to="/about">
+                        <button type='button' className='btn btn-success btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>About us</button>
                     </Link>
                     <Link to="/contact">
                         <button type='button' className='btn btn-outline-light btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Contact Us</button>

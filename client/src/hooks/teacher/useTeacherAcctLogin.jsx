@@ -20,7 +20,7 @@ export default function useTeacherAcctLogin() {
             })
 
             //check if the response is OK
-            if(!response.ok){
+            if(!res.ok){
                 const errorText = await res.text(); //read raw response text
                 let errorJson;
                 try {

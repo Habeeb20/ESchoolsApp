@@ -666,7 +666,9 @@ import SchOwnerSignup from './pages/schOwner/SchOwnerSignup';
 import SchOwnerDashboard from './pages/schOwner/SchOwnerDashboard';
 import SchOwnerHome from './pages/schOwner/SchOwnerHome';
 import CreateSchool from './pages/schOwner/CreateSchool';
-
+import Contact from './pages/LandingPage/essentialLanding/Contact/Contact';
+import LandingAbout from './pages/LandingPage/essentialLanding/About/About'
+import Scholarship from './pages/Scholarship';
 
 
 //schowner
@@ -859,6 +861,16 @@ function App() {
          <Route path="/schownerhome" element={<SchOwnerHome />} />
          <Route path="/schownercreate" element={<CreateSchool />} />
 
+         //Scholarship
+         <Route path='/scholarship' element={<Scholarship/>} />
+
+
+
+         //others
+
+         <Route path='/contact' element={<Contact/>} />
+          
+         <Route path='/about' element={<LandingAbout/>} />
 
 
 

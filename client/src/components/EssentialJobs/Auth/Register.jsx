@@ -9,6 +9,7 @@ import { FaPhoneFlip } from "react-icons/fa6";
 import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
+import HomeNavbar from "../../../pages/LandingPage/essentialLanding/HomeNavbar";
 
 function Register() {
     const [email, setEmail] = useState("");
@@ -51,6 +52,7 @@ function Register() {
   
     return (
       <>
+      <Navbar />
         <section className="authPage">
           <div className="container">
             <div className="header">

@@ -73,7 +73,7 @@ export default function Contact() {
             <h2 className='text-center mb-5'>Our Locations</h2>
             <div className='row g-4'>
                 <div className='col-lg-4 d-flex flex-column align-items-center'>
-                    <img src={LondonLocationImg} className='img-fluid' alt="" />
+                    <img src={LodonLocatingImg} className='img-fluid' alt="" />
                     <h3 className='text-center mt-3'>London</h3>
                 </div>
                 <div className='col-lg-4 d-flex flex-column align-items-center'>

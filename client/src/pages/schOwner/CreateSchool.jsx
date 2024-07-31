@@ -143,8 +143,9 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import { useNavigate } from 'react-router-dom';
 const CreateSchool = () => {
+  const navigate = useNavigate()
   const [school, setSchool] = useState({
     name: '',
     history: '',
@@ -182,6 +183,7 @@ const CreateSchool = () => {
         headers: { 'x-auth-token': localStorage.getItem('token') }
       });
       alert('School created successfully');
+      navigate('/schownerdashboard')
     } catch (err) {
       console.error(err);
     }

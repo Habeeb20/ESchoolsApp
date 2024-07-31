@@ -30,7 +30,7 @@ export default function TNavbar() {
          <header>
         <div style={buttonBackground} className="container">
             <Link style={link} to="#"><h1>ESchools</h1></Link>
-            <Link style={link} to="/landingpage"><h1>Back</h1></Link>
+            <Link style={link} to="/landinghome"><h1>Back</h1></Link>
             <nav>
                 {teacher && (
                     <div>
