@@ -25,7 +25,7 @@ export default function HomeNavbar() {
               </span>
             </Link>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls='basic-navbar-nav' className='bg-light' />
+          <Navbar.Toggle aria-controls='basic-navbar-nav' className='bg-light h-6' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav  className='me-auto justify-content-end w-100'>
               <Nav.Link href='/' className='text-uppercase'>Home</Nav.Link>
@@ -34,10 +34,10 @@ export default function HomeNavbar() {
               <Nav.Link href='/teacherpage' className='text-uppercase'>Teacher</Nav.Link>
               <Nav.Link href='/ejobslogin' className='text-uppercase'>E-jobs</Nav.Link>
               <Nav.Link href='/scholarship' className='text-uppercase'>Scholarships</Nav.Link>
-              <Nav.Link href='/bookhomepage' className='text-uppercase'>Exams</Nav.Link>
+              <Nav.Link href='/exammainpage' className='text-uppercase'>Exams</Nav.Link>
               <Nav.Link href='/Aihome' className='text-uppercase'>Comparism</Nav.Link>
               <Nav.Link href='/mainpage' className='text-uppercase'>Books</Nav.Link>
-              <Nav.Link href='/contact' className='text-uppercase'>Tutorial</Nav.Link>
+              <Nav.Link href='/tutorial' className='text-uppercase'>Tutorial</Nav.Link>
               <Nav.Link href='/contact' className='text-uppercase'>Abroad</Nav.Link>
             </Nav>
           </Navbar.Collapse>

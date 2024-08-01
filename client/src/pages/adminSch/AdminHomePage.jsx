@@ -121,6 +121,10 @@ import { getAllTeachers } from '../../redux/teacherRelated/teacherHandle';
 import Students from '../../assets/img1.png';
 import Classes from '../../assets/img2.png';
 import Teachers from '../../assets/img3.png';
+import student from '../../assets/website/student.webp';
+import student2 from '../../assets/website/student2.webp';
+import classrm from '../../assets/website/classrm.webp'
+import class2 from '../../assets/website/class2.webp'
 import Fees from '../../assets/img4.png';
 import StyledButtons from './StyledButtons';
 
@@ -148,28 +152,28 @@ const AdminHomePage = () => {
             <Grid container spacing={4}>
                 <Grid item xs={12} md={6} lg={3}>
                     <StyledPaper>
-                        <img src={Students} alt="Students" />
+                        <img src={student} alt="Students" />
                         <Title>Total Students</Title>
                         <Data start={0} end={numberOfStudents} duration={2.5} />
                     </StyledPaper>
                 </Grid>
                 <Grid item xs={12} md={6} lg={3}>
                     <StyledPaper>
-                        <img src={Classes} alt="Classes" />
+                        <img src={classrm} alt="Classes" />
                         <Title>Total Classes</Title>
                         <Data start={0} end={numberOfClasses} duration={2.5} />
                     </StyledPaper>
                 </Grid>
                 <Grid item xs={12} md={6} lg={3}>
                     <StyledPaper>
-                        <img src={Teachers} alt="Teachers" />
+                        <img src={student2} alt="Teachers" />
                         <Title>Total Teachers</Title>
                         <Data start={0} end={numberOfTeachers} duration={2.5} />
                     </StyledPaper>
                 </Grid>
                 <Grid item xs={12} md={6} lg={3}>
                     <StyledPaper>
-                        <img src={Fees} alt="Fees" />
+                        <img src={class2} alt="Fees" />
                         <Title>Fees Collection</Title>
                         <Data start={0} end={23000} duration={2.5} prefix="$" />
                     </StyledPaper>

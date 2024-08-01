@@ -661,10 +661,7 @@ import BookList from './components/searchBook/component/BookList/BookList'
 import BookDetails from './components/searchBook/component/BookDetails/BookDetails'
 import Payment from './pages/Payment/Payment'
 import PaymentSuccess from './pages/Payment/PaymentSuccess';
-import SchOwnerSignin from './pages/schOwner/SchOwnerSignin';
-import SchOwnerSignup from './pages/schOwner/SchOwnerSignup';
-import SchOwnerDashboard from './pages/schOwner/SchOwnerDashboard';
-import SchOwnerHome from './pages/schOwner/SchOwnerHome';
+
 import CreateSchool from './pages/schOwner/CreateSchool';
 import Contact from './pages/LandingPage/essentialLanding/Contact/Contact';
 import LandingAbout from './pages/LandingPage/essentialLanding/About/About'
@@ -673,8 +670,16 @@ import Scholarship from './pages/Scholarship';
 
 //schowner
 
+import SchOwnerSignin from './pages/schOwner/SchOwnerSignin';
+import SchOwnerSignup from './pages/schOwner/SchOwnerSignup';
+import SchOwnerDashboard from './pages/schOwner/SchOwnerDashboard';
+import SchOwnerHome from './pages/schOwner/SchOwnerHome';
 
 
+
+//exam
+import ExamMain from './pages/Exams/ExamMain';
+import Tutorial from './pages/Tutorial';
 
 // import StudentDashboardSch from './pages/studentSch/StudentDashboard';
 // import TeacherDashboard from './pages/teacherSch/TeacherDashboard';
@@ -871,6 +876,14 @@ function App() {
          <Route path='/contact' element={<Contact/>} />
           
          <Route path='/about' element={<LandingAbout/>} />
+
+         //exams
+         <Route path='/exammainpage' element={<ExamMain/>} />
+
+
+         //Tutorial
+
+         <Route path='/tutorial' element={<Tutorial />} />
 
 
 
