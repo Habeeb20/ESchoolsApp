@@ -16,6 +16,7 @@ import bk2 from '../assets/website/bk2.jpg'
 import bk3 from '../assets/website/bk3.jpg'
 import bk4 from '../assets/website/bk4.jpg'
 import bk5 from '../assets/website/bk5.jpg'
+import Eatery from './eatery/Eatery';
 const Tutorial = () => {
   const [searchTerm, setSearchTerm] = useState('')  
 
@@ -153,6 +154,7 @@ const Tutorial = () => {
           <p>&copy; 2024 Tutorial Guide</p>
         </footer>
       </div>
+      <Eatery />
       <Footer />
     </>
   );

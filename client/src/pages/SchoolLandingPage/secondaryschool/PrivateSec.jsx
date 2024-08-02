@@ -2,11 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../../../components/BookEssential/Footer';
 import SchoolNavbar from '../schoolselection/SchoolNavbar';
+import Nav from '../../../components/Nav/Nav';
+import Navbar from '../../../components/LandingPage/Navbar';
 
 export default function PrivateSec() {
   const headerStyle = {
     backgroundColor: '#f8f8f8',
     padding: '10px',
+    paddingTop: "14%",
     textAlign: 'center',
     borderBottom: '1px solid #ddd',
   };
@@ -88,7 +91,8 @@ export default function PrivateSec() {
 
   return (
     <>
-      <SchoolNavbar/>
+      <Nav />
+      {/* <SchoolNavbar/> */}
       <header style={headerStyle}>
         <h1>Private Secondary Schools</h1>
       </header>
@@ -96,6 +100,7 @@ export default function PrivateSec() {
         <input type="text" placeholder="Search..." />
         <button style={buttonStyle}>Search</button>
       </section>
+      <Navbar />
       <section style={gridStyle}>
         {cardDetails.map((card, index) => (
           <div key={index} style={cardStyle}>

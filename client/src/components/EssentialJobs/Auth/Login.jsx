@@ -49,7 +49,7 @@ const Login = () => {
   return (
     <>
     {/* <Navbar /> */}
-      <Navbar />
+      <HomeNavbar />
       <section className="authPage">
         <div className="container">
           <div className="header">

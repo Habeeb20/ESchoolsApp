@@ -2,25 +2,28 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../../../components/BookEssential/Footer';
 import SchoolNavbar from '../schoolselection/SchoolNavbar';
-import CovenantImage from '../assets/universities/covenant.jpg';
-import BabcockImage from '../assets/universities/babcock.jpg';
-import AbuadImage from '../assets/universities/abuad.jpg';
-import AunImage from '../assets/universities/aun.jpg';
-import BowenImage from '../assets/universities/bowen.jpg';
-import IgbinedionImage from '../assets/universities/igbinedion.jpg';
-import PauImage from '../assets/universities/pau.jpg';
-import BellsImage from '../assets/universities/bells.jpg';
-import RedeemersImage from '../assets/universities/redeemers.jpg';
-import CalebImage from '../assets/universities/caleb.jpg';
-import JabuImage from '../assets/universities/jabu.jpg';
-import AcuImage from '../assets/universities/acu.jpg';
-import BazeImage from '../assets/universities/baze.jpg';
-import LandmarkImage from '../assets/universities/landmark.jpg';
-import VeritasImage from '../assets/universities/veritas.jpg';
-import NileImage from '../assets/universities/nile.jpg';
-import MadonnaImage from '../assets/universities/madonna.jpg';
-import HeaderBackground from '../assets/universities/nigeria_university.jpg';
+import CovenantImage from '../../../assets/university/un.jfif';
+import BabcockImage from '../../../assets/university/uni1.jfif';
+import AbuadImage from '../../../assets/university/uni10.jfif';
+import AunImage from '../../../assets/university/uni11.jfif';
+import BowenImage from '../../../assets/university/uni9.jfif';
+import IgbinedionImage from '../../../assets/university/uni3.jfif';
+import PauImage from '../../../assets/university/uni14.jfif';
+import BellsImage from '../../../assets/university/uni15.jfif';
+import RedeemersImage from '../../../assets/university/uni16.jfif';
+import CalebImage from '../../../assets/university/uni3.jfif';
+import JabuImage from '../../../assets/university/uni1.jfif';
+import AcuImage from '../../../assets/university/uni5.jfif';
+import BazeImage from '../../../assets/university/uni6.webp';
+import LandmarkImage from '../../../assets/university/uni7.webp';
+import VeritasImage from '../../../assets/university/uni8.gif';
+import NileImage from '../../../assets/university/uni9.jfif';
+import MadonnaImage from '../../../assets/university/uni10.jfif';
+import HeaderBackground from '../../../assets/university/uni11.jfif';
 
+import UniNav from './UniNav'
+import Navbar from '../../../components/LandingPage/Navbar';
+import HomeNavbar from '../../LandingPage/essentialLanding/HomeNavbar';
 export default function PrivateUni() {
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -29,6 +32,7 @@ export default function PrivateUni() {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     padding: '50px 20px',
+   
     textAlign: 'center',
     color: 'white',
     fontSize: '2em',
@@ -115,7 +119,7 @@ export default function PrivateUni() {
 
   return (
     <>
-      <SchoolNavbar />
+      <HomeNavbar />
       <header style={headerStyle}>
         <h1>List of Private Universities</h1>
       </header>
@@ -128,6 +132,7 @@ export default function PrivateUni() {
         />
         <button style={buttonStyle}>Search</button>
       </section>
+      <UniNav />
       <section style={gridStyle}>
         {filteredCards.map((card, index) => (
           <div key={index} style={cardStyle}>

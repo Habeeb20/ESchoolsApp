@@ -5,6 +5,7 @@ import TypingAnim from "../../components/AIchat/TypinAnim";
 
 import Navbar from "../../components/LandingPage/Navbar";
 import { Link } from "react-router-dom";
+import HomeNavbar from "../LandingPage/essentialLanding/HomeNavbar";
 const background = {
   backgroundColor : "#05101c",
   color: "white"
@@ -73,7 +74,7 @@ const HomeChat = () => {
   return (
     <div style={styles.html}>
       <div style={styles.body}>
-        <Navbar />
+        <HomeNavbar />
       <Box width={"100%"} height={"100%"}>
       <Box
         sx={{
