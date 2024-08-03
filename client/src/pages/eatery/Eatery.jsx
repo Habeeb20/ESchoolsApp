@@ -145,7 +145,35 @@
 
 import React, { useState } from 'react';
 import sampleImage from '../../assets/website/strip.png';
-
+import f from '../../assets/food/fo1.jfif'
+import f2 from '../../assets/food/fo2.jfif'
+import f3 from '../../assets/food/fo3.jfif'
+import f4 from '../../assets/food/fo4.jfif'
+import f5 from '../../assets/food/fo5.jfif'
+import f6 from '../../assets/food/fo6.jfif'
+import f7 from '../../assets/food/fo7.jfif'
+import f8 from '../../assets/food/fo8.jfif'
+import f9 from '../../assets/food/fo9.jfif'
+import f10 from '../../assets/food/fo10.jfif'
+import f11 from '../../assets/food/fo11.jfif'
+import f12 from '../../assets/food/fo12.jfif'
+import f13 from '../../assets/food/fo13.jfif'
+import f14 from '../../assets/food/fo14.jfif'
+import f15 from '../../assets/food/fo15.jfif'
+import f16 from '../../assets/food/fo16.jfif'
+import f17 from '../../assets/food/fo17.jfif'
+import f18 from '../../assets/food/fo18.jfif'
+import f19 from '../../assets/food/fo19.jfif'
+import f20 from '../../assets/food/fo20.jfif'
+import f22 from '../../assets/food/f22.jfif'
+import f23 from '../../assets/food/f23.jfif'
+import f24 from '../../assets/food/f24.jfif'
+import f25 from '../../assets/food/f25.jfif'
+import f26 from '../../assets/food/f26.jfif'
+import f27 from '../../assets/food/f27.jfif'
+import f28 from '../../assets/food/f28.jfif'
+import f29 from '../../assets/food/f29.jfif'
+import f30 from '../../assets/food/f30.jfif'
 const styles = {
   container: {
     fontFamily: 'Arial, sans-serif',
@@ -210,24 +238,33 @@ const styles = {
 };
 
 const items = [
-  { name: 'Item 1', description: 'Description 1', image: sampleImage },
-  { name: 'Item 2', description: 'Description 2', image: sampleImage },
-  { name: 'Item 3', description: 'Description 3', image: sampleImage },
-  { name: 'Item 4', description: 'Description 4', image: sampleImage },
-  { name: 'Item 5', description: 'Description 5', image: sampleImage },
-  { name: 'Item 6', description: 'Description 6', image: sampleImage },
-  { name: 'Item 7', description: 'Description 7', image: sampleImage },
-  { name: 'Item 8', description: 'Description 8', image: sampleImage },
-  { name: 'Item 9', description: 'Description 9', image: sampleImage },
-  { name: 'Item 10', description: 'Description 10', image: sampleImage },
-  { name: 'Item 11', description: 'Description 11', image: sampleImage },
-  { name: 'Item 12', description: 'Description 12', image: sampleImage },
-  { name: 'Item 13', description: 'Description 13', image: sampleImage },
-  { name: 'Item 14', description: 'Description 14', image: sampleImage },
-  { name: 'Item 15', description: 'Description 15', image: sampleImage },
-  { name: 'Item 16', description: 'Description 16', image: sampleImage },
-  { name: 'Item 17', description: 'Description 17', image: sampleImage },
-  { name: 'Item 18', description: 'Description 18', image: sampleImage },
+  { name: 'Item 1', description: 'Description 1', image: f },
+  { name: 'Item 2', description: 'Description 2', image: f2 },
+  { name: 'Item 3', description: 'Description 3', image: f3 },
+  { name: 'Item 4', description: 'Description 4', image: f7 },
+  { name: 'Item 5', description: 'Description 5', image: f4 },
+  { name: 'Item 6', description: 'Description 6', image: f5 },
+  { name: 'Item 7', description: 'Description 7', image: f6 },
+  { name: 'Item 8', description: 'Description 8', image: f9 },
+  { name: 'Item 9', description: 'Description 9', image: f8 },
+  { name: 'Item 10', description: 'Description 10', image: f10 },
+  { name: 'Item 11', description: 'Description 11', image: f12 },
+  { name: 'Item 12', description: 'Description 12', image: f13 },
+  { name: 'Item 13', description: 'Description 13', image: f14 },
+  { name: 'Item 14', description: 'Description 14', image: f15 },
+  { name: 'Item 15', description: 'Description 15', image: f16 },
+  { name: 'Item 16', description: 'Description 16', image: f17 },
+  { name: 'Item 17', description: 'Description 17', image: f18 },
+  { name: 'Item 18', description: 'Description 18', image: f19 },
+  { name: 'Item 18', description: 'Description 18', image: f11 },
+  { name: 'Item 19', description: 'Description 18', image: f22 },
+  { name: 'Item 20', description: 'Description 18', image: f23 },
+  { name: 'Item 25', description: 'Description 18', image: f25 },
+  { name: 'Item 26', description: 'Description 18', image: f26 },
+  { name: 'Item 27', description: 'Description 18', image: f27 },
+  { name: 'Item 28', description: 'Description 18', image: f28 },
+  { name: 'Item 29', description: 'Description 18', image: f29 },
+  { name: 'Item 30', description: 'Description 18', image: f30 },
 ];
 
 export default function Eatery() {
@@ -283,7 +320,7 @@ export default function Eatery() {
       </section>
 
       <section style={styles.advertSection}>
-        <img src={sampleImage} alt="Advert" style={{ width: '100%', height: 'auto' }} />
+        <img src={f24} alt="Advert" style={{ width: '100%', height: 'auto' }} />
         <p>Thursday 06</p>
         <p>Title of the Advert</p>
         <p>Description of the advert goes here.</p>
