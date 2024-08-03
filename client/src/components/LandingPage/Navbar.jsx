@@ -14,7 +14,7 @@ export default function Navbar() {
    <header>
         <div style={{marginLeft:"10%"}} className="container">
           
-            <Link to="/universities/private"><h6 style={{fontSize:"100%", fontWeight: "bolder", color:"green"}}>Universities</h6></Link>
+            <Link to="/universities/federal"><h6 style={{fontSize:"100%", fontWeight: "bolder", color:"green"}}>Universities</h6></Link>
             <Link to="/polytechnics/state"><h6 style={{fontSize:"100%", fontWeight: "bolder", color:"green"}}>Polytechnic</h6></Link>
             <Link to="/colleges-of-education"><h6 style={{fontSize:"100%", fontWeight: "bolder", color:"green"}}>College Of Edu</h6></Link>
             <Link to="/secondary-schools/government"><h6 style={{fontSize:"100%", fontWeight: "bolder", color:"green"}}>Secondary</h6></Link>

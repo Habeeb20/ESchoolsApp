@@ -40,12 +40,13 @@ export default function StateUni() {
 
   const headerStyle = {
     backgroundColor: '#f8f8f8',
-    padding: '10px',
+    padding: '80px 20px',
     textAlign: 'center',
     borderBottom: '1px solid #ddd',
     backgroundImage: `url(${u1})`, // Replace with actual URL
     backgroundSize: 'cover',
     color: 'white',
+    fontSize:"180%"
   };
 
   const searchStyle = {

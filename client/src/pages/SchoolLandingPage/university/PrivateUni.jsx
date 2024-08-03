@@ -132,7 +132,8 @@ export default function PrivateUni() {
         />
         <button style={buttonStyle}>Search</button>
       </section>
-      <UniNav />
+      <Navbar />
+      {/* <UniNav /> */}
       <section style={gridStyle}>
         {filteredCards.map((card, index) => (
           <div key={index} style={cardStyle}>
