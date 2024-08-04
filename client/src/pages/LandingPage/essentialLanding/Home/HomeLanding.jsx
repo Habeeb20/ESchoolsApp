@@ -16,6 +16,8 @@ import Groups from '../Groups';
 import KenyanPresident from '../utils/images/kenyan president.png'
 import BAT from '../utils/images/tinubuConstruction.png'
 import Diddy from '../utils/images/Diddy.png'
+import Benefit from '../../../Benefit/Benefit';
+
 const blogs = [
     {
         id: 1,
@@ -106,6 +108,7 @@ export default function HomeLanding() {
         </div>
         
         <Groups />
+        <Benefit />
      
 
         <div className='blog-section text-light py-5'>
@@ -131,6 +134,7 @@ export default function HomeLanding() {
                 </Link>
             </div>
         </div>
+       
         
     </div>
     <Footer />

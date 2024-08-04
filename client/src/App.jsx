@@ -684,6 +684,8 @@ import Authfinance from './pages/finance/AuthFinance';
 import FinanceDashboard from './pages/finance/FinanceDashboard';
 import FinanceStudentForm from './pages/finance/FinanceStudentForm';
 import FinanceExpenditure from './pages/finance/FinanceExpenditure';
+import BenefitPostForm from './pages/Benefit/BenefitPostForm';
+import Benefit from './pages/Benefit/Benefit';
 
 // import StudentDashboardSch from './pages/studentSch/StudentDashboard';
 // import TeacherDashboard from './pages/teacherSch/TeacherDashboard';
@@ -896,6 +898,9 @@ function App() {
          <Route path='/financestudentform' element={<FinanceStudentForm />} />
          <Route path='/financeexpenditure' element={<FinanceExpenditure />} />
 
+         //benefit
+         <Route path='/benefitpostform' element={<BenefitPostForm />} />
+         <Route path='/benefit' element={<Benefit />} />
 
 
 

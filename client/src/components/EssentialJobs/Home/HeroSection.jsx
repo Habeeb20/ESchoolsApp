@@ -47,8 +47,11 @@ const HeroSection = () => {
             <p>
               Find a job that interests you without disrupting your education
             </p>
-            <Link to='/job/getall'><button>get all jobs</button></Link>
-            <Link to='/application/me'>see my jobs</Link>
+            <div >
+                  <Link to='/job/getall'><button style={{border:"1px solid black", padding: "1%", backgroundColor: "green", color: "white", marginRight:"5%"}}>get all jobs</button></Link>
+                  <Link  to='/application/me'> <button style={{border:"1px solid black", padding: "1%", backgroundColor: "green", color: "white"}} >see my jobs</button></Link>
+            </div>
+            
           </div>
           <div className="image">
             <img src="/heroS.jpg" alt="hero" />
