@@ -44,6 +44,10 @@ import bookroute from "./routes/Book/bookroute.js";
 import paymentRoute from "./routes/paymentRoute.js";
 import admissionRouter from "./routes/admissionScrapper/admissionScrapper.js";
 import schOwnerRouter from "./routes/SchoolOwner/SchoolOwner.js";
+import financeAuthRouter from "./routes/finance/userFinance.js";
+import expenditureFinanceRoute from "./routes/finance/expenditureFinance.js";
+import financeStudentRouter from "./routes/finance/financeStudent.js";
+import financeSummaryRoute from "./routes/finance/financeSummary.js";
 
 
 const __dirname = path.resolve()
@@ -105,12 +109,6 @@ app.use("/api/user", EuserRoute);
 
 app.use("/api/school", schoolRoute)
 
-app.use(express.static(path.join(__dirname, '/client/dist')))
-
-
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'))
-})
 
 //chatAI
 
@@ -143,7 +141,21 @@ app.use('/api', admissionRouter)
 app.use("/api", schOwnerRouter)
 
 
+//finance
+
+app.use('/api', financeAuthRouter)
+app.use('/api', expenditureFinanceRoute)
+app.use('/api', financeStudentRouter)
+app.use('/api', financeSummaryRoute)
 // app.listen(port, () => {
 //     console.log("server is running on port " + port)
 // })
+
+app.use(express.static(path.join(__dirname, '/client/dist')))
+
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'))
+})
+
 

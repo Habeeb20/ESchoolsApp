@@ -15,7 +15,7 @@ const SideBar = () => {
     const location = useLocation();
 
     const menuItems = [
-        { to: '/', text: 'Home', icon: <HomeIcon />, activePaths: ["/", "/Admin/dashboard"] },
+        { to: '/studentlogin', text: 'Home', icon: <HomeIcon />, activePaths: ["/", "/Admin/dashboard"] },
         { to: '/Admin/classes', text: 'Classes', icon: <ClassOutlinedIcon />, activePaths: ['/Admin/classes'] },
         { to: '/Admin/subjects', text: 'Subjects', icon: <AssignmentIcon />, activePaths: ['/Admin/subjects'] },
         { to: '/Admin/teachers', text: 'Teachers', icon: <SupervisorAccountOutlinedIcon />, activePaths: ['/Admin/teachers'] },
@@ -37,7 +37,7 @@ const SideBar = () => {
                 to={item.to}
                 sx={{
                     '&:hover': { backgroundColor: '#333' },
-                    '&.Mui-selected': { backgroundColor: '#555', '&:hover': { backgroundColor: '#444' } },
+                    '&.Mui-selected': { backgroundColor: '#555', '&:hover': { backgroundColor: 'green' } },
                     backgroundColor: 'black',
                     color: 'white',
                     my: 0.5,

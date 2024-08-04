@@ -140,7 +140,7 @@ const HomeNavbar = () => {
   return (
     <NavbarContainer>
       <LogoContainer>
-        <Link to="/" className='navbar-brand d-flex align-items-center'>
+        <Link to="/schoolhomepage" className='navbar-brand d-flex align-items-center'>
           <LogoImage src={footerLogo} alt="Logo" />
           {/* <LogoText>ESchools</LogoText> */}
         </Link>
@@ -150,7 +150,7 @@ const HomeNavbar = () => {
       </ToggleButton>
       <LinksContainer isOpen={isMenuOpen}>
         <LinkItem>
-          <StyledNavLink to="/">Home</StyledNavLink>
+          <StyledNavLink to="/landinghome">Home</StyledNavLink>
         </LinkItem>
         <LinkItem>
           <StyledNavLink to="/admissiondat">Admission</StyledNavLink>

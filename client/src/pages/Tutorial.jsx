@@ -260,7 +260,14 @@
 
 // export default Tutorial;
 
-import React, { useState } from 'react';
+
+
+
+
+
+
+import React from 'react';
+import { useState } from 'react';
 import HomeNavbar from './LandingPage/essentialLanding/HomeNavbar';
 import tutorial from '../assets/website/tutorial.jpg';
 import tutorial2 from '../assets/website/tutorial2.jpg';
@@ -287,28 +294,28 @@ const Tutorial = () => {
   };
 
   const tutorDetails = [
-    { name: "Taiwo", img: tutorial2 },
-    { name: "Jimoh", img: tutorial3 },
-    { name: "Tutor 3", img: tutorial4 },
-    { name: "Tutor 4", img: tutorial5 },
-    { name: "Tutor 5", img: tutorial7 },
-    { name: "Tutor 6", img: tutorial9 },
+    { name: 'Taiwo', img: tutorial2 },
+    { name: 'Jimoh', img: tutorial3 },
+    { name: 'Tutor 3', img: tutorial4 },
+    { name: 'Tutor 4', img: tutorial5 },
+    { name: 'Tutor 5', img: tutorial7 },
+    { name: 'Tutor 6', img: tutorial9 },
   ];
 
   const recommendedDetails = [
-    { name: "Recommended Tutor 1", img: tutorial7 },
-    { name: "Recommended Tutor 2", img: tutorial8 },
-    { name: "Recommended Tutor 3", img: tutorial9 },
-    { name: "Recommended Tutor 4", img: tutorial10 },
-    { name: "Recommended Tutor 5", img: tutorial3 },
-    { name: "Recommended Tutor 6", img: tutorial9 },
+    { name: 'Recommended Tutor 1', img: tutorial7 },
+    { name: 'Recommended Tutor 2', img: tutorial8 },
+    { name: 'Recommended Tutor 3', img: tutorial9 },
+    { name: 'Recommended Tutor 4', img: tutorial10 },
+    { name: 'Recommended Tutor 5', img: tutorial3 },
+    { name: 'Recommended Tutor 6', img: tutorial9 },
   ];
 
   const bookDetails = [
-    { name: "Atomic habit", img: bk2 },
-    { name: "Twisted Love", img: bk3 },
-    { name: "Court of misty fury", img: bk4 },
-    { name: "Read people like a book", img: bk5 },
+    { name: 'Atomic habit', img: bk2 },
+    { name: 'Twisted Love', img: bk3 },
+    { name: 'Court of misty fury', img: bk4 },
+    { name: 'Read people like a book', img: bk5 },
   ];
 
   const filteredTutorDetails = tutorDetails.filter((card) =>
@@ -325,11 +332,7 @@ const Tutorial = () => {
       <div style={styles.container}>
         {/* Header Section */}
         <header style={styles.header}>
-          <img
-            src={tutorial}
-            alt="Students Learning"
-            style={styles.headerImage}
-          />
+          <img src={tutorial} alt="Students Learning" style={styles.headerImage} />
           <div style={styles.headerText}>
             <FadeIn delay={0.4} direction="down">
               <h1>ARE YOU PREPARING FOR ANY EXAMINATION?</h1>
@@ -351,15 +354,11 @@ const Tutorial = () => {
 
         {/* Tutors Near You Section */}
         <section style={styles.tutorsSection}>
-          <h2 style={styles.sectionTitle}>Tutors near you</h2>
+          <h2 style={styles.sectionHeader}>Tutors near you</h2>
           <div style={styles.cards}>
             {filteredTutorDetails.map((detail, i) => (
               <div style={styles.card} key={i}>
-                <img
-                  src={detail.img}
-                  alt={detail.name}
-                  style={styles.cardImage}
-                />
+                <img src={detail.img} alt={detail.name} style={styles.cardImage} />
                 <div>{ratingStars(3)}</div>
                 <p>{detail.name}</p>
               </div>
@@ -369,15 +368,11 @@ const Tutorial = () => {
 
         {/* Highly Recommended Section */}
         <section style={styles.recommendedSection}>
-          <h2 style={styles.sectionTitle}>Highly recommended</h2>
+          <h2 style={styles.sectionHeader}>Highly recommended</h2>
           <div style={styles.cards}>
             {filteredRecommendedDetails.map((detail, i) => (
               <div style={styles.card} key={i}>
-                <img
-                  src={detail.img}
-                  alt={detail.name}
-                  style={styles.cardImage}
-                />
+                <img src={detail.img} alt={detail.name} style={styles.cardImage} />
                 <div>{ratingStars(5)}</div>
                 <p>{detail.name}</p>
               </div>
@@ -387,7 +382,10 @@ const Tutorial = () => {
 
         {/* Featured Section */}
         <section style={styles.featuredSection}>
-          <h2>Be engaged with the best Tutors Nationwide with experience from different parts of the Globe</h2>
+          <h2>
+            Be engaged with the best Tutors Nationwide with experience from different parts of
+            the Globe
+          </h2>
           <img
             src="https://unsplash.com/photos/5fNmWej4tAA/download?force=true&w=640"
             alt="Featured Tutors"
@@ -396,16 +394,12 @@ const Tutorial = () => {
         </section>
 
         {/* Books Section */}
-        <section style={styles.booksSection}>
-          <h2 style={styles.sectionTitle}>Recommended Books</h2>
+        <section style={styles.featuredSection}>
+          <h2>Recommended Books</h2>
           <div style={styles.cards}>
             {bookDetails.map((detail, i) => (
               <div style={styles.bookCard} key={i}>
-                <img
-                  src={detail.img}
-                  alt={detail.name}
-                  style={styles.bookImage}
-                />
+                <img src={detail.img} alt={detail.name} style={styles.bookImage} />
                 <p>{detail.name}</p>
               </div>
             ))}
@@ -430,7 +424,7 @@ const styles = {
     lineHeight: '1.6',
     margin: 0,
     padding: 0,
-    marginTop: "7%",
+    marginTop: '7%',
   },
   header: {
     position: 'relative',
@@ -447,6 +441,7 @@ const styles = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
+    padding: '10px',
   },
   searchSection: {
     display: 'flex',
@@ -484,27 +479,24 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-around',
     flexWrap: 'wrap',
-    gap: '10px',
   },
   card: {
     backgroundColor: '#fff',
     padding: '20px',
     borderRadius: '8px',
     margin: '10px',
-    flex: '1 1 calc(33.333% - 20px)',
+    width: '30%',
     textAlign: 'center',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-    transition: 'transform 0.2s',
   },
   bookCard: {
     backgroundColor: '#fff',
     padding: '20px',
     borderRadius: '8px',
     margin: '10px',
-    flex: '1 1 calc(25% - 20px)',
+    width: '22%',
     textAlign: 'center',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-    transition: 'transform 0.2s',
   },
   cardImage: {
     width: '100%',
@@ -522,37 +514,37 @@ const styles = {
     textAlign: 'center',
     padding: '10px',
   },
-  sectionTitle: {
+  sectionHeader: {
     textAlign: 'center',
   },
-  '@media (max-width: 1024px)': {
-    card: {
-      flex: '1 1 calc(45% - 20px)',
-    },
-    bookCard: {
-      flex: '1 1 calc(45% - 20px)',
-    },
-  },
   '@media (max-width: 768px)': {
-    card: {
-      flex: '1 1 calc(100% - 20px)',
+    headerText: {
+      padding: '5px',
     },
-    bookCard: {
-      flex: '1 1 calc(100% - 20px)',
-    },
-    searchInput: {
-      width: '100%',
-    },
-  },
-  '@media (max-width: 480px)': {
-    card: {
-      flex: '1 1 calc(100% - 20px)',
-    },
-    bookCard: {
-      flex: '1 1 calc(100% - 20px)',
+    searchSection: {
+      padding: '10px',
     },
     searchInput: {
       width: '100%',
+    },
+    cards: {
+      justifyContent: 'center',
+    },
+    card: {
+      width: '80%',
+      margin: '10px 0',
+    },
+    bookCard: {
+      width: '80%',
+      margin: '10px 0',
+    },
+    cardImage: {
+      width: '100%',
+      height: 'auto',
+    },
+    bookImage: {
+      width: '100%',
+      height: 'auto',
     },
   },
 };

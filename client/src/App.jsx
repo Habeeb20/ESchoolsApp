@@ -680,6 +680,10 @@ import SchOwnerHome from './pages/schOwner/SchOwnerHome';
 //exam
 import ExamMain from './pages/Exams/ExamMain';
 import Tutorial from './pages/Tutorial';
+import Authfinance from './pages/finance/AuthFinance';
+import FinanceDashboard from './pages/finance/FinanceDashboard';
+import FinanceStudentForm from './pages/finance/FinanceStudentForm';
+import FinanceExpenditure from './pages/finance/FinanceExpenditure';
 
 // import StudentDashboardSch from './pages/studentSch/StudentDashboard';
 // import TeacherDashboard from './pages/teacherSch/TeacherDashboard';
@@ -885,6 +889,12 @@ function App() {
 
          <Route path='/tutorial' element={<Tutorial />} />
 
+
+         //finance
+         <Route path='/finance' element={<Authfinance />} />
+         <Route path='/financedashboard' element={<FinanceDashboard />} />
+         <Route path='/financestudentform' element={<FinanceStudentForm />} />
+         <Route path='/financeexpenditure' element={<FinanceExpenditure />} />
 
 
 
