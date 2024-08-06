@@ -686,6 +686,13 @@ import FinanceStudentForm from './pages/finance/FinanceStudentForm';
 import FinanceExpenditure from './pages/finance/FinanceExpenditure';
 import BenefitPostForm from './pages/Benefit/BenefitPostForm';
 import Benefit from './pages/Benefit/Benefit';
+import SchAdminDashboard from './pages/schoolmanagement/SchAdminDashboard';
+import SchStudentDashboard from './pages/schoolmanagement/SchStudentDashboard';
+import SchTeacherDashboard from './pages/schoolmanagement/SchTeacherDashboard';
+import SchStudentLogin from './pages/schoolmanagement/SchStudentLogin';
+import SchTeacherLogin from './pages/schoolmanagement/SchTeacherLogin';
+import SchAdminLogin from './pages/schoolmanagement/SchAdminLogin';
+import SchAdminRegister from './pages/schoolmanagement/SchAdminRegister';
 
 // import StudentDashboardSch from './pages/studentSch/StudentDashboard';
 // import TeacherDashboard from './pages/teacherSch/TeacherDashboard';
@@ -901,6 +908,17 @@ function App() {
          //benefit
          <Route path='/benefitpostform' element={<BenefitPostForm />} />
          <Route path='/benefit' element={<Benefit />} />
+
+
+         //schoolmanangement
+         <Route path='/schadminregister' element={<SchAdminRegister />} />
+         <Route path='/schadminlogin' element={<SchAdminLogin />} />
+         <Route path='/schadmindashboard' element={<SchAdminDashboard />} />
+         <Route path='/schstudentdashboard' element={<SchStudentDashboard />} />
+         <Route path='/schteacherdashboard' element={<SchTeacherDashboard />} />
+         <Route path='/schstudentlogin' element={<SchStudentLogin />} />
+         <Route path='/schteacherlogin' element={<SchTeacherLogin />} />
+
 
 
 

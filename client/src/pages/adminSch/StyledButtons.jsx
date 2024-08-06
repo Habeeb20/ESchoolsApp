@@ -206,8 +206,8 @@ const StyledButtons = () => {
       <Link to="/Admin/addstudents" style={{ textDecoration: 'none', margin: '10px' }}>
         <ButtonDanger  style={{backgroundColor: 'green' }}  variant="contained">Add Students</ButtonDanger>
       </Link>
-      <Link to="/Admin/addnotice" style={{ textDecoration: 'none', margin: '10px' }}>
-        <ButtonWarning  style={{backgroundColor: 'green' }}  variant="contained">Add Notice</ButtonWarning>
+      <Link to="/schadminregister" style={{ textDecoration: 'none', margin: '10px' }}>
+        <ButtonWarning  style={{backgroundColor: 'green' }}  variant="contained">Manage Teachers</ButtonWarning>
       </Link>
       <Link to="/finance" style={{ textDecoration: 'none', margin: '10px' }}>
         <ButtonInfo  style={{backgroundColor: 'green' }}  variant="contained">Finance</ButtonInfo>

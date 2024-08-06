@@ -119,7 +119,7 @@ export default function Benefit() {
         <img src={postData.coverPhoto} alt="Cover" style={{ width: '100%', borderRadius: '4px' }} />
         <p style={{ marginTop: '10px' }}>{postData.text}</p>
       </div>
-      <Link to="/">
+      <Link to="/benefitpostform">
         <button style={buttonStyle}>Make Another Post</button>
       </Link>
     </div>

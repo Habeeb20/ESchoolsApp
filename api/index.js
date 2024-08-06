@@ -48,6 +48,9 @@ import financeAuthRouter from "./routes/finance/userFinance.js";
 import expenditureFinanceRoute from "./routes/finance/expenditureFinance.js";
 import financeStudentRouter from "./routes/finance/financeStudent.js";
 import financeSummaryRoute from "./routes/finance/financeSummary.js";
+import schAdminRoute from "./schoolManagement/schroute/adminRoute.js";
+import schstudentRoute from "./schoolManagement/schroute/schstudentRoute.js";
+import schteacherRoute from "./schoolManagement/schroute/schteacherRoute.js";
 
 
 const __dirname = path.resolve()
@@ -150,6 +153,10 @@ app.use('/api', financeSummaryRoute)
 // app.listen(port, () => {
 //     console.log("server is running on port " + port)
 // })
+
+app.use('/api', schAdminRoute)
+app.use('/api', schstudentRoute)
+app.use('/api', schteacherRoute)
 
 app.use(express.static(path.join(__dirname, '/client/dist')))
 

@@ -136,37 +136,37 @@ import E6 from "../../assets/exam/E6.jfif";
 const examsData = [
   {
     title: 'JAMB',
-    description: 'Description for JAMB...',
+    description: 'Description for JAMB...All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans',
     link: '/jamb-portal',
   },
   {
     title: 'WAEC',
-    description: 'Description for WAEC...',
+    description: 'Description for WAEC...All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans',
     link: '/waec-portal',
   },
   {
     title: 'NABTEB',
-    description: 'Description for NABTEB...',
+    description: 'Description for NABTEB...All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans',
     link: '/nabteb-portal',
   },
   {
     title: 'IELTS',
-    description: 'Description for IELTS...',
+    description: 'Description for IELTS...All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans',
     link: '/ielts-portal',
   },
   {
     title: 'GRE',
-    description: 'Description for GRE...',
+    description: 'Description for GRE...All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans',
     link: '/gre-portal',
   },
   {
     title: 'MASTERS',
-    description: 'Description for MASTERS...',
+    description: 'Description for MASTERS...All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans',
     link: '/masters-portal',
   },
   {
     title: 'PHD',
-    description: 'Description for PHD...',
+    description: 'Description for PHD....All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans',
     link: '/phd-portal',
   },
 ];
