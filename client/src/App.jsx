@@ -148,6 +148,10 @@ import FinanceStudentForm from './pages/finance/FinanceStudentForm';
 import FinanceExpenditure from './pages/finance/FinanceExpenditure';
 import BenefitPostForm from './pages/Benefit/BenefitPostForm';
 import Benefit from './pages/Benefit/Benefit';
+import TeacherForm from './pages/Teachers/TeacherForm';
+import TeacherList from './pages/Teachers/TeacherList';
+import TeacherDetail from './pages/Teachers/TeacherDetail';
+import TeacherGrid from './pages/Teachers/TeacherGrid';
 
 
 function App() {
@@ -155,6 +159,22 @@ function App() {
 
   const { isAuthorized, setIsAuthorized, setUser } = useContext(Context)
   const { currentRole } = useSelector(state => state.user);
+  const [teachers, setTeachers] = useState([])
+
+ 
+
+  useEffect(() => {
+    const storedTeachers = JSON.parse(localStorage.getItem('teachers')) || [];
+    setTeachers(storedTeachers);
+  }, []);
+
+  
+  const addTeacher = (teacher) => {
+    const updatedTeachers = [...teachers, teacher];
+    localStorage.setItem('teachers', JSON.stringify(updatedTeachers));
+    setTeachers(updatedTeachers);
+  };
+
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -228,7 +248,22 @@ function App() {
 
           
            //chat
-          <Route exact path='Aihome' element ={<HomeChat />}/>     <Route exact path='chat' element ={<Chat />}/>
+          <Route exact path='Aihome' element ={<HomeChat />}/>     
+          <Route exact path='chat' element ={<Chat />}/>
+
+
+
+          //teachers
+          {/* <Route exact path='/addteacher' element ={<TeacherForm />}/>
+          <Route exact path='/teachers' element ={<TeacherList />}/>
+          <Route exact path='/teacher/:id' element ={<TeacherDetail />}/>
+          <Route exact path='/teacher-grid' element ={<TeacherGrid />}/>
+           */}
+          <Route path="/addteacher" element={<TeacherForm addTeacher={addTeacher} />} />
+        <Route path="/teachers" element={<TeacherGrid teachers={teachers} />} />
+        <Route path="/teacher/:id" element={<TeacherDetail teachers={teachers} />} />
+          
+          
          
         
 
