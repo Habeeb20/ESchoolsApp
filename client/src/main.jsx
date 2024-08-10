@@ -158,8 +158,7 @@ import { Provider } from 'react-redux';
 import { AppProvider } from './context';
 import { StudentAcctContextProvider } from './context/Student/StudentAcctContext.jsx';
 import { StudentProfileContextProvider } from './context/Student/StudentProfileContext.jsx';
-import { TeacherContextProvider } from './context/Teacher/TeacherAccountContext.jsx';
-import { TeacherProfileStore } from './pages/Teacher/TeacherRedux/TeacherProfileStore.js';
+
 // Uncomment and configure if using Clerk
 // import { ClerkProvider } from '@clerk/clerk-react';
 // import TeacherLogin from './pages/Teacher/TeacherLogin.jsx';
@@ -186,14 +185,16 @@ const AppWrapper = () => {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <TeacherContextProvider>
+   
+      
         <StudentAcctContextProvider>
           <StudentProfileContextProvider>
+          <Provider store={store}>
             <AppWrapper />
+          </Provider>
           </StudentProfileContextProvider>
         </StudentAcctContextProvider>
-      </TeacherContextProvider>
-    </Provider>
+    
+   
   </React.StrictMode>
 );

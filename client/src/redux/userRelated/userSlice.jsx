@@ -1,12 +1,22 @@
+
 // import { createSlice } from '@reduxjs/toolkit';
+
+// const parseUserFromLocalStorage = () => {
+//     try {
+//         return JSON.parse(localStorage.getItem('user'));
+//     } catch (error) {
+//         console.error("Failed to parse user from localStorage:", error);
+//         return null;
+//     }
+// };
 
 // const initialState = {
 //     status: 'idle',
 //     userDetails: [],
 //     tempDetails: [],
 //     loading: false,
-//     currentUser: JSON.parse(localStorage.getItem('user')) || null,
-//     currentRole: (JSON.parse(localStorage.getItem('user')) || {}).role || null,
+//     currentUser: parseUserFromLocalStorage(),
+//     currentRole: (parseUserFromLocalStorage() || {}).role || null,
 //     error: null,
 //     response: null,
 //     darkMode: true
@@ -50,7 +60,7 @@
 //             state.currentUser = null;
 //             state.status = 'idle';
 //             state.error = null;
-//             state.currentRole = null
+//             state.currentRole = null;
 //         },
 
 //         doneSuccess: (state, action) => {
@@ -104,22 +114,13 @@
 
 import { createSlice } from '@reduxjs/toolkit';
 
-const parseUserFromLocalStorage = () => {
-    try {
-        return JSON.parse(localStorage.getItem('user'));
-    } catch (error) {
-        console.error("Failed to parse user from localStorage:", error);
-        return null;
-    }
-};
-
 const initialState = {
     status: 'idle',
     userDetails: [],
     tempDetails: [],
     loading: false,
-    currentUser: parseUserFromLocalStorage(),
-    currentRole: (parseUserFromLocalStorage() || {}).role || null,
+    currentUser: JSON.parse(localStorage.getItem('user')) || null,
+    currentRole: (JSON.parse(localStorage.getItem('user')) || {}).role || null,
     error: null,
     response: null,
     darkMode: true
@@ -163,7 +164,7 @@ const userSlice = createSlice({
             state.currentUser = null;
             state.status = 'idle';
             state.error = null;
-            state.currentRole = null;
+            state.currentRole = null
         },
 
         doneSuccess: (state, action) => {

@@ -1,6 +1,6 @@
 import express from "express";
 import StudentFinance from "../../models/finance/studentfinance.js";
-
+import { isAuthenticated } from "../../middlewares/auth.js";
 const financeStudentRouter = express.Router()
 
 financeStudentRouter.post('/financestudent', async(req, res) => {
@@ -16,7 +16,7 @@ financeStudentRouter.post('/financestudent', async(req, res) => {
 
 
 
-financeStudentRouter.get('/getfinancestudent', async(req, res) => {
+financeStudentRouter.get('/getfinancestudent', isAuthenticated, async(req, res) => {
     try {
         const student = await StudentFinance.find()
         res.status(200).json(student)

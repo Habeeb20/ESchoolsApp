@@ -1,10 +1,11 @@
 import express from "express";
 import StudentFinance from "../../models/finance/studentfinance.js";
 import ExpenditureFinance from "../../models/finance/expenditurefinance.js";
+import { isAuthenticated } from "../../middlewares/auth.js";
 
 const financeSummaryRoute = express.Router();
 
-financeSummaryRoute.get('/summary', async(req, res) => {
+financeSummaryRoute.get('/summary', isAuthenticated, async(req, res) => {
     try {
         const student = await StudentFinance.find()
         const expenditure = await ExpenditureFinance.find()

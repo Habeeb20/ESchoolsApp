@@ -17,6 +17,8 @@ import KenyanPresident from '../utils/images/kenyan president.png'
 import BAT from '../utils/images/tinubuConstruction.png'
 import Diddy from '../utils/images/Diddy.png'
 import Benefit from '../../../Benefit/Benefit';
+import Video from '../../../Video';
+import Number from '../../../Number';
 
 const blogs = [
     {
@@ -106,8 +108,9 @@ export default function HomeLanding() {
         <div className="py-5">
             <FaqAccordion />
         </div>
-        
+        <Number />
         <Groups />
+        <Video />
         <Benefit />
      
 

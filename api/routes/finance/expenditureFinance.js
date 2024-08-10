@@ -1,5 +1,6 @@
 import express from "express";
 import ExpenditureFinance from "../../models/finance/expenditurefinance.js";
+import { isAuthenticated } from "../../middlewares/auth.js";
 
 const expenditureFinanceRoute = express.Router()
 
@@ -14,7 +15,7 @@ expenditureFinanceRoute.post('/expenditure', async(req, res) => {
 });
 
 
-expenditureFinanceRoute.get('/getexpenditure', async(req, res) => {
+expenditureFinanceRoute.get('/getexpenditure', isAuthenticated, async(req, res) => {
     try {
         const expenditure = await ExpenditureFinance.find()
         res.status(200).json(expenditure)
