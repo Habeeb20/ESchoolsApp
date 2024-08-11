@@ -136,36 +136,57 @@ import E6 from "../../assets/exam/E6.jfif";
 const examsData = [
   {
     title: 'JAMB',
+    Start_date: 'Start-Date:',
+    End_date: 'End-Date:',
+    Year: '2024 session:',
     description: 'Description for JAMB...All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans',
-    link: '/jamb-portal',
+    link: 'https://www.jamb.gov.ng/',
   },
   {
     title: 'WAEC',
+    Start_date: 'Start-Date:',
+    End_date: 'End-Date:',
+    Year: '2024 session:',
     description: 'Description for WAEC...All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans',
-    link: '/waec-portal',
+    link: 'https://www.waecdirect.org/',
   },
   {
     title: 'NABTEB',
+    Start_date: 'Start-Date:',
+    End_date: 'End-Date:',
+    Year: '2024 session:',
     description: 'Description for NABTEB...All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans',
-    link: '/nabteb-portal',
+    link: 'https://www.nabteb.gov.ng/',
   },
   {
     title: 'IELTS',
+    Start_date: 'Start-Date:',
+    End_date: 'End-Date:',
+    Year: '2024 session:',
     description: 'Description for IELTS...All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans',
-    link: '/ielts-portal',
+    link: 'https://www.ielts.org/',
   },
   {
     title: 'GRE',
+    Start_date: 'Start-Date:',
+    End_date: 'End-Date:',
+    Year: '2024 session:',
     description: 'Description for GRE...All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans',
-    link: '/gre-portal',
+    link: 'www.ets.org/gre',
   },
   {
     title: 'MASTERS',
+    Start_date: 'Start-Date:',
+    End_date: 'End-Date:',
+    Year: '2024 session:',
     description: 'Description for MASTERS...All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans',
-    link: '/masters-portal',
+    link: 'www.mastersportal.com ',
   },
   {
     title: 'PHD',
+    Start_date: 'Start-Date:',
+    End_date: 'End-Date:',
+    Year: '2024 session:',
     description: 'Description for PHD....All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans.All you need to know about any Examination held in and outside of Nigeria for Nigerians and Africans',
     link: '/phd-portal',
   },
@@ -194,7 +215,7 @@ const styles = {
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
   },
   title: {
-    fontSize: '1.5em',
+    fontSize: '2.5em',
     marginBottom: '10px',
     color: '#006400',
   },
@@ -263,7 +284,11 @@ const ExamMain = () => {
         </div>
         {examsData.map((exam, index) => (
           <div key={index} style={styles.examSection}>
+           
             <h2 style={styles.title}>{exam.title}</h2>
+            <h2>{exam.Start_date}</h2>
+            <h2>{exam.End_date}</h2>
+            <h2>{exam.Year}</h2>
             <p style={styles.description}>{exam.description}</p>
             <a href={exam.link} style={styles.button}>Go to {exam.title} portal</a>
           </div>

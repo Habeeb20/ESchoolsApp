@@ -159,7 +159,7 @@ const HomeNavbar = () => {
           <StyledNavLink to="/universities/private">Schools</StyledNavLink>
         </LinkItem>
         <LinkItem>
-          <StyledNavLink to="/teacher-grid">Teacher</StyledNavLink>
+          <StyledNavLink to="/teachers">Teacher</StyledNavLink>
         </LinkItem>
         <LinkItem>
           <StyledNavLink to="/ejobslogin">EJobs</StyledNavLink>

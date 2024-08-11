@@ -262,6 +262,7 @@ function App() {
           <Route path="/addteacher" element={<TeacherForm addTeacher={addTeacher} />} />
         <Route path="/teachers" element={<TeacherGrid teachers={teachers} />} />
         <Route path="/teacher/:id" element={<TeacherDetail teachers={teachers} />} />
+        {/* <Route path="/teacherlist" element={<TeacherList teachers={teachers} />} /> */}
           
           
          
