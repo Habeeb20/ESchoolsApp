@@ -12,6 +12,9 @@ import { useEffect } from "react";
 import AppStore from "../../components/BookEssential/AppStore.jsx";
 
 import React from 'react'
+import Background from "../../components/BookEssential/Background.jsx";
+import Background2 from "../../components/BookEssential/Backgroun2.jsx";
+import HomeNavbar from "../LandingPage/essentialLanding/HomeNavbar.jsx";
 
 function MainBook() {
     const [orderPopup, setOrderPopup] = React.useState(false);
@@ -31,13 +34,17 @@ function MainBook() {
     }, []);
   return (
     <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
-    <Navbar handleOrderPopup={handleOrderPopup} />
-    <Hero handleOrderPopup={handleOrderPopup} />
+    <HomeNavbar />
+    {/* <Navbar handleOrderPopup={handleOrderPopup} /> */}
+    <Background />
+    {/* <Hero handleOrderPopup={handleOrderPopup} /> */}
     <Services handleOrderPopup={handleOrderPopup} />
     <Banner />
+   
     {/* <CoverBanner /> */}
     <AppStore />
     {/* <PdfReader /> */}
+    {/* <Background2 /> */}
     <Books />
     <Testimonial />
     <Footer />
