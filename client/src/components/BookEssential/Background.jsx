@@ -395,7 +395,8 @@ const Background = () => {
           onChange={handleSearchChange}
         />
         <SearchButton onClick={handleSearchSubmit}>
-          <Link style={{color:"white", textDecoration:"none"}} to='/searchbook'><FaSearch style={{color: 'white'}} /> search</Link>
+          <Link style={{color:"white", textDecoration:"none"}} to='/searchbook'> search</Link>
+          {/* <FaSearch style={{color: 'white'}} /> */}
         </SearchButton>
       </SearchSection>
 
