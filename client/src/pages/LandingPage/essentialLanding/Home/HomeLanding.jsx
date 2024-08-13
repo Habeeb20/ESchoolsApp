@@ -19,6 +19,7 @@ import Diddy from '../utils/images/Diddy.png'
 import Benefit from '../../../Benefit/Benefit';
 import Video from '../../../Video';
 import Number from '../../../Number';
+import Store from '../../../Store';
 
 const blogs = [
     {
@@ -112,6 +113,7 @@ export default function HomeLanding() {
         <Groups />
         <Video />
         <Benefit />
+    
      
 
         <div className='blog-section text-light py-5'>

@@ -152,6 +152,7 @@ import TeacherForm from './pages/Teachers/TeacherForm';
 import TeacherList from './pages/Teachers/TeacherList';
 import TeacherDetail from './pages/Teachers/TeacherDetail';
 import TeacherGrid from './pages/Teachers/TeacherGrid';
+import Store from './pages/Store';
 
 
 function App() {
@@ -340,6 +341,9 @@ function App() {
          <Route path='/benefitpostform' element={<BenefitPostForm />} />
          <Route path='/benefit' element={<Benefit />} />
 
+
+         //store
+         <Route path='/store' element={<Store />} />
 
          {/* //schoolmanangement
          <Route path='/schadminregister' element={<SchAdminRegister />} />
