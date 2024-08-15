@@ -1,10 +1,10 @@
+// models/finance/expenditurefinance.js
 import mongoose from "mongoose";
 
-const ExpenditureSchema = new mongoose.Schema({
-    description: {type:String, required: true},
-    amount:{type: Number, required: true}
-})
+const ExpenditureFinanceSchema = new mongoose.Schema({
+    description: String,
+    amount: Number,
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserFinance' },
+}, { timestamps: true });
 
-const ExpenditureFinance = mongoose.model('Expenditure', ExpenditureSchema)
-
-export default ExpenditureFinance
+export default mongoose.model('ExpenditureFinance', ExpenditureFinanceSchema);

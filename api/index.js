@@ -116,14 +116,6 @@ app.use("/api", chatRoute);
 
 app.use(errorMiddleware)
 
-app.use((err, req, res, next) => {
-    const statusCode = err.statusCode || 500;
-    const message = err.message || 'internal Server Error';
-    return res.status(statusCode).json({
-        message,
-    });
-})
-
 //Book
 app.use('/api', bookroute )
 
@@ -150,6 +142,17 @@ app.use('/api', financeSummaryRoute)
 // app.listen(port, () => {
 //     console.log("server is running on port " + port)
 // })
+
+
+
+
+app.use((err, req, res, next) => {
+    const statusCode = err.statusCode || 500;
+    const message = err.message || 'internal Server Error';
+    return res.status(statusCode).json({
+        message,
+    });
+})
 
 
 

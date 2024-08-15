@@ -1,11 +1,11 @@
+// models/finance/studentfinance.js
 import mongoose from "mongoose";
 
+const StudentFinanceSchema = new mongoose.Schema({
+    name: String,
+    amountPaid: Number,
+    purpose: String, // Added purpose
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'UserFinance' },
+}, { timestamps: true });
 
-const StudentSchema = new mongoose.Schema({
-    name:{type:String, required: true},
-    amountPaid:{type: Number, required: true, default: 0}
-})
-
-const StudentFinance = mongoose.model('Studentfinance', StudentSchema)
-
-export default StudentFinance
+export default mongoose.model('StudentFinance', StudentFinanceSchema);

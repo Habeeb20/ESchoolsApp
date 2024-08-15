@@ -90,6 +90,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
+import HomeNavbar from '../LandingPage/essentialLanding/HomeNavbar';
 
 const Payment = () => {
     const location = useLocation();
@@ -148,7 +149,9 @@ const Payment = () => {
     };
 
     return (
-        <div style={styles.container}>
+        <>
+        <HomeNavbar />
+            <div style={styles.container}>
             <h2 style={styles.heading}>Paystack Payment</h2>
             <input
                 type="email"
@@ -170,6 +173,8 @@ const Payment = () => {
                 Pay
             </button>
         </div>
+        </>
+
     );
 };
 
