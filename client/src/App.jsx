@@ -153,6 +153,7 @@ import TeacherList from './pages/Teachers/TeacherList';
 import TeacherDetail from './pages/Teachers/TeacherDetail';
 import TeacherGrid from './pages/Teachers/TeacherGrid';
 import Store from './pages/Store';
+import Market from './pages/Market';
 
 
 function App() {
@@ -344,6 +345,9 @@ function App() {
 
          //store
          <Route path='/store' element={<Store />} />
+
+         //market
+         <Route path='/market' element={<Market />} />
 
          {/* //schoolmanangement
          <Route path='/schadminregister' element={<SchAdminRegister />} />

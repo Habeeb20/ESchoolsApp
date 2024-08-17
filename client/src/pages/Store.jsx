@@ -25,6 +25,7 @@ import c23 from '../assets/store/c23.jfif';
 import c24 from '../assets/store/c24.jfif';
 import Footer from '../components/BookEssential/Footer';
 import HomeNavbar from './LandingPage/essentialLanding/HomeNavbar';
+import { useNavigate } from 'react-router-dom';
 
 const storeImages = [
   { src: c1, name: 'Store 1' },
@@ -56,13 +57,14 @@ const storeImages = [
 const Store = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTab, setActiveTab] = useState('store');
-
+  const navigate = useNavigate()
   const filteredStores = storeImages.filter((store) =>
     store.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
+    navigate('/market')
   };
 
   return (
