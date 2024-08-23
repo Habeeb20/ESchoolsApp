@@ -128,7 +128,7 @@ const HomeNavbar = () => {
             </StyledNavLink>
           </LinkItem>
           <LinkItem>
-            <StyledNavLink to="/Aihome" activeClassName="active">
+            <StyledNavLink to="/comparison" activeClassName="active">
               Comparison
             </StyledNavLink>
           </LinkItem>

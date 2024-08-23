@@ -154,6 +154,9 @@ import TeacherDetail from './pages/Teachers/TeacherDetail';
 import TeacherGrid from './pages/Teachers/TeacherGrid';
 import Store from './pages/Store';
 import Market from './pages/Market';
+import CompareSchools from './pages/CompareSchools';
+import Comparison from './pages/Comparison';
+import Abroad from './pages/Abroad/Abroad';
 
 
 function App() {
@@ -349,6 +352,13 @@ function App() {
          //market
          <Route path='/market' element={<Market />} />
 
+         //CompareSchools
+       
+         <Route path='/compareschools' element={<CompareSchools />} />
+         <Route path='/comparison' element={<Comparison />} />
+
+         //abroad
+         <Route path='/abroad' element={<Abroad />} />
          {/* //schoolmanangement
          <Route path='/schadminregister' element={<SchAdminRegister />} />
          <Route path='/schadminlogin' element={<SchAdminLogin />} />
