@@ -6,22 +6,22 @@ const PopularCompanies = () => {
   const companies = [
     {
       id: 1,
-      title: "Microsoft",
-      location: "New Jersey, USA",
+      title: "Valencia Schools",
+      location: "Ibadan",
       openPositions: 10,
       icon: <FaMicrosoft />,
     },
     {
       id: 2,
-      title: "Tesla",
-      location: "Atlanta Geogia, USA",
+      title: "Kings college",
+      location: "Lagos",
       openPositions: 5,
       icon: <SiTesla />,
     },
     {
       id: 3,
-      title: "Apple",
-      location: "Washington DC, USA",
+      title: "Government College",
+      location: "Lagos",
       openPositions: 20,
       icon: <FaApple />,
     },
@@ -29,7 +29,7 @@ const PopularCompanies = () => {
   return (
     <div className="companies">
       <div className="container">
-        <h3>TOP COMPANIES</h3>
+        <h3>TOP SCHOOLS</h3>
         <div className="banner">
           {companies.map((element) => {
             return (

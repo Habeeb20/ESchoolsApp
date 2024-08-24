@@ -164,34 +164,34 @@ export default function MyJobs() {
                           }
                         >
                           <option value="Graphics & Design">
-                            Graphics & Design
+                            Teaching
                           </option>
                           <option value="Mobile App Development">
-                            Mobile App Development
+                            Non-Teaching
                           </option>
                           <option value="Frontend Web Development">
-                            Frontend Web Development
+                            Sec sch teacher
                           </option>
                           <option value="MERN Stack Development">
-                            MERN STACK Development
+                            Pri sch teacher
                           </option>
                           <option value="Account & Finance">
-                            Account & Finance
+                            lecturer
                           </option>
                           <option value="Artificial Intelligence">
-                            Artificial Intelligence
+                            part time teaching
                           </option>
                           <option value="Video Animation">
-                            Video Animation
+                            full time teaching
                           </option>
                           <option value="MEAN Stack Development">
-                            MEAN STACK Development
+                            remote teaching
                           </option>
                           <option value="MEVN Stack Development">
-                            MEVN STACK Development
+                            helper
                           </option>
                           <option value="Data Entry Operator">
-                            Data Entry Operator
+                            sch accountant
                           </option>
                         </select>
                       </div>
