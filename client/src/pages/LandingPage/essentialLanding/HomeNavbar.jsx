@@ -113,6 +113,11 @@ const HomeNavbar = () => {
             </StyledNavLink>
           </LinkItem>
           <LinkItem>
+            <StyledNavLink to="/admission" activeClassName="active">
+              Admission
+            </StyledNavLink>
+          </LinkItem>
+          <LinkItem>
             <StyledNavLink to="/teachers" activeClassName="active">
               Teacher
             </StyledNavLink>
@@ -138,6 +143,16 @@ const HomeNavbar = () => {
             </StyledNavLink>
           </LinkItem>
           <LinkItem>
+            <StyledNavLink to="/#" activeClassName="active">
+              EStudents
+            </StyledNavLink>
+          </LinkItem>
+          <LinkItem>
+            <StyledNavLink to="/#" activeClassName="active">
+              ETraining
+            </StyledNavLink>
+          </LinkItem>
+          <LinkItem>
             <StyledNavLink to="/mainpage" activeClassName="active">
               EBook
             </StyledNavLink>
@@ -154,7 +169,7 @@ const HomeNavbar = () => {
           </LinkItem>
           <LinkItem>
             <StyledNavLink to="/abroad" activeClassName="active">
-              Abroad
+              Study Abroad
             </StyledNavLink>
           </LinkItem>
         </LinksContainer>

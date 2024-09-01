@@ -24,7 +24,7 @@ const PopupNotification = () => {
           <StyledButton variant="contained" color="primary" href="/studentlogin">
             User
           </StyledButton>
-          <StyledButton variant="contained" color="secondary" href="/schoolhomepage">
+          <StyledButton variant="contained" color="secondary" href="/">
             Sch Management
           </StyledButton>
         </ButtonContainer>
@@ -33,7 +33,7 @@ const PopupNotification = () => {
   );
 };
 const globalStyles = {
-  fontSize: '1.8em', // Adjust the font size as needed
+  fontSize: '1.8em', 
 };
 
 const StyledPaper = styled(Paper)`

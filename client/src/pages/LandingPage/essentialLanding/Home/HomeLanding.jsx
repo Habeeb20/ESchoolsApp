@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import ChooseSection from '../Components/ChooseSection';
 import StartCoursesImg from '../utils/images/start-courses-img.jpg'
 import FaqAccordion from '../Components/FaqAccordion';
+
 import { Card } from 'react-bootstrap';
 import Blog1Img from '../utils/images/blog1-img.jpg'
 import Blog2Img from '../utils/images/blog2-img.jpg'
@@ -20,6 +21,14 @@ import Benefit from '../../../Benefit/Benefit';
 import Video from '../../../Video';
 import Number from '../../../Number';
 import Store from '../../../Store';
+import LanFirst from '../../LanFirst';
+import Lanfix2 from '../../Lanfix2';
+import Lanfix3 from '../../Lanfix3';
+import Lanfirst4 from '../../Lanfirst4';
+import Lanfirst5 from '../../LanFirst5';
+import Land6 from '../../Land6';
+import Land7 from '../../Land7';
+import Land8 from '../../Land8';
 
 const blogs = [
     {
@@ -50,8 +59,8 @@ export default function HomeLanding() {
   return (
   <>
   <HomeNavbar />
-  <div className='home-page'>
-        <header className='h-100 min-vh-100 d-flex align-items-center text-light'>
+  <div className=''>
+        {/* <header className='h-100 min-vh-100 d-flex align-items-center text-light'>
             <div className='container d-flex flex-column align-items-center'>
                
                     <h2>Welcome To</h2>
@@ -77,8 +86,8 @@ export default function HomeLanding() {
                 </ul>
                 </FadeIn>
             </div>
-        </header>
-
+        </header> */}
+{/* 
         <div className="py-5">
             <ChooseSection />
         </div>
@@ -108,14 +117,24 @@ export default function HomeLanding() {
 
         <div className="py-5">
             <FaqAccordion />
-        </div>
+        </div> */}
+        <LanFirst />
         <Number />
+        <Lanfix2 />
+      
+        <Lanfix3 />
+        <Lanfirst4/>
+        <Lanfirst5 />
+       
         <Groups />
-        <Video />
+      
         <Benefit />
+        <Land6 />
+        <Land7 />
+        <Land8/>
     
      
-
+{/* 
         <div className='blog-section text-light py-5'>
             <div className='container d-flex flex-column align-items-center'>
                 <h2 className='text-center text-capitalize mb-5'>E Direct Blog</h2>
@@ -139,7 +158,7 @@ export default function HomeLanding() {
                 </Link>
             </div>
         </div>
-       
+        */}
         
     </div>
     <Footer />

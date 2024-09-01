@@ -1,78 +1,3 @@
-// import React from "react";
-// import { FaBuilding, FaSuitcase, FaUsers, FaUserPlus } from "react-icons/fa";
-// import CountUp from "react-countup";
-// import Fade from "react-reveal/Fade";
-// import styled from 'styled-components';
-
-// const Number = () => {
-//   const style = {
-//     backgroundColor: "green",
-//     color: "white",
-//     padding: "50px",
-//     margin: "30px",
-//     borderRadius: "10px",
-//     textAlign: "center",
-//     fontSize: "250%"
-//   };
-
-//   const details = [
-//     {
-//       id: 1,
-//       title: "23441",
-//       subTitle: "Jobs",
-//       icon: <FaSuitcase />,
-//     },
-//     {
-//         id: 2,
-//         title: "1220",
-//         subTitle: "Schools",
-//         icon: <FaBuilding />,
-  
-//       },
-//     {
-//       id: 3,
-//       title: "200",
-//       subTitle: "Groups",
-//       icon: <FaUsers />,
-//     },
-//     {
-//       id: 4,
-//       title: "1761",
-//       subTitle: "Users",
-//       icon: <FaUserPlus />,
-//     },
-//   ];
-
-//   return (
-//     <>
-//       <div className="heroSection">
-//         <div className="details" style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
-//           {details.map((element) => {
-//             return (
-//               <Fade key={element.id}>
-//                 <div style={style} className="card">
-//                   <div className="icon">{element.icon}</div>
-//                   <div className="content">
-//                     <CountUp
-//                       start={0}
-//                       end={parseInt(element.title)}
-//                       duration={3.75}
-//                       separator=","
-//                     />
-//                     <p style={{color: "white"}}>{element.subTitle}</p>
-//                   </div>
-//                 </div>
-//               </Fade>
-//             );
-//           })}
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Number;
-
 import React, { useState } from "react";
 import { FaBuilding, FaSuitcase, FaUsers, FaUserPlus } from "react-icons/fa";
 import CountUp from "react-countup";
@@ -83,13 +8,13 @@ const Number = () => {
   const Card = styled.div`
     background-color: green;
     color: white;
-    padding: 50px;
-    margin: 30px;
+    padding: 25px;
+    margin: 15px;
     border-radius: 10px;
     text-align: center;
-    font-size: 250%;
-    flex: 1 1 200px;
-    max-width: 300px;
+    font-size: 150%;
+    flex: 1 1 100px;
+    max-width: 150px;
   `;
 
   const details = [
@@ -115,6 +40,31 @@ const Number = () => {
       id: 4,
       title: "1761",
       subTitle: "Users",
+      icon: <FaUserPlus />,
+    },
+  
+    {
+      id: 5,
+      title: "1500",
+      subTitle: "Students",
+      icon: <FaUsers />,
+    },
+    {
+      id: 6,
+      title: "800",
+      subTitle: "Teachers",
+      icon: <FaSuitcase />,
+    },
+    {
+      id: 7,
+      title: "450",
+      subTitle: "Exams",
+      icon: <FaBuilding />,
+    },
+    {
+      id: 8,
+      title: "3000",
+      subTitle: "Training",
       icon: <FaUserPlus />,
     },
   ];

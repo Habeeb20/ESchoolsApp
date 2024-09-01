@@ -76,6 +76,10 @@ const Video = () => {
           <VideoContainer>
             <video id={`video-${video.id}`} src={video.src} controls></video>
           </VideoContainer>
+          <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', color: '#333' }}>
+          <span>203</span>
+          <span>5,345 views</span>
+        </div>
           {/* <Controls>
             <button onClick={() => playVideo(video.id)}>Play</button>
             <button onClick={() => pauseVideo(video.id)}>Pause</button>
