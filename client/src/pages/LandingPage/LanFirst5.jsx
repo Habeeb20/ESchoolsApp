@@ -36,8 +36,9 @@ const Lanfirst5 = () => {
 
   const headingStyle = {
     color: '#333',
-    fontSize: '2rem',
+    fontSize: '3rem',
     margin: '0 0 20px',
+    paddingLeft:  '3px'
   };
 
   const spanStyle = {
@@ -46,9 +47,10 @@ const Lanfirst5 = () => {
   };
 
   const paragraphStyle = {
-    fontSize: '1rem',
+    fontSize: '1.8rem',
     maxWidth: '600px',
     margin: '0',
+    fontWeight: "bolder"
   };
 
 
