@@ -1,7 +1,11 @@
 import React from 'react';
-import im from '../../assets/website/tutorial5.jpg'
-import im1 from '../../assets/website/tutorial7.jpg'
+import im from '../../assets/website/Rectangle 406.png'
+import im1 from '../../assets/website/Rectangle 408.png'
+import im3 from '../../assets/website/Rectangle 409.png'
+import im4 from '../../assets/website/Rectangle 410.png'
 import im2 from '../../assets/website/tutorial8.jpg'
+import student from '../../assets/website/homepage student.png'
+import student1 from '../../assets/website/Mask group.png'
 const Lanfix3 = () => {
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', margin: '0', padding: '0' }}>
@@ -39,7 +43,7 @@ const Lanfix3 = () => {
         
         {/* Image Grid Section */}
         <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
-          {[im1, im1, im1].map((src, index) => (
+          {[im1, im4, im3].map((src, index) => (
             <div key={index} style={{ flex: '1 1 30%' }}>
               <img src={src} alt={`Image ${index + 1}`} style={{ width: '100%', borderRadius: '10px' }} />
             </div>
@@ -57,7 +61,7 @@ const Lanfix3 = () => {
           </p>
         </div>
         <div style={{ maxWidth: '40%' }}>
-          <img src={im1} alt="Student ID" style={{ width: '90%', borderRadius: '10px' }} />
+          <img src={student1} alt="Student ID" style={{ width: '90%', borderRadius: '10px' }} />
         </div>
       </section>
       
@@ -66,7 +70,7 @@ const Lanfix3 = () => {
         
         {/* Left Image */}
         <div style={{ flex: '1 1 45%' }}>
-          <img src={im2} alt="Left Image" style={{ width: '100%', borderRadius: '10px' }} />
+          <img src={student} alt="Left Image" style={{ width: '100%', borderRadius: '10px' }} />
         </div>
         
         {/* Right Text */}

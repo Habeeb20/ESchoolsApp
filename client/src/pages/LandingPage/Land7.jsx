@@ -1,6 +1,7 @@
 import React from 'react';
-import im from '../../assets/website/tutorial.jpg'
-import im2 from '../../assets/website/tutorial9.jpg'
+
+import im2 from '../../assets/website/Rectangle 458.png'
+import im from '../../assets/website/image 370.png'
 const Land7 = () => {
     const containerStyling = {
         fontFamily: 'Arial, sans-serif',
@@ -11,7 +12,7 @@ const Land7 = () => {
       };
     
       const headerStyle = {
-        backgroundImage: `url(${im})`, // replace with your image path
+        backgroundImage: `url(${im})`, 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         color: '#fff',
@@ -193,7 +194,7 @@ const Land7 = () => {
       <div style={blogSectionStyle}>
         <div style={blogPostStyle}>
           <img
-            src={im}
+            src={im2}
             alt="Blog"
             style={blogImageStyle}
           />

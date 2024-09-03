@@ -1,6 +1,7 @@
 import React from 'react';
 import im from '../../assets/website/tutorial8.jpg'
-
+import g from '../../assets/website/guy.png'
+import h from '../../assets/website/hire.png'
 const Lanfirst5 = () => {
   const containerStyle = {
     position: 'relative',
@@ -8,7 +9,8 @@ const Lanfirst5 = () => {
     maxWidth: '1200px',
     margin: '0 auto',
     height: '400px',
-    backgroundImage: `url(${im})`,
+    backgroundImage: `url(${g})`,
+    objectFit:'cover',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     display: 'flex',
@@ -58,12 +60,13 @@ const Lanfirst5 = () => {
     <div style={{ fontFamily: 'Arial, sans-serif', color: '#333' }}>
       {/* First Section */}
       <div style={{
-        backgroundImage: `url(${im})`, // Replace with actual image URL
+        backgroundImage: `url(${im})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         color: '#fff',
         padding: '60px 20px',
         textAlign: 'center',
+        height:"380px"
       }}>
         <h1 style={{ fontSize: '2rem', margin: '0 0 20px' }}>
           We tell you more about <br /> People, Businesses & Places In <span style={{ color: '#4CAF50' }}>Nigeria</span> Than Any Other Directory.
@@ -99,7 +102,12 @@ const Lanfirst5 = () => {
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
+        position: "flex"
       }}>
+        {/* <div className='1' style={{flex:"1"}}>
+          <img src={h} alt="" />
+        </div> */}
+        <div >
         <h2 style={{ color: '#333', fontSize: '2rem', margin: '0 0 20px' }}>
           Student can get jobs easily with student e-jobs
         </h2>
@@ -117,6 +125,9 @@ const Lanfirst5 = () => {
         }}>
           learn more
         </button>
+
+        </div>
+       
       </div>
     </div>
   );

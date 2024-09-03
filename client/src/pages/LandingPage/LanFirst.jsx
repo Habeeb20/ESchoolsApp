@@ -20,15 +20,15 @@ const LanFirst = () => {
         <h1 style={{ fontSize: '2rem', fontWeight: 'bold' }}>Connect the world of Students, schools, and exams <br /><span style={{ color: '#00a60e', fontSize:'240%' }}>Together</span></h1>
         
         <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '20px', flexWrap: 'wrap' }}>
-          <div style={{ textAlign: 'center', maxWidth: '220px' }}>
-            <img src={im} alt="Student 1" style={{ borderRadius: '50%', width: '150px', height: '170px', marginBottom: '10px' }} />
+          <div style={{ textAlign: 'start', maxWidth: '220px' }}>
+            <img src={im} alt="Student 1" style={{ borderRadius: '50%', width: '150px', height: '170px', marginBottom: '10px', objectFit:'cover' }} />
             <p style={{fontSize:"200%", lineHeight:"22px"}}>If you are travelling with a group of 16 or more people and are looking for sustainable cost-effective travel, look no further. When hiring a coach and a driver, you have complete control over your travel itinerary.</p>
           </div>
           <div style={{ textAlign: 'center', maxWidth: '240px' }}>
-            <img src={im2} alt="Graduate" style={{ borderRadius: '50%', width: '230px', height: '270px', marginBottom: '10px' }} />
+            <img src={im2} alt="Graduate" style={{ borderRadius: '50%', width: '230px', height: '270px', marginBottom: '10px', objectFit:'cover' }} />
           </div>
-          <div style={{ textAlign: 'center', maxWidth: '220px' }}>
-            <img src={im3} alt="Student 2" style={{ borderRadius: '50%', width: '150px', height: '170px', marginBottom: '10px' }} />
+          <div style={{ textAlign: 'start', maxWidth: '220px' }}>
+            <img src={im3} alt="Student 2" style={{ borderRadius: '50%', width: '150px', height: '170px', marginBottom: '10px', objectFit:'cover' }} />
             <p style={{fontSize:"200%", lineHeight:"22px"}}>If you are travelling with a group of 16 or more people and are looking for sustainable cost-effective travel, look no further. When hiring a coach and a driver, you have complete control over your travel itinerary.</p>
           </div>
         </div>

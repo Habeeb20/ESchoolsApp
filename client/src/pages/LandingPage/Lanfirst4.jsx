@@ -1,5 +1,7 @@
 import React from "react";
-import im2 from '../../assets/website/tutorial4.jpg'
+import im2 from '../../assets/website/Rectangle 392.png'
+import im3 from '../../assets/website/Rectangle 393.png'
+import im4 from '../../assets/website/graduate.png'
 const styles = {
   container: {
     width: "100%",
@@ -36,7 +38,7 @@ const styles = {
   },
   cardContainer: {
     display: "flex",
-    flexWrap: "wrap",
+    // flexWrap: "wrap",
     justifyContent: "space-around",
     gap: "10px",
   },
@@ -50,6 +52,11 @@ const styles = {
   cardImg: {
     width: "100%",
     height: "auto",
+  },
+  cardImg2: {
+    width: "100%",
+    height: "600px",
+    objectFit:"cover"
   },
   cardContent: {
     position: "absolute",
@@ -69,11 +76,15 @@ const styles = {
     color: "#fff",
     textAlign: "center",
     borderRadius: "10px",
-    backgroundImage: `url(${im2})`, // Replace with actual image URL
-    backgroundSize: "auto 200%",  // Adjust the height to 200% of the container's height
+    backgroundImage: `url(${im4})`, 
+    backgroundSize: "auto 200%",  
     backgroundPosition: "center",
     position: "relative",
-    height: '150%',  // Adjust as needed for the footer height
+    height: '400px',
+    display:"flex",
+    alignItems:"center",
+    justifyContent:"center",
+    flexDirection:"column"  
   },
   
   overlay: {
@@ -82,7 +93,7 @@ const styles = {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: "rgba(0, 0, 0, 0.5)", // To darken the background image for better text readability
+    backgroundColor: "rgba(0, 0, 0, 0.5)", 
     borderRadius: "10px",
   },
   footerContent: {
@@ -92,7 +103,7 @@ const styles = {
 
 
   footerText: {
-    fontSize: "20px",
+    fontSize: "40px",
     fontWeight: "bold",
   },
   footerSubtext: {
@@ -123,17 +134,17 @@ const Lanfirst4 = () => {
         <div style={styles.cardContainer}>
           <div style={styles.card}>
             <img 
-              src ={im2} // Replace with actual image source
+              src ={im2} 
               alt="Discount 1"
               style={styles.cardImg}
             />
-            <div style={styles.cardContent}>5% OFF All Year Round</div>
+            {/* <div style={styles.cardContent}>5% OFF All Year Round</div> */}
           </div>
           <div style={styles.card}>
             <img
-              src={im2} // Replace with actual image source
+              src={im3} 
               alt="Discount 2"
-              style={styles.cardImg}
+              style={styles.cardImg2}
             />
             <div style={styles.cardContent}>
               Student Discounts on everything you want

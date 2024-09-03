@@ -1,7 +1,7 @@
 import React from 'react';
 import im from '../../assets/university/u.jfif'
 import im2 from '../../assets/website/tutorial4.jpg'
-import im3 from '../../assets/website/tutorial5.jpg'
+import im3 from '../../assets/website/image 37.png'
 import im4 from '../../assets/website/tutorial8.jpg'
 import im5 from '../../assets/website/tutorial3.jpg'
 import im6 from '../../assets/website/tutorial9.jpg'

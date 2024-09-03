@@ -1,6 +1,6 @@
 import React from 'react';
 import im from '../../assets/website/tutorial.jpg'
-import im2 from '../../assets/website/tutorial9.jpg'
+import im2 from '../../assets/website/img234.png'
 const Land8 = () => {
   const containerStyle = {
     fontFamily: 'Arial, sans-serif',
@@ -11,7 +11,7 @@ const Land8 = () => {
   };
 
   const headerStyle = {
-    backgroundImage: `url(${im})`, 
+    backgroundImage: `url(${im2})`, 
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     color: '#fff',

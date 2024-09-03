@@ -191,14 +191,14 @@
 
 
 import React from 'react';
-import im from '../../assets/website/tutorial3.jpg';
-import im2 from '../../assets/website/tutorial5.jpg';
-import im3 from '../../assets/exam/E1.jfif';
-import im4 from '../../assets/exam/E2.jfif';
-import im5 from '../../assets/exam/E3.jfif';
-import im6 from '../../assets/exam/E4.jfif';
-import im7 from '../../assets/exam/E5.jfif';
-
+import im from '../../assets/website/accredit.png';
+import im2 from '../../assets/website/pictureBack.png';
+import im3 from '../../assets/website/unnamed 1.png';
+import im4 from '../../assets/website/unnamed 2.png';
+import im5 from '../../assets/website/unnamed 3.png';
+import im6 from '../../assets/website/unnamed 4.png';
+import im7 from '../../assets/website/unnamed 5.png';
+import im8 from '../../assets/website/image 34.png';
 const Land6 = () => {
   const containerStyle = {
     fontFamily: 'Arial, sans-serif',
@@ -226,7 +226,7 @@ const Land6 = () => {
   const subheaderStyle = {
     fontSize: '1rem',
     marginBottom: '30px',
-    color: '#555',
+    color: '#fff',
     // Adjusting font size and margin for mobile devices
     '@media (max-width: 600px)': {
       fontSize: '0.9rem',
@@ -259,20 +259,36 @@ const Land6 = () => {
   const imageStyle = {
     width: '100%',
     height: '40%',
+  
+    
   };
+
+  const overlay = {
+    position:'absolute',
+    top: '0',
+    left:'0',
+    width:"100%",
+    height:"100%",
+    backgroundColor:"black",
+    opacity:".7",
+    zIndex:'2'
+  }
 
   const overlayTextStyle = {
     position: 'absolute',
-    top: '50%',
+    top: '30%',
     left: '50%',
-    marginLeft: '199px',
+    marginLeft: '109px',
+    overlay:'rgb(0, 0,0, 0.5)',
     transform: 'translate(-50%, -50%)',
-    color: 'black',
+    color: '#fff',
     fontSize: '4rem',
     textAlign: 'right',
-    padding: '20px',
-    paddingTop: '5%',
+    padding: '10px',
+    paddingTop: '19%',
     borderRadius: '10px',
+    objectFit:'cover',
+    zIndex:'3',
     // Adjusting text size and alignment for mobile devices
     '@media (max-width: 600px)': {
       fontSize: '2rem',
@@ -324,17 +340,25 @@ const Land6 = () => {
     flexDirection: 'column',
     alignItems: 'center',
     marginBottom: '50px',
+  
+    
   };
 
   const imagesContainerStyle = {
     position: 'absolute',
-    width: '100%',
-    top: '-5px',
+    width: '30%',
+    marginLeft:'14%',
+    paddingTop:"3%",
+    // paddingLeft:'11%',
+    objectFit:'cover',
+    // top: '5px',
     left: '50%',
     marginBottom: '250px',
+    paddingBottom: '50%',
     transform: 'translateX(-50%)',
     display: 'flex',
     gap: '10px',
+    zIndex:'3',
     // Adjusting the positioning and layout for mobile devices
     '@media (max-width: 600px)': {
       top: '5px',
@@ -342,14 +366,17 @@ const Land6 = () => {
       alignItems: 'center',
       gap: '5px',
       marginBottom: '150px',
+  
     },
   };
 
   const imageStyless = {
     width: '250%',
     height: '60px',
+    marginBottom: '80%',
     borderRadius: '50%',
     border: '2px solid #fff',
+    zIndex:'3',
     boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
     // Adjusting width and height for mobile devices
     '@media (max-width: 600px)': {
@@ -374,12 +401,13 @@ const Land6 = () => {
     flexDirection: 'column',
     alignItems: 'center',
     marginBottom: '50px',
+ 
   };
 
   const imageStyles = {
     width: '100%',
     height: '400px', 
-    objectFit: 'cover', 
+    position:'absolute'
   };
   const trapeziumStyles = {
     position: 'absolute',
@@ -489,14 +517,18 @@ const Land6 = () => {
           alt="Exam Image"
           style={imageStyle}
         />
-        <div style={overlayTextStyle}>
-          <div style={imagesContainerStyle}>
+           <div style={imagesContainerStyle}>
+           <img src={im8} alt="icon5" style={imageStyless} />
             <img src={im3} alt="icon1" style={imageStyless} />
             <img src={im4} alt="icon2" style={imageStyless} />
             <img src={im5} alt="icon3" style={imageStyless} />
             <img src={im6} alt="icon4" style={imageStyless} />
             <img src={im7} alt="icon5" style={imageStyless} />
           </div>
+
+        <div style={overlay}></div>
+        <div style={overlayTextStyle}>
+       
           A single click to take any examination home and abroad
           <div style={subheaderStyle}>
             Lorem ipsum dolor sit amet consectetur. Eti rhoncus nunc dictum massa.
