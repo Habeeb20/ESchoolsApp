@@ -21,7 +21,7 @@ const PopupNotification = () => {
           and teachers that want to be hired for a teaching job.
         </Typography>
         <ButtonContainer>
-          <StyledButton variant="contained" color="primary" href="/studentlogin">
+          <StyledButton variant="contained" color="primary" href="/landinghome">
             User
           </StyledButton>
           <StyledButton variant="contained" color="secondary" href="/">

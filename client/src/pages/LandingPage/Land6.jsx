@@ -435,9 +435,9 @@ const Land6 = () => {
 
   const searchContainerStyles = {
     display: 'flex',
-    flexDirection: 'row', // Arrange items side by side
+    flexDirection: 'row', 
     alignItems: 'center',
-    gap: '10px', // Space between the input boxes
+    gap: '10px', 
   };
   
 
@@ -486,7 +486,7 @@ const Land6 = () => {
         <img
           src={im}
           alt="University Image"
-          style={imageStyles}
+          style={imageStyle}
         />
         <div style={trapeziumStyles}>
           <div style={textContainerStyles}>
@@ -505,7 +505,7 @@ const Land6 = () => {
             />
          
           </div>
-          <button style={searchButtonStyles}>search</button>
+          <button style={searchButtonStyle}>search</button>
         </div>
       </div>
 

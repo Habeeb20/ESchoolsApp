@@ -17,7 +17,7 @@ import { Context } from './main'
 import Navbar from './components/Navbar'
 
 
-import SchoolDashboard from './pages/Dashboards/SchoolDashboard'
+
 import StudentLoginAcct from './pages/Student/StudentLoginAcct'
 import StudentSignupAcct from './pages/Student/StudentSignupAcct'
 // import StudentProfileForm from './pages/Student/StudentProfileForm'
@@ -31,14 +31,6 @@ import Page from './pages/AppPage/Page'
 
 
 import Home from './components/school/Home'
-
-import LandingPage from './pages/LandingPage/LandingPage'
-import AdminDashboardSch from './pages/adminSch/AdminDashboard'
-import StudentDashboardSch from './pages/studentSch/StudentDashboard'
-import TeacherDashboard from './pages/teacherSch/TeacherDashboard'
-import LoginPage from './pages/LoginPage'
-import AdminRegisterPageSch from './pages/adminSch/AdminRegisterPage'
-import ChooseUser from './pages/ChooseUser'
 
 
 
@@ -63,29 +55,6 @@ import Footer from './components/EssentialJobs/Layout/Footer'
 
 //school
 
-
-import Homepage from './pages/Homepage';
-import ShowClasses from './pages/adminSch/classRelated/ShowClasses';
-import ShowSubjects from './pages/adminSch/subjectRelated/ShowSubjects';
-import ShowTeachers from './pages/adminSch/teacherRelated/ShowTeachers';
-import ShowStudents from './pages/adminSch/studentRelated/ShowStudents';
-import ShowNotices from './pages/adminSch/noticeRelated/ShowNotices';
-import SeeComplains from './pages/adminSch/studentRelated/SeeComplains';
-import AddStudent from './pages/adminSch/studentRelated/AddStudent';
-import AddClass from './pages/adminSch/classRelated/AddClass';
-import AddNotice from './pages/adminSch/noticeRelated/AddNotice';
-import SubjectForm from './pages/adminSch/subjectRelated/SubjectForm';
-import AdminProfile from './pages/adminSch/AdminProfile';
-import ClassDetails from './pages/adminSch/classRelated/ClassDetails';
-import ViewSubject from './pages/adminSch/subjectRelated/ViewSubject';
-import ChooseClass from './pages/adminSch/teacherRelated/ChooseClass';
-import StudentAttendance from './pages/adminSch/studentRelated/StudentAttendance';
-import ViewStudent from './pages/adminSch/studentRelated/ViewStudent';
-import AddTeacher from './pages/adminSch/teacherRelated/AddTeacher';
-import ChooseSubject from './pages/adminSch/teacherRelated/ChooseSubject';
-import TeacherDetails from './pages/adminSch/teacherRelated/TeacherDetails';
-
-import AdmissionData from './pages/AdmissionData';
 import SchOriginal from './pages/SchoolLandingPage/SchOriginal';
 import PrivateSec from './pages/SchoolLandingPage/secondaryschool/PrivateSec';
 import PublicSec from './pages/SchoolLandingPage/secondaryschool/PublicSec';
@@ -105,11 +74,6 @@ import HomeLanding from './pages/LandingPage/essentialLanding/Home/HomeLanding';
 
 //AIchats
 
-import Chat from './pages/AIChat/Chat'
-import HomeChat from './pages/AIChat/HomeChat'
-
-
-
 
 ///bookEssential
 
@@ -124,28 +88,17 @@ import BookDetails from './components/searchBook/component/BookDetails/BookDetai
 import Payment from './pages/Payment/Payment'
 import PaymentSuccess from './pages/Payment/PaymentSuccess';
 
-import CreateSchool from './pages/schOwner/CreateSchool';
 import Contact from './pages/LandingPage/essentialLanding/Contact/Contact';
 import LandingAbout from './pages/LandingPage/essentialLanding/About/About'
 import Scholarship from './pages/Scholarship';
 
-
-//schowner
-
-import SchOwnerSignin from './pages/schOwner/SchOwnerSignin';
-import SchOwnerSignup from './pages/schOwner/SchOwnerSignup';
-import SchOwnerDashboard from './pages/schOwner/SchOwnerDashboard';
-import SchOwnerHome from './pages/schOwner/SchOwnerHome';
 
 
 
 //exam
 import ExamMain from './pages/Exams/ExamMain';
 import Tutorial from './pages/Tutorial';
-import Authfinance from './pages/finance/AuthFinance';
-import FinanceDashboard from './pages/finance/FinanceDashboard';
-import FinanceStudentForm from './pages/finance/FinanceStudentForm';
-import FinanceExpenditure from './pages/finance/FinanceExpenditure';
+
 import BenefitPostForm from './pages/Benefit/BenefitPostForm';
 import Benefit from './pages/Benefit/Benefit';
 import TeacherForm from './pages/Teachers/TeacherForm';
@@ -155,15 +108,27 @@ import TeacherGrid from './pages/Teachers/TeacherGrid';
 import Store from './pages/Store';
 import Market from './pages/Market';
 import CompareSchools from './pages/CompareSchools';
-import Comparison from './pages/Comparison';
+// import Comparison from './pages/Comparison';
 import Abroad from './pages/Abroad/Abroad';
+
+
+
+//admission
+
+import LoginPage from './pages/LoginPageAd';
+import RegistrationPage from './pages/RegistrationPage';
+import ProfilePage from './pages/ProfilePage';
+import Admission from './pages/PublicPage';
+import Comparison from './pages/Comparison';
+
+
 
 
 function App() {
   const { user } = useStudentAcctContext()
 
   const { isAuthorized, setIsAuthorized, setUser } = useContext(Context)
-  const { currentRole } = useSelector(state => state.user);
+  // const { currentRole } = useSelector(state => state.user);
   const [teachers, setTeachers] = useState([])
 
  
@@ -199,6 +164,17 @@ function App() {
     fetchUser();
   }, [isAuthorized]);
 
+  const handleLogin = (email, password) => {
+    // Simulate login logic (you should replace this with real authentication logic)
+    if (email === 'admin@example.com' && password === 'password') {
+      alert('Login successful!');
+      // Redirect to the profile page or perform other login actions
+      window.location.href = '/profile';
+    } else {
+      alert('Invalid email or password');
+    }
+  };
+
   return (
     <BrowserRouter>
       <Routes>
@@ -225,8 +201,8 @@ function App() {
         <Route path='/job/me' element={<MyJobs />} />
         <Route path='*' element={<NotFound />} />
 
-        <Route path='/admissiondata' element={<AdmissionData />} />
-        <Route path='/schoriginal' element={<SchOriginal />} />
+        {/* <Route path='/admissiondata' element={<AdmissionData />} />
+        <Route path='/schoriginal' element={<SchOriginal />} /> */}
 
 
 
@@ -250,11 +226,6 @@ function App() {
           //home
          
 
-
-          
-           //chat
-          <Route exact path='Aihome' element ={<HomeChat />}/>     
-          <Route exact path='chat' element ={<Chat />}/>
 
 
 
@@ -309,11 +280,7 @@ function App() {
 
          //schoOwner
        
-         <Route path="/schownerlogin" element={<SchOwnerSignin />} />
-         <Route path="/schownerregister" element={<SchOwnerSignup />}/>
-         <Route path="/schownerdashboard" element={<SchOwnerDashboard />} />
-         <Route path="/schownerhome" element={<SchOwnerHome />} />
-         <Route path="/schownercreate" element={<CreateSchool />} />
+     
 
          //Scholarship
          <Route path='/scholarship' element={<Scholarship/>} />
@@ -335,11 +302,6 @@ function App() {
          <Route path='/tutorial' element={<Tutorial />} />
 
 
-         //finance
-         <Route path='/finance' element={<Authfinance />} />
-         <Route path='/financedashboard' element={<FinanceDashboard />} />
-         <Route path='/financestudentform' element={<FinanceStudentForm />} />
-         <Route path='/financeexpenditure' element={<FinanceExpenditure />} />
 
          //benefit
          <Route path='/benefitpostform' element={<BenefitPostForm />} />
@@ -359,99 +321,18 @@ function App() {
 
          //abroad
          <Route path='/abroad' element={<Abroad />} />
-         {/* //schoolmanangement
-         <Route path='/schadminregister' element={<SchAdminRegister />} />
-         <Route path='/schadminlogin' element={<SchAdminLogin />} />
-         <Route path='/schadmindashboard' element={<SchAdminDashboard />} />
-         <Route path='/schstudentdashboard' element={<SchStudentDashboard />} />
-         <Route path='/schteacherdashboard' element={<SchTeacherDashboard />} />
-         <Route path='/schstudentlogin' element={<SchStudentLogin />} />
-         <Route path='/schteacherlogin' element={<SchTeacherLogin />} />
- */}
 
+          //admission
+          <Route path="/admission" element={<Admission />} />
+          <Route path="/loginadmission" element={<LoginPage onLogin={handleLogin} />} />
+          <Route path="/registeradmission" element={<RegistrationPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/comparison" element={<Comparison />} />
 
 
 
 
             
-            
-
-
-
-
-        <Route path='/schoolhomepage' element={<Homepage />} />
-        <Route path='/choose' element={<ChooseUser visitor="normal" />} />
-        <Route path='/Admin/profile' element={<AdminProfile />}/>
-        <Route path='/Adminregister' element={<AdminRegisterPageSch />} />
-        <Route path='/Adminlogin' element={<LoginPage role="Admin" />} />
-        {currentRole === null && (
-          <>
-           
-          
-            <Route path='/chooseasguest' element={<ChooseUser visitor="guest" />} />
-          
-            <Route path='/Studentloginsch' element={<LoginPage role="Student" />} />
-            <Route path='/Teacherloginsch' element={<LoginPage role="Teacher" />} />
-            <Route  path='/Admin/subjects/subject/:classID/:subjectID' element={<ViewSubject/>}/>
-            <Route path='/Admin/classes' element={<ShowClasses />} />
-            <Route path='*' element={<Navigate to="/" />} />
-          </>
-        )}
-
-        {currentRole === "Admin" && (
-          <>
-            <Route path='/admin/dashboard' element={<AdminDashboardSch />} />
-            <Route path='/Admin/classes' element={<ShowClasses />} />
-            <Route path='/Admin/subjects' element={<ShowSubjects />} />
-            <Route path='/Admin/teachers' element={<ShowTeachers />} />
-            <Route path='/Admin/students' element={<ShowStudents />} />
-            <Route path='/Admin/notices' element={<ShowNotices />} />
-            <Route path='/Admin/complains' element={<SeeComplains />} />
-
-
-
-
-            <Route path="/Admin/addstudents" element={<AddStudent />} />
-            <Route path="/Admin/addclass" element={<AddClass />} />
-            <Route path="/Admin/addnotice" element={<AddNotice />} />
-            <Route  path='/Admin/classes/class/:id' element={<ClassDetails />}/>
-            <Route path='/Admin/subjects/chooseclass' element={<ChooseClass />} />
-            
-            <Route path="/Admin/addsubject/:id" element={<SubjectForm  situation="Subject"/>} />
-            <Route path='/Admin/subjects/subject/:classID/:subjectID' element={<ViewSubject />} />
-            <Route path='/Admin/class/addstudents/:id' element={<AddStudent situation="Class" />} />
-            <Route path='/Admin/subject/student/attendance/:studentID/:subjectID' element={<StudentAttendance  situation="Subject"/>}/>
-            <Route path='/Admin/students/student/:id' element={<ViewStudent />} />
-            
-
-
-            //teacher
-            <Route path='/Admin/teachers/addteacher/:id' element={<AddTeacher />} />
-            <Route path='/AAdmin/teachers/choosesubject/:classID/:teacherID' element={<ChooseSubject situation="Teacher" />} />
-            <Route path='/Admin/teachers/choosesubject/:id' element={<ChooseSubject situation="Norm"/>} />
-            <Route path='/Admin/teachers/chooseclass'  element={<ChooseClass situation="Teacher" />} />
-            <Route path="/Admin/teachers/teacher/:id" element={<TeacherDetails /> } />
-            
-            
-            
-            
-            {/* Add other admin routes here */}
-          </>
-        )}
-
-        {currentRole === "Student" && (
-          <>
-            <Route path='/student/dashboard' element={<StudentDashboardSch />} />
-            {/* Add other student routes here */}
-          </>
-        )}
-
-        {currentRole === "Teacher" && (
-          <>
-            <Route path='/teacher/dashboard' element={<TeacherDashboard />} />
-            {/* Add other teacher routes here */}
-          </>
-        )}
       </Routes>
       <Toaster />
       {/* <Footer /> */}
@@ -460,6 +341,5 @@ function App() {
 }
 
 export default App
-
 
 
