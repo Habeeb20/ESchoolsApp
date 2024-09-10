@@ -199,6 +199,7 @@ import im5 from '../../assets/website/unnamed 3.png';
 import im6 from '../../assets/website/unnamed 4.png';
 import im7 from '../../assets/website/unnamed 5.png';
 import im8 from '../../assets/website/image 34.png';
+import BestSchools from '../BestSchools';
 const Land6 = () => {
   const containerStyle = {
     fontFamily: 'Arial, sans-serif',
@@ -536,6 +537,7 @@ const Land6 = () => {
           <button style={searchButtonStyle}>learn more</button>
         </div>
       </div>
+      <BestSchools />
     </div>
   );
 };

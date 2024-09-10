@@ -2,6 +2,7 @@ import React from 'react';
 import im from '../../assets/website/tutorial.jpg'
 import im2 from '../../assets/website/img234.png'
 import CountSchool from '../CountSchools';
+import PopularSchools from '../PopularSchools';
 const Land8 = () => {
   const containerStyle = {
     fontFamily: 'Arial, sans-serif',
@@ -118,7 +119,9 @@ const Land8 = () => {
   };
 
   return (
-    <div style={containerStyle}>
+    <>
+    <PopularSchools />
+        <div style={containerStyle}>
       {/* Header Section */}
       <div style={headerStyle}>
         <p style={{paddingBottom:"8%", fontWeight: "bolder", fontSize:"20px"}}> Book a flight, Hotel, train, interstate ALL OVER NIGERIA <br /> AND THE WORLD - and get a student discount rate</p>
@@ -163,6 +166,9 @@ const Land8 = () => {
       </div>
       
     </div>
+
+    </>
+
   );
 };
 

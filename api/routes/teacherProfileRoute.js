@@ -123,6 +123,20 @@ teacherProfileRoute.post('/login', async (req, res) => {
           res.status(500).send('Error retrieving teachers');
     }
   })
+
+  teacherProfileRoute.get('/teacher/:id', async (req, res) => {
+    try {
+      const teacher = await TeacherProfile.findById(req.params.id);
+      if (!teacher) {
+        return res.status(404).json({ message: 'Teacher not found' });
+      }
+      res.json(teacher);
+    } catch (error) {
+      console.log(error)
+      res.status(500).json({ message: 'Server error', error });
+    }
+  });
+  
   
 
   export default teacherProfileRoute

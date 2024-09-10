@@ -102,7 +102,7 @@ import Tutorial from './pages/Tutorial';
 import BenefitPostForm from './pages/Benefit/BenefitPostForm';
 import Benefit from './pages/Benefit/Benefit';
 import TeacherForm from './pages/Teachers/TeacherForm';
-import TeacherList from './pages/Teachers/TeacherList';
+import TeacherList from './pages/Teachers/TeacherDetails.jsx';
 import TeacherDetail from './pages/Teachers/TeacherDetail';
 import TeacherGrid from './pages/Teachers/TeacherGrid';
 import Store from './pages/Store';
@@ -127,6 +127,9 @@ import BookPublicPage from './pages/Bookseller/BookPublicPage';
 import BookLogin from './pages/Bookseller/BookLogin';
 import TeacherProfile from './pages/Teachers/TeacherProfile';
 import TeacherProfileLogin from './pages/Teachers/TeacherProfileLogin';
+import FormComponent from './pages/FormComponent';
+import FormOutput from './pages/FormOuput';
+import TeacherDetails from './pages/Teachers/TeacherDetails.jsx';
 
 
 
@@ -237,18 +240,16 @@ function App() {
 
 
           //teachers
-          {/* <Route exact path='/addteacher' element ={<TeacherForm />}/>
-          <Route exact path='/teachers' element ={<TeacherList />}/>
-          <Route exact path='/teacher/:id' element ={<TeacherDetail />}/>
-          <Route exact path='/teacher-grid' element ={<TeacherGrid />}/>
-           */}
-          <Route path="/addteacher" element={<TeacherForm />} />
-          <Route path="/teachergrid" element={<TeacherGrid />} />
-        <Route path="/teachers" element={<TeacherList />} />
-        <Route path="/teacher/:id" element={<TeacherDetail />} />
+     
+        <Route path="/addteacher" element={<TeacherForm />} />
+          {/* <Route path="/teachergrid" element={<TeacherGrid />} /> */}
+          <Route path="/teachers" element={<TeacherGrid />} />
+        {/* <Route path="/teachers/:id" element={<TeacherDetails />} />
+        <Route path="/teachers" element={<TeacherList />} /> */}
+        <Route path="/teacher/:id" element={<TeacherDetails />} />
         <Route path="/teacherprofile" element={<TeacherProfile />} />
         <Route path="/teacherprofilelogin" element={<TeacherProfileLogin />} />
-        {/* <Route path="/teacherlist" element={<TeacherList teachers={teachers} />} /> */}
+   
           
           
          
@@ -346,6 +347,8 @@ function App() {
         <Route path= '/bookpublicpage' element={<BookPublicPage />} />
         <Route path= '/booklogin' element={<BookLogin />} />
 
+        <Route path= '/form' element={<FormComponent />} />
+        <Route path= '/formoutput' element={<FormOutput />} />
 
 
             

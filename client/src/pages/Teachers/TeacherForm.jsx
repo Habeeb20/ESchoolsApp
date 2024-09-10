@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid'; // Optional, not used but you can add unique IDs if necessary
+import { v4 as uuidv4 } from 'uuid'; 
 import { useNavigate } from 'react-router-dom';
 import HomeNavbar from '../LandingPage/essentialLanding/HomeNavbar';
 import toast from 'react-hot-toast';

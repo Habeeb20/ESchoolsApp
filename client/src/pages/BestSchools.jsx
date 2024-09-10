@@ -178,7 +178,7 @@ const renderStars = (rating) => {
   return stars;
 };
 
-const SchoolDeals = () => {
+const BestSchools = () => {
   const styles = {
     hotelDealsContainer: {
       textAlign: 'center',
@@ -260,7 +260,7 @@ const SchoolDeals = () => {
 
   return (
     <div style={styles.hotelDealsContainer}>
-      <h2 style={styles.header}>Today's Top School Deals</h2>
+      <h2 style={styles.header}>Today's Best School Deals</h2>
       <p style={styles.subHeader}>
         A selection of the best School deals, only available today
       </p>
@@ -285,4 +285,4 @@ const SchoolDeals = () => {
   );
 };
 
-export default SchoolDeals;
+export default BestSchools;
