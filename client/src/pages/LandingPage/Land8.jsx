@@ -1,6 +1,7 @@
 import React from 'react';
 import im from '../../assets/website/tutorial.jpg'
 import im2 from '../../assets/website/img234.png'
+import CountSchool from '../CountSchools';
 const Land8 = () => {
   const containerStyle = {
     fontFamily: 'Arial, sans-serif',
@@ -160,6 +161,7 @@ const Land8 = () => {
           Take a look at our privacy policy. You can unsubscribe at any time.
         </div>
       </div>
+      
     </div>
   );
 };

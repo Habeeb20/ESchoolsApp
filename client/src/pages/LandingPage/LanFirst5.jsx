@@ -55,6 +55,25 @@ const Lanfirst5 = () => {
     fontWeight: "bolder"
   };
 
+  const headerSectionStyle = {
+    textAlign: 'center',
+    padding: '50px 20px',
+    backgroundColor: '#f4f4f4',
+    position: 'relative',
+  };
+
+  const headerTextStyle = {
+    fontSize: '2.5rem',
+    fontWeight: 'bold',
+    marginBottom: '20px',
+  };
+
+  const subheaderTextStyle = {
+    fontSize: '1.2rem',
+    fontWeight: 'normal',
+    color: '#555',
+  };
+
 
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', color: '#333' }}>
@@ -71,6 +90,10 @@ const Lanfirst5 = () => {
         <h1 style={{ fontSize: '2rem', margin: '0 0 20px' }}>
           We tell you more about <br /> People, Businesses & Places In <span style={{ color: '#4CAF50' }}>Nigeria</span> Than Any Other Directory.
         </h1>
+      </div>
+      <div style={headerSectionStyle}>
+        <div style={headerTextStyle}>Advert</div>
+        <div style={subheaderTextStyle}>Here • Now • Free</div>
       </div>
 
       {/* Second Section */}
@@ -128,6 +151,10 @@ const Lanfirst5 = () => {
 
         </div>
        
+      </div>
+      <div style={headerSectionStyle}>
+        <div style={headerTextStyle}>Advert</div>
+        <div style={subheaderTextStyle}>Here • Now • Free</div>
       </div>
     </div>
   );

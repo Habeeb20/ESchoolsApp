@@ -32,7 +32,7 @@ import bookRouter from "./routes/schoolRoutes/libraryRoute.js";
 import student_Router from "./routes/schoolRoutes/stdentRoute.js";
 import teacher_Router from "./routes/schoolRoutes/tcherRoute.js";
 import paymentRoute from "./routes/paymentRoute.js"
-
+import validator from "validator";
 
 //Ejobs
 
@@ -143,45 +143,51 @@ app.use((err, req, res, next) => {
 
 app.use(express.static(path.join(__dirname, '/client/dist')))
 
-
 app.post('/register', async (req, res) => {
-    try {
-      const { name, email, phone, school, department, faculty, history, password, admissionStartDate, admissionEndDate, admissionRequirements, tuitionFees, students } = req.body;
-  
-      // Convert strings to arrays if necessary
-      const departmentArray = Array.isArray(department) ? department : department.split(',').map(s => s.trim());
-      const facultyArray = Array.isArray(faculty) ? faculty : faculty.split(',').map(s => s.trim());
-      const studentsArray = Array.isArray(students) ? students : students.split(',').map(s => s.trim());
-  
-      // Check if the user already exists
-      const existingUser = await User.findOne({ email });
-      if (existingUser) {
-        return res.status(400).send('User already registered');
-      }
-  
-      const newUser = new User({ 
-        name, 
-        email, 
-        phone, 
-        school, 
-        department: departmentArray, 
-        faculty: facultyArray, 
-        history, 
-        password, 
-        admissionStartDate, 
-        admissionEndDate, 
-        admissionRequirements, 
-        tuitionFees, 
-        students: studentsArray
-      });
-  
-      await newUser.save();
-      res.status(201).send('User registered successfully');
-    } catch (error) {
-      console.log(error);
-      res.status(500).send('Error registering user');
+  try {
+    const { name, email, phone, school, department, faculty, history, password, admissionStartDate, admissionEndDate, admissionRequirements, tuitionFees, students, location, schoolFees, onBoarding } = req.body;
+
+    // Convert strings to arrays if necessary
+    const departmentArray = Array.isArray(department) ? department : department.split(',').map(s => s.trim());
+    const facultyArray = Array.isArray(faculty) ? faculty : faculty.split(',').map(s => s.trim());
+    const studentsArray = Array.isArray(students) ? students : students.split(',').map(s => s.trim());
+
+    // Convert 'Yes'/'No' string to boolean
+    const onBoardingBoolean = onBoarding === 'Yes' ? true : false;
+
+    // Check if the user already exists
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).send('User already registered');
     }
-  });
+
+    const newUser = new User({ 
+      name, 
+      email, 
+      phone, 
+      school, 
+      department: departmentArray, 
+      faculty: facultyArray, 
+      history, 
+      password, 
+      admissionStartDate, 
+      admissionEndDate, 
+      admissionRequirements, 
+      tuitionFees, 
+      students: studentsArray,
+      location,
+      schoolFees,
+      onBoarding: onBoardingBoolean, // store the boolean value
+    });
+
+    await newUser.save();
+    res.status(201).send('User registered successfully');
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('Error registering user');
+  }
+});
+
 
   // User Authentication
 app.post('/login', async (req, res) => {
@@ -220,7 +226,7 @@ app.get('/profile', auth, async (req, res) => {
 
 app.put('/profile', auth, async (req, res) => {
     try {
-      const { name, phone, school, department, faculty, history, admissionStartDate, admissionEndDate, admissionRequirements, tuitionFees, students } = req.body;
+      const { name, phone, school, department, faculty, history, admissionStartDate, admissionEndDate, admissionRequirements, tuitionFees, students,location, schoolFees, onBoarding } = req.body;
   
       const user = await User.findByIdAndUpdate(
         req.user._id, 
@@ -235,7 +241,10 @@ app.put('/profile', auth, async (req, res) => {
           admissionEndDate, 
           admissionRequirements, 
           tuitionFees, 
-          students 
+          students,
+          location,
+          schoolFees,
+          onBoarding 
         }, 
         { new: true }
       );
@@ -254,6 +263,74 @@ app.put('/profile', auth, async (req, res) => {
       res.status(500).send('Error retrieving schools');
     }
   });
+  app.delete('/profile', auth, async (req, res) => {
+    const userId = req.user.id;  
+    try {
+        const user = await User.findByIdAndDelete(userId);
+        if (!user) {
+            console.log("user not found")
+            return res.status(404).json({ message: 'User not found' });
+        }
+        res.status(200).json({ message: 'Account deleted successfully' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Error occurred during deletion of account' });
+    }
+});
+
+app.get('/schoolscompare', async (req, res) => {
+  try {
+    const { location, schoolFees, onBoarding, name } = req.query;
+
+    // Construct query to match any of the provided search parameters
+    const query = [];
+    
+    if (location && typeof location === 'string') {
+      query.push({ location: { $regex: location, $options: 'i' } });
+    }
+    if (schoolFees && !isNaN(parseInt(schoolFees))) {
+      query.push({ schoolFees: parseInt(schoolFees) });
+    }
+    if (onBoarding !== undefined) {
+      query.push({ onBoarding: JSON.parse(onBoarding.toLowerCase()) });
+    }
+    if (name && typeof name === 'string') {
+      query.push({ name: { $regex: name, $options: 'i' } });
+    }
+
+   
+    const schools = await User.find({ $or: query });
+    res.json(schools);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: error.message });
+  }
+});
+
+app.get('/countSchools', async (req, res) => {
+  try {
+    const { locations } = req.query;
+
+    if (!locations || !Array.isArray(locations)) {
+      return res.status(400).json({ message: 'Locations query parameter must be an array of strings' });
+    }
+
+    const counts = await Promise.all(locations.map(async (loc) => {
+      const count = await User.countDocuments({
+        location: { $regex: loc, $options: 'i' }
+      });
+      return { location: loc, count };
+    }));
+
+    res.json(counts);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: error.message });
+  }
+});
+
+
+
 
   app.get('/comparison', async (req, res) => {
     const { school } = req.query;

@@ -246,6 +246,9 @@ const PublicPage = () => {
                                     <p style={styles.detail}><strong>Tuition Fees (Non-Indigene):</strong> {school.tuitionFees?.nonIndigene || 'N/A'}</p>
                                     <p style={styles.detail}><strong>Students:</strong> {school.students?.join(', ') || 'N/A'}</p>
                                     <p style={styles.detail}><strong>Phone number:</strong> {school.phone}</p>
+                                    <p style={styles.detail}><strong>Location(city or state):</strong> {school.location}</p>
+                                    <p style={styles.detail}><strong>School fees  range:</strong> {school.schoolFees}</p>
+                                    <p style={styles.detail}><strong>Boarding:</strong> {school.onBoarding ? "yes, it is available" : 'not available'}</p>
                                     {school.email && (
                                        
                                         <a

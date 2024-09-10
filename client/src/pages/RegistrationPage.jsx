@@ -3,54 +3,57 @@ import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import HomeNavbar from './LandingPage/essentialLanding/HomeNavbar';
 const RegistrationPage = () => {
-    const navigate = useNavigate()
-    const [formData, setFormData] = useState({
-      name: '',
-      email: '',
-      phone: '',
-      school: '',
-      department: '',
-      faculty: '',
-      history: '',
-      admissionStartDate: '',
-      admissionEndDate: '',
-      admissionRequirements: '',
-      tuitionFeesIndigene: 0,
-      tuitionFeesNonIndigene: 0,
-      students: '',
-      password: '',
-    });
-  
-    const handleInputChange = (e) => {
-      const { name, value } = e.target;
-      setFormData({ ...formData, [name]: value });
-    };
-  
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-        const response = await fetch('http://localhost:4000/register', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
-  
-        if (response.ok) {
-          toast.success('Registration successful');
-          navigate('/profile')
-        } else {
-          alert('Registration failed');
-        }
-      } catch (error) {
-        console.error('Error during registration:', error);
-        toast.error('Error during registration');
+  const navigate = useNavigate()
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    school: '',
+    department: '',
+    faculty: '',
+    history: '',
+    admissionStartDate: '',
+    admissionEndDate: '',
+    admissionRequirements: '',
+    tuitionFeesIndigene: 0,
+    tuitionFeesNonIndigene: 0,
+    students: '',
+    location: '',
+    onBoarding: '',
+    schoolFees: '',
+    password: '',
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:4000/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast.success('Registration successful');
+        navigate('/profile')
+      } else {
+        toast.success('Registration failed');
       }
-    };
-  
-    return (
-      <>
+    } catch (error) {
+      console.error('Error during registration:', error);
+      toast.error('Error during registration');
+    }
+  };
+
+  return (
+    <>
       <HomeNavbar />
       <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
         <h1 style={{ textAlign: 'center', paddingTop: '5%' }}>Register</h1>
@@ -136,6 +139,7 @@ const RegistrationPage = () => {
             placeholder="Tuition Fees (Indigene)"
             style={{ padding: '10px', fontSize: '16px', borderRadius: '4px', border: '1px solid #ccc' }}
           />
+
           <input
             name="tuitionFeesNonIndigene"
             type="number"
@@ -144,6 +148,37 @@ const RegistrationPage = () => {
             placeholder="Tuition Fees (Non-Indigene)"
             style={{ padding: '10px', fontSize: '16px', borderRadius: '4px', border: '1px solid #ccc' }}
           />
+
+          <input
+            name="location"
+            type="text"
+            value={formData.location}
+            onChange={handleInputChange}
+            placeholder="location(state or city)"
+            style={{ padding: '10px', fontSize: '16px', borderRadius: '4px', border: '1px solid #ccc' }}
+          />
+          <input
+            name="schoolFees"
+            type="text"
+            value={formData.schoolFees}
+            onChange={handleInputChange}
+            placeholder="schoolFees"
+            style={{ padding: '10px', fontSize: '16px', borderRadius: '4px', border: '1px solid #ccc' }}
+          />
+          <select
+            name="onBoarding"
+            value={formData.onBoarding}
+            onChange={handleInputChange}
+            style={{ padding: '10px', fontSize: '16px', borderRadius: '4px', border: '1px solid #ccc' }}
+          >
+            <option value="">Boarding available? Select...</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+
+
+
+
           <textarea
             name="students"
             value={formData.students}
@@ -175,9 +210,9 @@ const RegistrationPage = () => {
           </button>
         </form>
       </div>
-      </>
-    );
-  };
-  
-  export default RegistrationPage;
-  
+    </>
+  );
+};
+
+export default RegistrationPage;
+

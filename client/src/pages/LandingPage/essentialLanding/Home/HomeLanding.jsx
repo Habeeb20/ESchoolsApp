@@ -29,6 +29,7 @@ import Lanfirst5 from '../../LanFirst5';
 import Land6 from '../../Land6';
 import Land7 from '../../Land7';
 import Land8 from '../../Land8';
+import SchoolDeals from '../../../SchoolDeals';
 
 const blogs = [
     {
@@ -123,6 +124,7 @@ export default function HomeLanding() {
         <Lanfix2 />
       
         <Lanfix3 />
+        <SchoolDeals />
         <Lanfirst4/>
         <Lanfirst5 />
        

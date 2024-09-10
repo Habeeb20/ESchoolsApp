@@ -19,6 +19,9 @@ const userSchema = new Schema(
     tuitionFees: { type: Number },
     students: [{ type: String }],    // Array of strings
     password: { type: String, required: true },
+    location: {type: String, required: true},
+    schoolFees: {type: String, required: true},
+    onBoarding: {type: Boolean, required: true}
   },
   { timestamps: true }
 );

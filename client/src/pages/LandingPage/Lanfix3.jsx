@@ -6,6 +6,7 @@ import im4 from '../../assets/website/Rectangle 410.png'
 import im2 from '../../assets/website/tutorial8.jpg'
 import student from '../../assets/website/homepage student.png'
 import student1 from '../../assets/website/Mask group.png'
+import CountSchools from '../CountSchools';
 const Lanfix3 = () => {
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', margin: '0', padding: '0' }}>
@@ -83,6 +84,7 @@ const Lanfix3 = () => {
       
         
       </section>
+      <CountSchools />
       
     </div>
   );

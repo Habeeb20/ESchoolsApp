@@ -521,6 +521,7 @@ import u1 from '../assets/u18.jfif';
 import u2 from '../assets/u10.jfif';
 import u3 from '../assets/u7.jfif';
 import HomeNavbar from './LandingPage/essentialLanding/HomeNavbar';
+import CompareDetails from './CompareDetails';
 
 const Comparison = () => {
     const [school1, setSchool1] = useState('');
@@ -857,6 +858,7 @@ const Comparison = () => {
                     )}
                 </div>
             )}
+            <CompareDetails />
         </div>
     );
 };

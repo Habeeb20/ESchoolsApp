@@ -153,6 +153,7 @@ const Land7 = () => {
 
   return (
     <div style={containerStyle}>
+      
       {/* Header Section */}
       <div style={headerSectionStyle}>
         <div style={headerTextStyle}>Host your school website</div>
@@ -173,6 +174,12 @@ const Land7 = () => {
           </div>
         ))}
       </div>
+
+      <div style={headerSectionStyle}>
+        <div style={headerTextStyle}>Advert </div>
+        <div style={subheaderTextStyle}>Here • Now • Free</div>
+      </div>
+
 
       {/* News Section
       <div style={newsSectionStyle}>

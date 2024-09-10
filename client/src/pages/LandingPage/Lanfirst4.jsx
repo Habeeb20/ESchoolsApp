@@ -124,6 +124,25 @@ const styles = {
     border: "none",
     cursor: "pointer",
   },
+  headerSectionStyle1 : {
+    textAlign: 'center',
+    padding: '50px 20px',
+    backgroundColor: '#f4f4f4',
+    position: 'relative',
+  },
+
+  headerTextStyle1 : {
+    fontSize: '2.5rem',
+    fontWeight: 'bold',
+    marginBottom: '20px',
+  },
+
+  subheaderTextStyle1 : {
+    fontSize: '1.2rem',
+    fontWeight: 'normal',
+    color: '#555',
+  },
+
 };
 
 const Lanfirst4 = () => {
@@ -152,6 +171,11 @@ const Lanfirst4 = () => {
           </div>
         </div>
       </div>
+      <div style={styles.headerSectionStyle1}>
+        <div style={styles.headerTextStyle1}>Advert </div>
+        <div style={styles.subheaderTextStyle1}>Here • Now • Free</div>
+      </div>
+
       <div style={styles.section}>
         <div style={styles.footer}>
           <div style={styles.overlay}></div>
