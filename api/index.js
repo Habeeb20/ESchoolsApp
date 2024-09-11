@@ -145,7 +145,7 @@ app.use(express.static(path.join(__dirname, '/client/dist')))
 
 app.post('/register', async (req, res) => {
   try {
-    const { name, email, phone, school, department, faculty, history, password, admissionStartDate, admissionEndDate, admissionRequirements, tuitionFees, students, location, schoolFees, onBoarding } = req.body;
+    const { name, email, phone, school, department, faculty, history, password, admissionStartDate, admissionEndDate, admissionRequirements, tuitionFees, students, location, schoolFees, onBoarding, LGA, transportation } = req.body;
 
     // Convert strings to arrays if necessary
     const departmentArray = Array.isArray(department) ? department : department.split(',').map(s => s.trim());
@@ -154,6 +154,7 @@ app.post('/register', async (req, res) => {
 
     // Convert 'Yes'/'No' string to boolean
     const onBoardingBoolean = onBoarding === 'Yes' ? true : false;
+    const transportationBoolean = transportation === 'Yes' ? true : false;
 
     // Check if the user already exists
     const existingUser = await User.findOne({ email });
@@ -178,6 +179,8 @@ app.post('/register', async (req, res) => {
       location,
       schoolFees,
       onBoarding: onBoardingBoolean, // store the boolean value
+      LGA,
+      transportation: transportationBoolean, // store the boolean value
     });
 
     await newUser.save();
@@ -226,7 +229,7 @@ app.get('/profile', auth, async (req, res) => {
 
 app.put('/profile', auth, async (req, res) => {
     try {
-      const { name, phone, school, department, faculty, history, admissionStartDate, admissionEndDate, admissionRequirements, tuitionFees, students,location, schoolFees, onBoarding } = req.body;
+      const { name, phone, school, department, faculty, history, admissionStartDate, admissionEndDate, admissionRequirements, tuitionFees, students,location, schoolFees, onBoarding, LGA, transportation } = req.body;
   
       const user = await User.findByIdAndUpdate(
         req.user._id, 
@@ -244,7 +247,10 @@ app.put('/profile', auth, async (req, res) => {
           students,
           location,
           schoolFees,
-          onBoarding 
+          onBoarding,
+          LGA,
+          transportation,
+           
         }, 
         { new: true }
       );

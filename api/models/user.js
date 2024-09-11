@@ -21,7 +21,9 @@ const userSchema = new Schema(
     password: { type: String, required: true },
     location: {type: String, required: true},
     schoolFees: {type: String, required: true},
-    onBoarding: {type: Boolean, required: true}
+    onBoarding: {type: Boolean, required: true},
+    LGA: {type: String, required: true},
+    transportation:{type: Boolean, required: true},
   },
   { timestamps: true }
 );

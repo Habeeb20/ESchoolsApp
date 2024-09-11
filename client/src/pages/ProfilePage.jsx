@@ -292,6 +292,8 @@ const ProfilePage = () => {
         location: '',
         schoolFees: '',
         onBoarding: '',
+        transportation: '',
+        LGA: '',
     });
 
     useEffect(() => {

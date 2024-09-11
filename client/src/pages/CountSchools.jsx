@@ -10,7 +10,7 @@ const CountSchools = () => {
   useEffect(() => {
     const fetchCounts = async () => {
       try {
-        const locations = ['Ibadan', 'Lagos', 'Abuja', 'Delta', 'Imo', 'Ogun', 'Ondo', 'Osun', 'Anambra', 'Kano', 'Katsina', 'Sokoto'];
+        const locations = ['oyo', 'Lagos', 'Abuja', 'Delta', 'Imo', 'Ogun', 'Ondo', 'Osun', 'Anambra', 'Kano', 'Katsina', 'Sokoto'];
         const response = await axios.get('http://localhost:4000/countSchools', {
           params: { locations }
         });
